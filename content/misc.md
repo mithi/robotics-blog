@@ -1,8 +1,8 @@
 
 # Misc
-- [Ideas](/pages/ideas)
-- [Wish List](/pages/wish-list)
-- [Readings](/pages/readings)
+- [Ideas](https://mithi.github.io/robotics-blog/pages/ideas)
+- [Wish List](https://mithi.github.io/robotics-blog//pages/wish-list)
+- [Readings](https://mithi.github.io/robotics-blog//pages/readings)
 
 - [Tags](/tags)
 - [Categories](/categories)

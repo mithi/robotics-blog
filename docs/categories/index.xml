@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Mithi&#39;s Robotics Blog</title>
+    <link>https://mithi.github.io/robotics-blog/categories/</link>
+    <description>Recent content in Categories on Mithi&#39;s Robotics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Mar 2020 19:57:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://mithi.github.io/robotics-blog/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>bossy</title>
+      <link>https://mithi.github.io/robotics-blog/categories/bossy/</link>
+      <pubDate>Mon, 16 Mar 2020 19:57:53 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/categories/bossy/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>custom controller on Mithi&#39;s Robotics Blog</title>
+    <link>https://mithi.github.io/robotics-blog/tags/custom-controller/</link>
+    <description>Recent content in custom controller on Mithi&#39;s Robotics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Mar 2020 19:57:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://mithi.github.io/robotics-blog/tags/custom-controller/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bossy: Bill of Materials</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/02-bill-of-materials/</link>
+      <pubDate>Mon, 16 Mar 2020 19:57:53 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/02-bill-of-materials/</guid>
+      <description>Custom controller    # Item     1x Arduino Micro micro controller   2x Sparkfun 16-channel Analog/Digital MUX Breakout - CD74HC4067   1x nrf24l01 breakout board   1x Adafruit Neopixel Stick stick (8 x 5050 RGB LED with Integrated Drivers, WS2812, WS2811 or SK6812)   1x Adafruit Bicolor 8x8 LED Matrix with I2C backpack (LED DOT MATRIX BL-M12X883 XX, HT16K33 driver)   4x Adafruit Thumb Joystick breakout board with select buttons   6x Potentiometers (10k, 20k, 50 works well)   15x Resistors 1/4 watt, (10kohms works well)   1x Capacitor- (1kmicrofarads, 6.</description>
+    </item>
+    
+    <item>
+      <title>Bossy: Todo List</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/01-to-do/</link>
+      <pubDate>Mon, 16 Mar 2020 15:44:53 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/01-to-do/</guid>
+      <description>Objective: A wireless custom controller project  The custom controller&amp;rsquo;s name is Bossy Build a custom controller with parts I already have at home    Preliminaries
+ .List bill of materials .Install arduino .Install fritzing .Test Arduino micro is working .Make continuity tester with adafruit metro mini .Find out uniqe values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons .Finalize breadboard schematic, pcb design    Breadboard tests</description>
+    </item>
+    
+  </channel>
+</rss>

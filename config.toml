@@ -1,0 +1,54 @@
+baseUrl = "https://mithi.github.io/robotics-blog/"
+languageCode = "en-us"
+theme = "hello-friend-ng"
+
+staticDir = ["static", "static/images", "static/images/bossy"]
+publishDir = "docs"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+
+  # Set disableReadOtherPosts to true in order to hide the links to other posts.
+  disableReadOtherPosts = false
+
+  # Metadata mostly used in document's head
+  description = "Mithi's Robotics Blog"
+  keywords = "homepage, blog"
+  images = [""]
+
+  # Directory name of your blog content (default is `content/posts`)
+  contentTypeName = "blog"
+
+  # Default theme "light" or "dark"
+  defaultTheme = "dark"
+
+[languages]
+  [languages.en]
+    title = "Mithi's Robotics Blog"
+    subtitle = "Notes, to-do lists, docs, ideas (etc) for building my robots"
+    keywords = ""
+    copyright = ""
+    readOtherPosts = "Read other posts"
+
+    [languages.en.params.logo]
+      logoText = "Mithi's Robotics Blog"
+      logoHomeLink = "/"
+
+  # And you can even create generic menu
+  [menu]
+    [[menu.main]]
+      identifier = "blog"
+      name       = "Blog"
+      url        = "/blog"
+
+    [[menu.main]]
+      identifier = "misc"
+      name       = "Misc"
+      url        = "/misc"

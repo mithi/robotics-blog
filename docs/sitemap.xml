@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/blog/</loc>
+    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/tags/bossy/</loc>
+    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/categories/bossy/</loc>
+    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/blog/bossy/02-bill-of-materials/</loc>
+    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/categories/</loc>
+    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/tags/custom-controller/</loc>
+    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/</loc>
+    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/tags/</loc>
+    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/tags/wireless-controller/</loc>
+    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/blog/bossy/01-to-do/</loc>
+    <lastmod>2020-03-16T15:44:53+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/blog/hello-world/</loc>
+    <lastmod>2020-03-16T03:11:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/misc/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/pages/ideas/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/pages/readings/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/pages/wish-list/</loc>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/pages/</loc>
+  </url>
+  
+</urlset>

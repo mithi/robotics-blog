@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mithi&#39;s Robotics Blog</title>
+    <link>https://mithi.github.io/robotics-blog/</link>
+    <description>Recent content on Mithi&#39;s Robotics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 16 Mar 2020 19:57:53 +0800</lastBuildDate>
+    
+	<atom:link href="https://mithi.github.io/robotics-blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bossy: Bill of Materials</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/02-bill-of-materials/</link>
+      <pubDate>Mon, 16 Mar 2020 19:57:53 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/02-bill-of-materials/</guid>
+      <description>Custom controller    # Item     1x Arduino Micro micro controller   2x Sparkfun 16-channel Analog/Digital MUX Breakout - CD74HC4067   1x nrf24l01 breakout board   1x Adafruit Neopixel Stick stick (8 x 5050 RGB LED with Integrated Drivers, WS2812, WS2811 or SK6812)   1x Adafruit Bicolor 8x8 LED Matrix with I2C backpack (LED DOT MATRIX BL-M12X883 XX, HT16K33 driver)   4x Adafruit Thumb Joystick breakout board with select buttons   6x Potentiometers (10k, 20k, 50 works well)   15x Resistors 1/4 watt, (10kohms works well)   1x Capacitor- (1kmicrofarads, 6.</description>
+    </item>
+    
+    <item>
+      <title>Bossy: Todo List</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/01-to-do/</link>
+      <pubDate>Mon, 16 Mar 2020 15:44:53 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/01-to-do/</guid>
+      <description>Objective: A wireless custom controller project  The custom controller&amp;rsquo;s name is Bossy Build a custom controller with parts I already have at home    Preliminaries
+ .List bill of materials .Install arduino .Install fritzing .Test Arduino micro is working .Make continuity tester with adafruit metro mini .Find out uniqe values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons .Finalize breadboard schematic, pcb design    Breadboard tests</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://mithi.github.io/robotics-blog/blog/hello-world/</link>
+      <pubDate>Mon, 16 Mar 2020 03:11:13 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/hello-world/</guid>
+      <description> I&amp;rsquo;m robotics blog! It&amp;rsquo;s nice to meet you!  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mithi.github.io/robotics-blog/misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/misc/</guid>
+      <description>Misc   Ideas
+  Wish List
+  Readings
+  Tags
+  Categories
+  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mithi.github.io/robotics-blog/pages/ideas/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/pages/ideas/</guid>
+      <description>Ideas  Ideas for robotics projects I&amp;rsquo;m aiming to do  Part 1   Build a custom controller
+ Build it using parts I already have: Arduino Micro, nrf24l01, HT16K33 LED Controller Driver, BL-M12X883 Led Dot Matrix, Analog/Digital MUX Breakout - CD74HC4067, 8 x 5050 RGB LED with Integrated Drivers (WS2812 Integrated Light Source), potentiometers, switches, buttons and more    Control Two custom robots wirelessly with custom controller</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mithi.github.io/robotics-blog/pages/readings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/pages/readings/</guid>
+      <description>Readings  References useful for my projects that I may not have gotten around to reading yet  Object Oriented Arduino  Arduino.cc: Writing a Library for Arduino Arduino.cc: Arduino Style Guide for Writing Libraries Arduino the Object Oriented Way Arduino Object Oriented Programming (OOP)  Arduino Project Directory Structure  Nov 18, 2019 | Arduino Github: Arduno IDE 1.5 Library Specification Jul 22, 2018 | Stack Exchange: Arduino IDE and subfolders Jan 31, 2017 | Stack Exchange: How do I configure the Arduino IDE to look for source code in a subdirectory within the directory that holds my sketch?</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mithi.github.io/robotics-blog/pages/wish-list/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/pages/wish-list/</guid>
+      <description>Wishlist  Creality Ender Pro 3D Printer Raspberry Pi Zero W 2x - Adafruit Servo Bonnets 32x - metal gear micro servos (9-14g) Materials to build own drone Materials to build own open dog M5StickV AI Camera - Kendryte K210 Chipset  </description>
+    </item>
+    
+  </channel>
+</rss>

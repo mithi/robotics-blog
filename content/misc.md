@@ -4,5 +4,5 @@
 - [Wish List](https://mithi.github.io/robotics-blog/pages/wish-list)
 - [Readings](https://mithi.github.io/robotics-blog/pages/readings)
 
-- [Tags](/tags)
-- [Categories](/categories)
+- [Tags](https://mithi.github.io/robotics-blog/tags)
+- [Categories](https://mithi.github.io/robotics-blog/categories)

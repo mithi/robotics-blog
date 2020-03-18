@@ -16,8 +16,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/pages/ideas/</guid>
-      <description>Ideas  Ideas for robotics projects I&amp;rsquo;m aiming to do  Part 1   Build a custom controller
- Build it using parts I already have: Arduino Micro, nrf24l01, HT16K33 LED Controller Driver, BL-M12X883 Led Dot Matrix, Analog/Digital MUX Breakout - CD74HC4067, 8 x 5050 RGB LED with Integrated Drivers (WS2812 Integrated Light Source), potentiometers, switches, buttons and more    Control Two custom robots wirelessly with custom controller</description>
+      <description>Ideas  Ideas for robotics projects I want to do  Part 1   Bossy: Build a custom wireless general purpose controller
+ Build it using parts I already have    Control Two custom robots with bossy
+ Robot #1 Arm Tank - MeArm 1.0 (Open-source 4-axis manipulator) on top of a metal tank chassis Robot #2 Hacked RC Car with Propeller Hat - Hacked Toy RC car frame, with two servos and brushless motor    7Bot</description>
     </item>
     
     <item>

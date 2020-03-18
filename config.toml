@@ -39,7 +39,7 @@ publishDir = "docs"
 
     [languages.en.params.logo]
       logoText = "Mithi's Robotics Blog"
-      logoHomeLink = "/"
+      logoHomeLink = "/robotics-blog"
 
   # And you can even create generic menu
   [menu]

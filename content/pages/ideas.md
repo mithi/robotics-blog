@@ -1,13 +1,13 @@
 # Ideas
-- Ideas for robotics projects I'm aiming to do
+- Ideas for robotics projects I want to do
 
 ## Part 1
-1.  Build  a custom controller
-    - Build it using parts I already have: Arduino Micro, nrf24l01, HT16K33 LED Controller Driver, BL-M12X883 Led Dot Matrix, Analog/Digital MUX Breakout - CD74HC4067, 8 x 5050 RGB LED with Integrated Drivers (WS2812 Integrated Light Source), potentiometers, switches, buttons and more
+1.  Bossy: Build  a custom wireless general purpose controller
+    - Build it using parts I already have
 
-2. Control Two custom robots wirelessly with custom controller
+2. Control Two custom robots with bossy
     - Robot #1 Arm Tank - MeArm 1.0 (Open-source 4-axis manipulator) on top of a metal tank chassis
-    - Robot #2 Hacked RC Car with Propeller Hat - Toy RC car frame and configuration with a propeller hat driven by a brushless motor.
+    - Robot #2 Hacked RC Car with Propeller Hat - Hacked Toy RC car frame, with two servos and brushless motor
 
 3. 7Bot
     - Explore the the open-source 6-axis manipulator from the ground up and use it for various tasks such as typing on a keyboard, placing go stones in a go board and more

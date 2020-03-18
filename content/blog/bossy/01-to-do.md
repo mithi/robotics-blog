@@ -6,7 +6,7 @@ date: 2020-03-16T15:44:53+08:00
 draft: false
 ---
 
-## Objective: A wireless custom controller project
+## Objective: Build a a wireless custom general-purpose controller project
 - The custom controller's name is Bossy
 - Build a custom controller with parts I already have at home
 
@@ -22,43 +22,18 @@ draft: false
     - [x] .Finalize breadboard schematic, pcb design
 
 2. Breadboard tests
-    - Test neopixel stick with Arduino Micro
-    - Test 8x8 Led matrix on Arduino Micro
-    - Test Adafruit Feather and Neopixel Wing if working
-    - Check if arduino micro and adafruit feather can communicate
-    - Test multiplexer #1 with joysticks
-    - Test multiplexer #2 with potentiometers, buttons, switches
+    - [x] .Test 8x8 Led matrix on Arduino Micro
+    - Check if the two arduino micro  can communicate
 
 3. Soldered Protoboard test
-    - Test neopixel stick
+    - [x] .Solder led matrix, potentiometers, joysticks
+    - Solder buttons and swithes
     - Test led matrix
     - Test multiplexer #1 with joysticks
     - Test multiplexer #2 with potentiometers, buttons, switches
     - Test wireless connection
 
 4. Coding and finishing up
-    - Add UI functionality for provide feedback of controls in the 8x8 led matrix and neopixel stick (screen)
+    - Add UI functionality for provide feedback of controls in the 8x8 led matrix (screen)
     - Make an enclosure to house our controller
-    - Use controller to control the neopixels of the feather wirelessly
-
-## Breadboard, Schematic, pcb design
-
-Here's my testing setup
-![](/breadboard.png)
-
-After several iterations, I finally settled to one design (the last one)
-
-|![](/1-design.jpg)|![](/2-design.jpg)|![](/3-design.jpg)|![](/4-design.jpg)|
-| ---------- | ---------- | ---------- | ---------- |
-|![](/5-design.jpg)|![](/6-design.jpg)|![](/7-design.jpg)|![](/final-design.jpg)|
-
-Here's my pathetic attempt to design the schematics. After several hours of pain, i decided to give up. lol
-
-
-![](/messy-schematic.png)
-
-
-|![](/messy-pcb.png)|![](/final-design.jpg)|
-| ---------- | ---------- | ---------- | ---------- |
-
-
+    - Use controller to control the neopixels wirelessly

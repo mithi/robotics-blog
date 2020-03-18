@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Objective: A wireless custom controller project  The custom controller&amp;rsquo;s name is Bossy Build a custom controller with parts I already have at home    Preliminaries
- .List bill of materials .Install arduino .Install fritzing .Test Arduino micro is working .Make continuity tester with adafruit metro mini .Find out uniqe values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons .Finalize breadboard schematic, pcb design    Breadboard tests" />
+<meta name="description" content="Objective: Build a a wireless custom general-purpose controller project  The custom controller&amp;rsquo;s name is Bossy Build a custom controller with parts I already have at home    Preliminaries
+ .List bill of materials .Install arduino .Install fritzing .Test Arduino micro is working .Make continuity tester with adafruit metro mini .Find out uniqe values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons ." />
 <meta name="keywords" content=", bossy, custom controller, wireless controller" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -32,11 +32,11 @@
 
 
 <meta itemprop="name" content="Bossy: Todo List">
-<meta itemprop="description" content="Objective: A wireless custom controller project  The custom controller&rsquo;s name is Bossy Build a custom controller with parts I already have at home    Preliminaries
- .List bill of materials .Install arduino .Install fritzing .Test Arduino micro is working .Make continuity tester with adafruit metro mini .Find out uniqe values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons .Finalize breadboard schematic, pcb design    Breadboard tests">
+<meta itemprop="description" content="Objective: Build a a wireless custom general-purpose controller project  The custom controller&rsquo;s name is Bossy Build a custom controller with parts I already have at home    Preliminaries
+ .List bill of materials .Install arduino .Install fritzing .Test Arduino micro is working .Make continuity tester with adafruit metro mini .Find out uniqe values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons .">
 <meta itemprop="datePublished" content="2020-03-16T15:44:53&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-16T15:44:53&#43;08:00" />
-<meta itemprop="wordCount" content="214">
+<meta itemprop="wordCount" content="151">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -45,8 +45,8 @@
 <meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
 
 <meta name="twitter:title" content="Bossy: Todo List"/>
-<meta name="twitter:description" content="Objective: A wireless custom controller project  The custom controller&rsquo;s name is Bossy Build a custom controller with parts I already have at home    Preliminaries
- .List bill of materials .Install arduino .Install fritzing .Test Arduino micro is working .Make continuity tester with adafruit metro mini .Find out uniqe values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons .Finalize breadboard schematic, pcb design    Breadboard tests"/>
+<meta name="twitter:description" content="Objective: Build a a wireless custom general-purpose controller project  The custom controller&rsquo;s name is Bossy Build a custom controller with parts I already have at home    Preliminaries
+ .List bill of materials .Install arduino .Install fritzing .Test Arduino micro is working .Make continuity tester with adafruit metro mini .Find out uniqe values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons ."/>
 
 
 
@@ -69,7 +69,7 @@
         <div class="container">
             <header class="header">
     <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
+        <a href="/robotics-blog" style="text-decoration: none;">
     <div class="logo">
         
             <span class="logo__mark">></span>
@@ -125,7 +125,7 @@
             
 
             <div class="post-content">
-                <h2 id="objective-a-wireless-custom-controller-project">Objective: A wireless custom controller project</h2>
+                <h2 id="objective-build-a-a-wireless-custom-general-purpose-controller-project">Objective: Build a a wireless custom general-purpose controller project</h2>
 <ul>
 <li>The custom controller&rsquo;s name is Bossy</li>
 <li>Build a custom controller with parts I already have at home</li>
@@ -147,18 +147,15 @@
 <li>
 <p>Breadboard tests</p>
 <ul>
-<li>Test neopixel stick with Arduino Micro</li>
-<li>Test 8x8 Led matrix on Arduino Micro</li>
-<li>Test Adafruit Feather and Neopixel Wing if working</li>
-<li>Check if arduino micro and adafruit feather can communicate</li>
-<li>Test multiplexer #1 with joysticks</li>
-<li>Test multiplexer #2 with potentiometers, buttons, switches</li>
+<li><input checked="" disabled="" type="checkbox">.Test 8x8 Led matrix on Arduino Micro</li>
+<li>Check if the two arduino micro  can communicate</li>
 </ul>
 </li>
 <li>
 <p>Soldered Protoboard test</p>
 <ul>
-<li>Test neopixel stick</li>
+<li><input checked="" disabled="" type="checkbox">.Solder led matrix, potentiometers, joysticks</li>
+<li>Solder buttons and swithes</li>
 <li>Test led matrix</li>
 <li>Test multiplexer #1 with joysticks</li>
 <li>Test multiplexer #2 with potentiometers, buttons, switches</li>
@@ -168,46 +165,12 @@
 <li>
 <p>Coding and finishing up</p>
 <ul>
-<li>Add UI functionality for provide feedback of controls in the 8x8 led matrix and neopixel stick (screen)</li>
+<li>Add UI functionality for provide feedback of controls in the 8x8 led matrix (screen)</li>
 <li>Make an enclosure to house our controller</li>
-<li>Use controller to control the neopixels of the feather wirelessly</li>
+<li>Use controller to control the neopixels wirelessly</li>
 </ul>
 </li>
 </ol>
-<h2 id="breadboard-schematic-pcb-design">Breadboard, Schematic, pcb design</h2>
-<p>Here&rsquo;s my testing setup
-<img src="/breadboard.png" alt=""></p>
-<p>After several iterations, I finally settled to one design (the last one)</p>
-<table>
-<thead>
-<tr>
-<th><img src="/1-design.jpg" alt=""></th>
-<th><img src="/2-design.jpg" alt=""></th>
-<th><img src="/3-design.jpg" alt=""></th>
-<th><img src="/4-design.jpg" alt=""></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img src="/5-design.jpg" alt=""></td>
-<td><img src="/6-design.jpg" alt=""></td>
-<td><img src="/7-design.jpg" alt=""></td>
-<td><img src="/final-design.jpg" alt=""></td>
-</tr>
-</tbody>
-</table>
-<p>Here&rsquo;s my pathetic attempt to design the schematics. After several hours of pain, i decided to give up. lol</p>
-<p><img src="/messy-schematic.png" alt=""></p>
-<table>
-<thead>
-<tr>
-<th><img src="/messy-pcb.png" alt=""></th>
-<th><img src="/final-design.jpg" alt=""></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-</table>
 
             </div>
         </article>

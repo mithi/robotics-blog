@@ -2,6 +2,8 @@ baseUrl = "https://mithi.github.io/robotics-blog/"
 languageCode = "en-us"
 theme = "hello-friend-ng"
 
+googleAnalytics = "UA-142507629-2"
+
 staticDir = ["static", "static/images", "static/images/bossy"]
 publishDir = "docs"
 

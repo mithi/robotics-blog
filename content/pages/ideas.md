@@ -13,14 +13,16 @@
     - Explore the the open-source 6-axis manipulator from the ground up and use it for various tasks such as typing on a keyboard, placing go stones in a go board and more
 
 4. Organize my Lego!
-  - I need to do this!
+    - I need to do this!
+    - Make a timelaps video
 
 5. Hacking the Lego EV3 Motors
     - User the Motors from the Lego EV3 kit with Arduino-like microcontrol. Make one controller mimick the other.
     - Showcase various lego mechanisms with these motors from Yoshihito Isogawa's book
     - Make a Drawing Turtle Bot
 
-6. Build various Mechanical Walkers (Klann's Linkage) with Lego based on Ben Vagle, Wade Vagle and DIYwalkers.com tutorials
+6. Build various Mechanical Walkers (Klann's Linkage)
+    - With Lego based on Ben Vagle, Wade Vagle and DIYwalkers.com tutorials
 
 7. Master Builders Academy
     - Checkout and Review Lego Master Builders Academy Books, make notes and apply what I learned to create simple designs
@@ -30,7 +32,8 @@
 (Kmiec, Pawel "Sariel").
     - Review his other book "Incredible Lego Technic: Cars Trucks, Robots and more"
 
-9. Assemble one of my Lego Technic Sets.
+9. Assemble one or two of my Lego Technic Sets.
+    - Make a timelapse video
 
 10. Three Popular Women Makers:
     - Former Queen of Shitty Robots: Simone Giertz
@@ -78,7 +81,7 @@
     - Watch Joop Brokking's make arduino flight controller drone from scratch
     - Learn more about drones based on Drones Dojo of Caleb Bergquist
 
-3. Build my own custom Open Dogs (brushless ones and servo besed ones) based on James Bruton's youtube videos
+3. Build my own custom Open Dogs (brushless ones and servo-based ones) based on James Bruton's youtube videos
 
 4. Lesson learned from Russ Tedrake's Underactuated Robotics course
 

@@ -25,7 +25,7 @@ publishDir = "docs"
   keywords = "homepage, blog, robotics"
   images = [""]
 
-  homeSubtitle = "Notes, to-do lists, docs, ideas (etc) for building my robots"
+  homeSubtitle = "👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾"
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "blog"
@@ -34,8 +34,8 @@ publishDir = "docs"
   defaultTheme = "dark"
 
   [[params.social]]
-    name = "coffee"
-    url  = "https://ko-fi.com/minimithi"
+    name = "book"
+    url  = "https://medium.com/@mithi"
 
   [[params.social]]
     name = "github"
@@ -43,22 +43,22 @@ publishDir = "docs"
 
   [[params.social]]
     name = "instagram"
-    url  = "https://instagram.com/mithi"
+    url  = "https://instagram.com/minimithi"
 
   [[params.social]]
-    name = "book"
-    url  = "https://medium.com/@mithi"
+    name = "coffee"
+    url  = "https://ko-fi.com/minimithi"
 
 [languages]
   [languages.en]
     title = "Mithi's Robotics Blog"
-    subtitle = "Notes, to-do lists, docs, ideas (etc) for building my robots"
+    subtitle = "👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾"
     keywords = ""
-    copyright = ""
+    copyright = "👾🤖 Mithi"
     readOtherPosts = "Read other posts"
 
     [languages.en.params.logo]
-      logoText = "Mithi's Robotics Blog"
+      logoText = "Mithi's Robots"
       logoHomeLink = "/robotics-blog"
 
   # And you can even create generic menu
@@ -72,3 +72,8 @@ publishDir = "docs"
       identifier = "misc"
       name       = "Misc"
       url        = "/misc"
+
+    [[menu.main]]
+      identifier = "coffee"
+      name       = "☕"
+      url        = "https://ko-fi.com/minimithi"

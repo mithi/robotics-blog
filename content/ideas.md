@@ -2,6 +2,8 @@
 - Ideas for robotics projects I want to do
 
 ## Part 1
+
+```
 1.  Bossy: A custom general-purpose wireless controller
     -  Build controller Build with I already have
 
@@ -11,12 +13,13 @@
 
 3. 7Bot
     - Explore the the open-source 6-axis manipulator from the ground up
-    - use it for various tasks such as typing on a keyboard, placing go stones in a go board and more
+    - Use it for various tasks like typing on a keyboard, placing go stones and more
 
 4. Organize my Lego!
 
 5. Hacking the Lego EV3 Motors
-    - User the Motors from the Lego EV3 kit with Arduino-like microcontrol. Make one controller mimick the other.
+    - User the Motors from the Lego EV3 kit with Arduino-like microcontrol
+    - Make one controller mimick the other.
     - Showcase various lego mechanisms with these motors from Yoshihito Isogawa's book
     - Make a Drawing Turtle Bot
 
@@ -24,11 +27,11 @@
     - With Lego based on Ben Vagle, Wade Vagle and DIYwalkers.com tutorials
 
 7. Master Builders Academy
-    - Checkout and Review Lego Master Builders Academy Books, make notes and apply what I learned to create simple designs
+    - Checkout and Review Lego Master Builders Academy Books
+    - Make notes and apply what I learned to create simple designs
 
 8. Sariel's Two Books
     - Review and make notes using Sariel's Unofficial Lego Technic Builder's Guide,
-(Kmiec, Pawel "Sariel").
     - Review his other book "Incredible Lego Technic: Cars Trucks, Robots and more"
 
 9. Assemble one or two of my Lego Technic Sets.
@@ -43,9 +46,11 @@
 
 12. Build simple browser-based robot simulators
     - hexapod, quadruped, and manipulator configurations
+```
 
 ## Part 2
 
+```
 1. Get a miniature (1x1 sq inch) single-needle watercolor tattoo
     - Neir Automata Stubby or Blackbox with Flowers
     - Maybe the Super Giant Game Transistor sword?
@@ -64,9 +69,11 @@
     - Download from thingiverse, mostly micro servo based
 
 7. Build a Beginner-Friendly Framework for Robots using Raspberry Pi and Adafruit Servo Driver
+```
 
 ## Part 3
 
+```
 1. Design my own robots / robot kit
     - 2 quadrupeds, one with 8 joints one with 12 joints
     - 2 hexapods, one with 12 joints one with 18 joints
@@ -80,13 +87,15 @@
     - Watch Joop Brokking's make arduino flight controller drone from scratch
     - Learn more about drones based on Drones Dojo of Caleb Bergquist
 
-3. Build my own custom Open Dogs (brushless ones and servo-based ones) based on James Bruton's youtube videos
+3. Build my own custom Open Dogs
+  - (brushless ones and servo-based ones) based on James Bruton's youtube videos
 
 4. Lesson learned from Russ Tedrake's Underactuated Robotics course
-
-
+```
 
 ## 7 BOT PROJECT
+
+```
 1. Rewrite Arduino Due's code to bare minimum
 2. Use serial to communicate the angles from Mac to Arduino
 3. Figure out inverse kinematics
@@ -100,4 +109,7 @@
     - Write name
     - Put honey on bread
     - Stir soup
+7. Can robot arm learn inverse kinematics using machine learning?
+  - PWM -> Angles -> Pose (x, y, z)
 
+```

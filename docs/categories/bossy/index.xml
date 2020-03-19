@@ -21,11 +21,11 @@
     </item>
     
     <item>
-      <title>Bossy: Todo List</title>
-      <link>https://mithi.github.io/robotics-blog/blog/bossy/01-to-do/</link>
+      <title>Bossy: Task List</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/01-task-list/</link>
       <pubDate>Mon, 16 Mar 2020 15:44:53 +0800</pubDate>
       
-      <guid>https://mithi.github.io/robotics-blog/blog/bossy/01-to-do/</guid>
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/01-task-list/</guid>
       <description>Objective: Build a a wireless custom general-purpose controller project  The custom controller&amp;rsquo;s name is Bossy Build a custom controller with parts I already have at home    Preliminaries
  .List bill of materials .Install arduino .Install fritzing .Test Arduino micro is working .Make continuity tester with adafruit metro mini .Find out uniqe values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons .</description>
     </item>

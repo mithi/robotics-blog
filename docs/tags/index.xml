@@ -6,7 +6,7 @@
     <description>Recent content in Tags on Mithi&#39;s Robotics Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Mar 2020 19:57:53 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2020 03:39:01 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,27 +14,18 @@
     <item>
       <title>bossy</title>
       <link>https://mithi.github.io/robotics-blog/tags/bossy/</link>
-      <pubDate>Mon, 16 Mar 2020 19:57:53 +0800</pubDate>
+      <pubDate>Thu, 19 Mar 2020 03:39:01 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/tags/bossy/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>custom controller</title>
-      <link>https://mithi.github.io/robotics-blog/tags/custom-controller/</link>
-      <pubDate>Mon, 16 Mar 2020 19:57:53 +0800</pubDate>
+      <title>general-purpose-controller</title>
+      <link>https://mithi.github.io/robotics-blog/tags/general-purpose-controller/</link>
+      <pubDate>Thu, 19 Mar 2020 03:39:01 +0800</pubDate>
       
-      <guid>https://mithi.github.io/robotics-blog/tags/custom-controller/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>wireless controller</title>
-      <link>https://mithi.github.io/robotics-blog/tags/wireless-controller/</link>
-      <pubDate>Mon, 16 Mar 2020 19:57:53 +0800</pubDate>
-      
-      <guid>https://mithi.github.io/robotics-blog/tags/wireless-controller/</guid>
+      <guid>https://mithi.github.io/robotics-blog/tags/general-purpose-controller/</guid>
       <description></description>
     </item>
     

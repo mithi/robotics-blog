@@ -8,7 +8,27 @@
   </url>
   
   <url>
+    <loc>https://mithi.github.io/robotics-blog/tags/bossy/</loc>
+    <lastmod>2020-03-19T03:39:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/categories/bossy/</loc>
+    <lastmod>2020-03-19T03:39:01+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://mithi.github.io/robotics-blog/blog/bossy/03-initial-design/</loc>
+    <lastmod>2020-03-19T03:39:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/categories/</loc>
+    <lastmod>2020-03-19T03:39:01+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/tags/general-purpose-controller/</loc>
     <lastmod>2020-03-19T03:39:01+08:00</lastmod>
   </url>
   
@@ -18,37 +38,12 @@
   </url>
   
   <url>
-    <loc>https://mithi.github.io/robotics-blog/tags/bossy/</loc>
-    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithi.github.io/robotics-blog/categories/bossy/</loc>
-    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
+    <loc>https://mithi.github.io/robotics-blog/tags/</loc>
+    <lastmod>2020-03-19T03:39:01+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://mithi.github.io/robotics-blog/blog/bossy/02-bill-of-materials/</loc>
-    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithi.github.io/robotics-blog/categories/</loc>
-    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithi.github.io/robotics-blog/tags/custom-controller/</loc>
-    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithi.github.io/robotics-blog/tags/</loc>
-    <lastmod>2020-03-16T19:57:53+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithi.github.io/robotics-blog/tags/wireless-controller/</loc>
     <lastmod>2020-03-16T19:57:53+08:00</lastmod>
   </url>
   

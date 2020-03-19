@@ -58,24 +58,23 @@
   </url>
   
   <url>
+    <loc>https://mithi.github.io/robotics-blog/ideas/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://mithi.github.io/robotics-blog/misc/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://mithi.github.io/robotics-blog/pages/ideas/</loc>
+    <loc>https://mithi.github.io/robotics-blog/readings/</loc>
+    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://mithi.github.io/robotics-blog/pages/readings/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mithi.github.io/robotics-blog/pages/wish-list/</loc>
-  </url>
-  
-  <url>
-    <loc>https://mithi.github.io/robotics-blog/pages/</loc>
+    <loc>https://mithi.github.io/robotics-blog/wish-list/</loc>
+    <priority>0</priority>
   </url>
   
 </urlset>

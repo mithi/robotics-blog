@@ -1,8 +1,8 @@
 ---
 title: "Bossy: Bill of Materials"
-categories: [bossy]
-tags: [bossy, custom controller, wireless controller]
 date: 2020-03-16T19:57:53+08:00
+categories: [bossy]
+tags: [bossy, general-purpose-controller]
 draft: false
 ---
 
@@ -28,7 +28,7 @@ draft: false
 | **1x**| Male and female pin headers |
 | **1x**| Powerbank + USB cable|
 | -  | Standoffs, screws, hex, and nuts for enclosure |
-| x | Lasercut acrylic for enclosure |
+| - | Lasercut acrylic for enclosure |
 
 
 ## Receiver

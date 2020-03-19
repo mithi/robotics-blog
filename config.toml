@@ -21,15 +21,33 @@ publishDir = "docs"
   disableReadOtherPosts = false
 
   # Metadata mostly used in document's head
-  description = "Mithi's Robotics Blog"
-  keywords = "homepage, blog"
+  description = "Robotics Blog"
+  keywords = "homepage, blog, robotics"
   images = [""]
+
+  homeSubtitle = "Notes, to-do lists, docs, ideas (etc) for building my robots"
 
   # Directory name of your blog content (default is `content/posts`)
   contentTypeName = "blog"
 
   # Default theme "light" or "dark"
   defaultTheme = "dark"
+
+  [[params.social]]
+    name = "coffee"
+    url  = "https://ko-fi.com/minimithi"
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/mithi"
+
+  [[params.social]]
+    name = "instagram"
+    url  = "https://instagram.com/mithi"
+
+  [[params.social]]
+    name = "book"
+    url  = "https://medium.com/@mithi"
 
 [languages]
   [languages.en]

@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Todo List"
+title: "Bossy: Task List"
 categories: [bossy]
 tags: [bossy, custom controller, wireless controller]
 date: 2020-03-16T15:44:53+08:00
@@ -27,7 +27,7 @@ draft: false
 
 3. Soldered Protoboard test
     - [x] .Solder led matrix, potentiometers, joysticks
-    - Solder buttons and swithes
+    - Solder buttons and switches
     - Test led matrix
     - Test multiplexer #1 with joysticks
     - Test multiplexer #2 with potentiometers, buttons, switches

@@ -13,6 +13,7 @@
     - Explore the the open-source 6-axis manipulator from the ground up and use it for various tasks such as typing on a keyboard, placing go stones in a go board and more
 
 4. Organize my Lego!
+  - I need to do this!
 
 5. Hacking the Lego EV3 Motors
     - User the Motors from the Lego EV3 kit with Arduino-like microcontrol. Make one controller mimick the other.

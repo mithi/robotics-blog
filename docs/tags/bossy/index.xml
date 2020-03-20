@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>👾🤖 Mithi</copyright>
-    <lastBuildDate>Thu, 19 Mar 2020 03:39:01 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2020 20:50:00 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/tags/bossy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bossy: Wireless Test</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/04-wireless-test/</link>
+      <pubDate>Fri, 20 Mar 2020 20:50:00 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/04-wireless-test/</guid>
+      <description>Make one Arduino Micro send a message &amp;quot;Hello world! Watchout!&amp;quot; and another Arduino Micro receive it using nrf24l01 modules Took me two whole days to get this thing up and running Ignore the TB6612 breakout board     color pin pin color     brown miso irq nc   green sck mosi white   violet ce csn yellow   black gnd vcc red    Transmitter Code #include &amp;lt;SPI.</description>
+    </item>
     
     <item>
       <title>Bossy: Initial Design</title>
@@ -18,7 +27,7 @@
       <pubDate>Thu, 19 Mar 2020 03:39:01 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/03-initial-design/</guid>
-      <description>Breadboard, Schematic, pcb design  Version 2  I had to remove one button and the neopixel stick because of the protoboard&amp;rsquo;s constraints. I also removed the capacitor as it wasn&amp;rsquo;t necessary since there isn&amp;rsquo;t a lot of possible sources of noise          Version 1   Here&amp;rsquo;s my testing setup   Here&amp;rsquo;s my pathetic attempt to design the schematics. After several hours of pain, i decided to give up.</description>
+      <description>Breadboard, Schematic, pcb design  Version 2  I had to remove one button and the neopixel stick because of the protoboard&amp;rsquo;s constraints. I also removed the capacitor as it wasn&amp;rsquo;t necessary since there isn&amp;rsquo;t a lot of possible sources of noise           Version 1   Here&amp;rsquo;s my testing setup   Here&amp;rsquo;s my pathetic attempt to design the schematics.</description>
     </item>
     
     <item>

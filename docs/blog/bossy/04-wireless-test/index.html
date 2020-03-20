@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Make one Arduino Micro send a message &amp;quot;Hello world! Watchout!&amp;quot; and another Arduino Micro receive it using nrf24l01 modules Took me two whole days to get this thing up and running Ignore the TB6612 breakout board     color pin pin color     brown miso irq nc   green sck mosi white   violet ce csn yellow   black gnd vcc red    Transmitter Code #include &amp;lt;SPI." />
+<meta name="keywords" content=", bossy, general-purpose-controller" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://mithi.github.io/robotics-blog/blog/bossy/04-wireless-test/" />
+
+
+    <title>
+        
+            Bossy: Wireless Test :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/robotics-blog/main.min.a71f1ccb2abf86c1f9d46cddfa6403b99497528c340efb7c3589023cc9808b15.css">
+
+
+
+
+<meta itemprop="name" content="Bossy: Wireless Test">
+<meta itemprop="description" content="Make one Arduino Micro send a message &quot;Hello world! Watchout!&quot; and another Arduino Micro receive it using nrf24l01 modules Took me two whole days to get this thing up and running Ignore the TB6612 breakout board     color pin pin color     brown miso irq nc   green sck mosi white   violet ce csn yellow   black gnd vcc red    Transmitter Code #include &lt;SPI.">
+<meta itemprop="datePublished" content="2020-03-20T20:50:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-20T20:50:00&#43;08:00" />
+<meta itemprop="wordCount" content="410">
+<meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
+
+
+
+<meta itemprop="keywords" content="bossy,general-purpose-controller," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
+
+<meta name="twitter:title" content="Bossy: Wireless Test"/>
+<meta name="twitter:description" content="Make one Arduino Micro send a message &quot;Hello world! Watchout!&quot; and another Arduino Micro receive it using nrf24l01 modules Took me two whole days to get this thing up and running Ignore the TB6612 breakout board     color pin pin color     brown miso irq nc   green sck mosi white   violet ce csn yellow   black gnd vcc red    Transmitter Code #include &lt;SPI."/>
+
+
+
+    <meta property="article:section" content="bossy" />
+
+
+
+    <meta property="article:published_time" content="2020-03-20 20:50:00 &#43;0800 PST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/robotics-blog" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Mithi&#39;s Robots</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://mithi.github.io/robotics-blog/blog">Blog</a></li><li><a href="https://mithi.github.io/robotics-blog/misc">Misc</a></li><li><a href="https://ko-fi.com/minimithi">☕</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/04-wireless-test/">Bossy: Wireless Test</a></h2>
+
+            
+
+            <div class="post-content">
+                <p><img src="/robotics-blog/wireless-1.jpg" alt=""></p>
+<ul>
+<li>Make one Arduino Micro send a message <code>&quot;Hello world! Watchout!&quot;</code> and another Arduino Micro receive it using <code>nrf24l01</code> modules</li>
+<li>Took me two whole days to get this thing up and running</li>
+<li>Ignore the TB6612 breakout board</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>color</th>
+<th>pin</th>
+<th>pin</th>
+<th>color</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>brown</td>
+<td>miso</td>
+<td>irq</td>
+<td>nc</td>
+</tr>
+<tr>
+<td>green</td>
+<td>sck</td>
+<td>mosi</td>
+<td>white</td>
+</tr>
+<tr>
+<td>violet</td>
+<td>ce</td>
+<td>csn</td>
+<td>yellow</td>
+</tr>
+<tr>
+<td>black</td>
+<td>gnd</td>
+<td>vcc</td>
+<td>red</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/robotics-blog/wireless-2.png" alt=""></p>
+<h2 id="transmitter-code">Transmitter Code</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;SPI.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;nRF24L01.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;RF24.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;printf.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define CE_PIN 9
+</span><span style="color:#75715e">#define CSN_PIN 10
+</span><span style="color:#75715e"></span>RF24 <span style="color:#a6e22e">radio</span>(CE_PIN, CSN_PIN);
+
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">byte</span> ADDRESS[<span style="color:#ae81ff">6</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;00001&#34;</span>;
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">char</span> TEXT[] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello world! Watchout!&#34;</span>;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>(){
+ <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Serial</span>);
+ <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#ae81ff">9600</span>);
+ printf_begin();
+ radio.<span style="color:#a6e22e">begin</span>();
+ <span style="color:#75715e">//radio.setAutoAck(false);
+</span><span style="color:#75715e"></span>
+ radio.setDataRate(RF24_2MBPS);
+ <span style="color:#75715e">//RF24_1MBPS
+</span><span style="color:#75715e"></span>
+ radio.setPALevel(RF24_PA_MIN);
+ <span style="color:#75715e">//RF24_PA_LOW
+</span><span style="color:#75715e"></span>
+ radio.setRetries(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>);
+ <span style="color:#75715e">//delay, count
+</span><span style="color:#75715e"></span>
+ radio.openWritingPipe(ADDRESS);
+ radio.stopListening();
+ radio.printDetails();
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>(){
+ radio.<span style="color:#a6e22e">write</span>(<span style="color:#f92672">&amp;</span>TEXT, <span style="color:#66d9ef">sizeof</span>(TEXT));
+ <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">1000</span>);
+}
+</code></pre></div><h2 id="receiver-code">Receiver Code</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;SPI.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;nRF24L01.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;RF24.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;printf.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define CE_PIN 9
+</span><span style="color:#75715e">#define CSN_PIN 10
+</span><span style="color:#75715e"></span>
+RF24 <span style="color:#a6e22e">radio</span>(CE_PIN, CSN_PIN);
+<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">byte</span> ADDRESS[<span style="color:#ae81ff">6</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;00001&#34;</span>;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+  <span style="color:#66d9ef">while</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">Serial</span>);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#ae81ff">9600</span>);
+  printf_begin();
+  radio.<span style="color:#a6e22e">begin</span>();
+  <span style="color:#75715e">//radio.setAutoAck(false);
+</span><span style="color:#75715e"></span>
+  radio.setDataRate(RF24_2MBPS);
+  <span style="color:#75715e">//RF24_1MBPS
+</span><span style="color:#75715e"></span>
+  radio.setPALevel(RF24_PA_MIN);
+  <span style="color:#75715e">//RF24_PA_LOW
+</span><span style="color:#75715e"></span>
+  radio.setRetries(<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">5</span>);
+  <span style="color:#75715e">//delay, count
+</span><span style="color:#75715e"></span>
+  radio.openReadingPipe(<span style="color:#ae81ff">0</span>, ADDRESS);
+  radio.startListening();
+
+  radio.printDetails();
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+  <span style="color:#66d9ef">if</span> (radio.<span style="color:#a6e22e">available</span>()) {
+    <span style="color:#66d9ef">char</span> <span style="color:#a6e22e">text</span>[<span style="color:#ae81ff">32</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
+    radio.<span style="color:#a6e22e">read</span>(<span style="color:#f92672">&amp;</span><span style="color:#a6e22e">text</span>, <span style="color:#66d9ef">sizeof</span>(<span style="color:#a6e22e">text</span>));
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#a6e22e">text</span>);
+  }
+}
+</code></pre></div><h2 id="trouble-shooting-tips">Trouble-shooting Tips</h2>
+<ul>
+<li>Doublecheck all your connection wires, vcc should be connect to 3v, connecting it to 5V will fry your board.</li>
+<li>Be sure to include <code>#include &lt;printf.h&gt;</code> and <code>printf_begin();</code> to be able to print <code>radio.printDetails()</code> on Serial monitor</li>
+<li>If your nRF24l01 is working properly, you&rsquo;ll be able to print details with <code>radio.printDetails()</code> of your module in the serial monitor.
+<ul>
+<li>Pay attention to the <code>Model</code>, <code>Data Rate</code> and <code>PA Power</code> rows.</li>
+<li>If you set the <code>Data Rate</code> to <code>RF24_2MBPS</code> is should reflect that.</li>
+<li>If you set <code>PA Power</code> to <code>RF24_PA_LOW</code>  it should reflect that.</li>
+</ul>
+</li>
+</ul>
+<h2 id="try-these-if-its-still-not-working-i-didnt-need-them">Try these if it&rsquo;s still not working (I didn&rsquo;t need them)</h2>
+<ul>
+<li>Due to some manufacturers&rsquo; poor soldering quality and improper storage, some modules might end up with a grey &ldquo;crust&rdquo; over the pins and the underside of the crystal oscillator This crust can affect the conductivity and/or create electrical noise. Remove the crust with a small flat screwdriver or tooth pick and wipe the remaining dust using a dry cloth -<a href="https://www.instructables.com/id/NRF24L01-Fixing-Connection-Issues/">Julio Vazquez Vexelius </a>. Instructables</li>
+<li>Solder a 10 uF electrolytic capacitor ground and power. Take note of the polarity. The capacitor is to make sure there is enough power being supplied when it needs it. Without the capacitor it causes unreliable communication.</li>
+<li>Place a capacitor of 100uF between 3.3V and GND of Arduino when using NRF24L01+ because it draws more current than NRF24L01 -<a href="https://www.theengineeringprojects.com/2015/10/nrf24l01-arduino-response-timed.html">The Engineering Projects</a></li>
+<li>Add <code>radio.setAutoAck(false);</code> after <code>radio.begin()</code> - <a href="https://www.youtube.com/watch?v=jfaFbjgwprI">Vitaliy D</a></li>
+<li>Watch this video by <a href="https://www.youtube.com/watch?v=JSHJ-RLbNJk">Ralph S Bacon</a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/bossy">bossy</a></span><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/general-purpose-controller">general-purpose-controller</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span>👾🤖 Mithi</span>
+            <span> <a href="https://mithi.github.io/robotics-blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/robotics-blog/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-142507629-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+    </body>
+</html>

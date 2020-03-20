@@ -25,7 +25,7 @@ draft: false
 ### Breadboard tests
 
 - [x] .Test 8x8 Led matrix on Arduino Micro
-- Check if the two arduino micro  can communicate
+- [x] .Check if the two arduino micro can communicate using nrf24l01
 
 ### Soldered Protoboard test
 - [x] .Solder led matrix, potentiometers, joysticks

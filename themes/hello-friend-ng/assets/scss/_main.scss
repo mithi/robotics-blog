@@ -1,3 +1,12 @@
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 0.5px solid gray;
+  padding: 10px;
+}
+
 html {
   box-sizing: border-box;
   line-height: 1.6;

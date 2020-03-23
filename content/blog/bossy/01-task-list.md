@@ -10,7 +10,6 @@ draft: false
 - The custom controller's name is Bossy
 - Build a custom controller with parts I already have at home
 
-
 ### Preliminaries
 
 - [x] .List bill of materials
@@ -26,14 +25,18 @@ draft: false
 
 - [x] .Test 8x8 Led matrix on Arduino Micro
 - [x] .Check if the two arduino micro can communicate using nrf24l01
+- [x] .Test multiplexers with potentiometers
 
 ### Soldered Protoboard test
 - [x] .Solder led matrix, potentiometers, joysticks
-- Solder buttons and switches
-- Test led matrix
-- Test multiplexer #1 with joysticks
-- Test multiplexer #2 with potentiometers, buttons, switches
+- [x] .Solder buttons and resistors
+- [x] .Test connectivity and routes on stripboard
+- [x] .Solder switches
+- [x] .Test switches
+- Solder wires to connect multiplexer to components
+- Test multiplexers with components
 - Test wireless connection
+- Test led matrix
 
 ### Coding and finishing up
 

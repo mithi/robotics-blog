@@ -10,6 +10,7 @@ draft: False
 
 - Make one Arduino Micro send a message `"Hello world! Watchout!"` and another Arduino Micro receive it using `nrf24l01` modules
 - Took me two whole days to get this thing up and running
+- I used this library: [nRF24/nRF24](https://github.com/nRF24/RF24), [documentation by tmrh20](https://tmrh20.github.io/RF24/)
 - Ignore the TB6612 breakout board
 
 | color | pin | pin | color |
@@ -110,7 +111,7 @@ void loop() {
 ```
 
 
-## Trouble-shooting Tips
+## Troubleshooting Tips
 - Doublecheck all your connection wires, vcc should be connect to 3v, connecting it to 5V will fry your board.
 - Be sure to include `#include <printf.h>` and `printf_begin();` to be able to print `radio.printDetails()` on Serial monitor
 - If your nRF24l01 is working properly, you'll be able to print details with `radio.printDetails()` of your module in the serial monitor.

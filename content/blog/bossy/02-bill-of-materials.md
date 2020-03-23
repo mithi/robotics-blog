@@ -6,9 +6,6 @@ tags: [bossy, general-purpose-controller]
 draft: false
 ---
 
-## Bossy: A general purpose custom controller
-
-
 |  # | Item |
 | ---------- | ---------- |
 | **1x**| [Arduino Micro micro controller](https://store.arduino.cc/usa/arduino-micro) |

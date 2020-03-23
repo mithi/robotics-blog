@@ -113,3 +113,19 @@
   - PWM -> Angles -> Pose (x, y, z)
 
 ```
+
+## Bossy Custom Controller derivatives
+- mini-bossy, tiny-bossy
+|![](/robotics-blog/mini-bossy.png)|![](/robotics-blog/tiny-bossy.png)|
+| ---------- | ---------- |
+
+## Component Tester
+- Inspired by [VolorsR Instructable](https://www.instructables.com/id/Arduino-Multimeter-and-Components-Tester/)
+- It has a mini oled display. You can check analog sensor readings, continuity, resistance. You can also
+set pwm values using potentiometers when you want to calibrate servos
+- You can check 2 analog sensor readings, 2 resistances and set two pwm values
+- A couple of preliminary designs I came up with
+
+|![](/robotics-blog/component-tester-1.png)|![](/robotics-blog/component-tester-2.png)|
+| ---------- | ---------- |
+|![](/robotics-blog/component-tester-3.png)|![](/robotics-blog/component-tester-volosr.png)|

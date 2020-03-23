@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="I tested the multiplexers if they&amp;rsquo;re working. To save time, I only tested two channels for each multiplexer, channel 0, and 15.
+I used two potentiometers which I connect randomly at channel 0 or channel 15 of multiplexer 1 or multiplexer 2 (four possibilities). I also randomly pull the remaining two channels either down to ground or up to 5 volts.
+Then I check the Serial monitor if it behaves the way I expect." />
+<meta name="keywords" content=", bossy, general-purpose-controller" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-tests/" />
+
+
+    <title>
+        
+            Bossy: Multiplexer Tests :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/robotics-blog/main.min.a71f1ccb2abf86c1f9d46cddfa6403b99497528c340efb7c3589023cc9808b15.css">
+
+
+
+
+<meta itemprop="name" content="Bossy: Multiplexer Tests">
+<meta itemprop="description" content="I tested the multiplexers if they&rsquo;re working. To save time, I only tested two channels for each multiplexer, channel 0, and 15.
+I used two potentiometers which I connect randomly at channel 0 or channel 15 of multiplexer 1 or multiplexer 2 (four possibilities). I also randomly pull the remaining two channels either down to ground or up to 5 volts.
+Then I check the Serial monitor if it behaves the way I expect.">
+<meta itemprop="datePublished" content="2020-03-22T14:28:34&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-22T14:28:34&#43;08:00" />
+<meta itemprop="wordCount" content="334">
+<meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
+
+
+
+<meta itemprop="keywords" content="bossy,general-purpose-controller," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
+
+<meta name="twitter:title" content="Bossy: Multiplexer Tests"/>
+<meta name="twitter:description" content="I tested the multiplexers if they&rsquo;re working. To save time, I only tested two channels for each multiplexer, channel 0, and 15.
+I used two potentiometers which I connect randomly at channel 0 or channel 15 of multiplexer 1 or multiplexer 2 (four possibilities). I also randomly pull the remaining two channels either down to ground or up to 5 volts.
+Then I check the Serial monitor if it behaves the way I expect."/>
+
+
+
+    <meta property="article:section" content="bossy" />
+
+
+
+    <meta property="article:published_time" content="2020-03-22 14:28:34 &#43;0800 PST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/robotics-blog" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Mithi&#39;s Robots</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://mithi.github.io/robotics-blog/blog">Blog</a></li><li><a href="https://mithi.github.io/robotics-blog/misc">Misc</a></li><li><a href="https://ko-fi.com/minimithi">☕</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-tests/">Bossy: Multiplexer Tests</a></h2>
+
+            
+
+            <div class="post-content">
+                <p><img src="/robotics-blog/multiplexers.png" alt=""></p>
+<p>I tested the multiplexers if they&rsquo;re working.
+To save time, I only tested two channels for each multiplexer,
+channel 0, and 15.</p>
+<p>I used two potentiometers which I connect randomly at
+channel 0 or channel 15 of multiplexer 1 or multiplexer 2
+(four possibilities). I also randomly pull the remaining
+two channels either down to ground or up to 5 volts.</p>
+<p>Then I check the Serial monitor if it behaves the way I expect.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
+<span style="color:#66d9ef">int</span> s0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+<span style="color:#66d9ef">int</span> s1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+<span style="color:#66d9ef">int</span> s2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+<span style="color:#66d9ef">int</span> s3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+
+<span style="color:#66d9ef">int</span> mux1_enable_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>;
+<span style="color:#66d9ef">int</span> mux2_enable_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
+
+<span style="color:#66d9ef">int</span> value1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">int</span> value2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+<span style="color:#66d9ef">int</span> sig_pin <span style="color:#f92672">=</span> A0;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>(){
+  <span style="color:#a6e22e">pinMode</span>(s0, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(s1, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(s2, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(s3, <span style="color:#66d9ef">OUTPUT</span>);
+
+  <span style="color:#a6e22e">pinMode</span>(mux1_enable_pin, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(mux2_enable_pin, <span style="color:#66d9ef">OUTPUT</span>);
+
+  <span style="color:#a6e22e">digitalWrite</span>(s0, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(s1, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(s2, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(s3, <span style="color:#66d9ef">LOW</span>);
+
+  <span style="color:#75715e">// Pulling down enable pin to ground enables the multiplexer
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">digitalWrite</span>(mux1_enable_pin, <span style="color:#66d9ef">HIGH</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(mux2_enable_pin, <span style="color:#66d9ef">HIGH</span>);
+
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#ae81ff">9600</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>(){
+
+  <span style="color:#75715e">// Read and distplay values at channel 0 and channel 15
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//for mux 1 and mux 2 every 1 second
+</span><span style="color:#75715e"></span>
+  enable_mux1();
+  value1 <span style="color:#f92672">=</span> readMux(<span style="color:#ae81ff">0</span>);
+  value2 <span style="color:#f92672">=</span> readMux(<span style="color:#ae81ff">15</span>);
+  print_mux_values(<span style="color:#ae81ff">1</span>, value1, value2);
+
+  enable_mux2();
+  value1 <span style="color:#f92672">=</span> readMux(<span style="color:#ae81ff">0</span>);
+  value2 <span style="color:#f92672">=</span> readMux(<span style="color:#ae81ff">15</span>);
+  print_mux_values(<span style="color:#ae81ff">1</span>, value1, value2);
+
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>();
+  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">1000</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">enable_mux1</span>() {
+  <span style="color:#a6e22e">digitalWrite</span>(mux1_enable_pin, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(mux2_enable_pin, <span style="color:#66d9ef">HIGH</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">enable_mux2</span>() {
+  <span style="color:#a6e22e">digitalWrite</span>(mux1_enable_pin, <span style="color:#66d9ef">HIGH</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(mux2_enable_pin, <span style="color:#66d9ef">LOW</span>);
+}
+
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">readMux</span>(<span style="color:#66d9ef">int</span> channel){
+
+  <span style="color:#66d9ef">int</span> controlPin[] <span style="color:#f92672">=</span> {s0, s1, s2, s3};
+
+  <span style="color:#66d9ef">int</span> muxChannel[<span style="color:#ae81ff">16</span>][<span style="color:#ae81ff">4</span>]<span style="color:#f92672">=</span> {
+    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 0
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 1
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 2
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 3
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 4
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 5
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 6
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 7
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 8
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 9
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 10
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 11
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 12
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 13
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 14
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>}  <span style="color:#75715e">//channel 15
+</span><span style="color:#75715e"></span>  };
+
+  <span style="color:#75715e">//loop through the 4 control pins
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; i <span style="color:#f92672">++</span>){
+    <span style="color:#a6e22e">digitalWrite</span>(controlPin[i], muxChannel[channel][i]);
+  }
+
+  <span style="color:#75715e">//read the value at the SIG pin
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> val <span style="color:#f92672">=</span> <span style="color:#a6e22e">analogRead</span>(sig_pin);
+  <span style="color:#66d9ef">return</span> val;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_mux_values</span>(<span style="color:#66d9ef">int</span> mux_id, <span style="color:#66d9ef">int</span> value1, <span style="color:#66d9ef">int</span> value2) {
+
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;mux&#34;</span>);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(mux_id);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;: &#34;</span>);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(value1);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34; | &#34;</span>);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(value2);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34; | &#34;</span>);
+}
+
+</code></pre></div><h1 id="references">References</h1>
+<ul>
+<li>2011-feb-1 <a href="https://bildr.org/2011/02/cd74hc4067-arduino/">Bildr: Muxing Around With The CD74HC4067 + Arduino </a></li>
+</ul>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/bossy">bossy</a></span><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/general-purpose-controller">general-purpose-controller</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span>👾🤖 Mithi</span>
+            <span> <a href="https://mithi.github.io/robotics-blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/robotics-blog/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-142507629-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+    </body>
+</html>

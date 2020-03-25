@@ -18,7 +18,7 @@ Items used
 | **1x**| LED DOT MATRIX BL-M12X883 XX, HT16K33 driver like [Adafruit Bicolor 8x8 LED Matrix with I2C backpack](https://www.adafruit.com/product/902) |
 | **4x**| 2-axis Joystick like [Adafruit Thumb Joystick breakout board with select buttons](https://www.adafruit.com/product/512) |
 | **1x**| Mini breadboard |
-| **5x**| Potentiometers (10k, 20k, 50 works well) |
+| **5x**| Potentiometers (10k, 20k, 50k works well) |
 | **12x**| Resistors 1/4 watt, (10kohms works well) |
 | **4x**| Momentary push buttons |
 | **2x**| PC401 proto board (14 cm x 10 cm) |

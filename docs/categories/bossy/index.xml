@@ -7,10 +7,39 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>👾🤖 Mithi</copyright>
-    <lastBuildDate>Sun, 22 Mar 2020 14:28:34 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2020 16:28:14 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/categories/bossy/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bossy: Led Matrix</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/08-led-matrix/</link>
+      <pubDate>Wed, 25 Mar 2020 16:28:14 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/08-led-matrix/</guid>
+      <description>IMPORTANT: I needed to put a 1500 uF capacitor in between 5V and GND of the Arduino Micro, as the current drawn from the Arduino by itself was insufficient to power the LED Matrix along with everything.
+         back view side view    I used the example code from Adafruit to test if the LED Matrix is working and that everything is hooked up properly.</description>
+    </item>
+    
+    <item>
+      <title>Bossy: Multiplexer Part 2</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/07-multiplexer-2/</link>
+      <pubDate>Tue, 24 Mar 2020 21:09:36 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/07-multiplexer-2/</guid>
+      <description>I hooked everything up to the multiplexers and it was really difficult, not only because of the soldering iron tip at hand, but also because I don&amp;rsquo;t have much available wires left. I cut six differently colored dupont cables and soldered the stranded wires which I hooked up to the multiplexer. It&amp;rsquo;s a bit of a delicate as of the moment. Will fix this to be more sturdy, maybe in the future.</description>
+    </item>
+    
+    <item>
+      <title>Bossy: Soldered Components</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/06-soldered-components/</link>
+      <pubDate>Sun, 22 Mar 2020 15:42:37 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/06-soldered-components/</guid>
+      <description>Note to self: Invest in a good soldering iron. Currently I only have a cordless AA-powered Hakko soldering iron, which is great, until after 15 minutes, it isn&amp;rsquo;t, and you have to change the battery, it gets expensive fast.
+I can&amp;rsquo;t buy right now having the extreme quarantine due to covid19, so I borrowed from a neighbor from the other floor. It heats up nicely but tip was really bad. The picture on the left are the soldering tips, the most right soldering tip is mine, the other two is from what I borrowed.</description>
+    </item>
     
     <item>
       <title>Bossy: Multiplexer Tests</title>
@@ -38,7 +67,8 @@ Then I check the Serial monitor if it behaves the way I expect.</description>
       <pubDate>Thu, 19 Mar 2020 03:39:01 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/03-initial-design/</guid>
-      <description>Breadboard, Schematic, pcb design  Version 2  I had to remove one button and the neopixel stick because of the protoboard&amp;rsquo;s constraints. I also removed the capacitor as it wasn&amp;rsquo;t necessary since there isn&amp;rsquo;t a lot of possible sources of noise           Version 1   Here&amp;rsquo;s my testing setup   Here&amp;rsquo;s my pathetic attempt to design the schematics.</description>
+      <description> Breadboard, Schematic, pcb design  Version 2  I had to remove one button, one potentiometer, and the neopixel stick because of the protoboard&amp;rsquo;s constraints.          Version 1   Here&amp;rsquo;s my testing setup   Here&amp;rsquo;s my pathetic attempt to design the schematics. After several hours of pain, i decided to give up. lol
+          Arduino Micro Pinouts  For future reference   </description>
     </item>
     
     <item>
@@ -47,7 +77,8 @@ Then I check the Serial monitor if it behaves the way I expect.</description>
       <pubDate>Mon, 16 Mar 2020 19:57:53 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/02-bill-of-materials/</guid>
-      <description># Item     1x Arduino Micro micro controller   2x Sparkfun 16-channel Analog/Digital MUX Breakout - CD74HC4067   1x nrf24l01 breakout board   1x Adafruit Neopixel Stick stick (8 x 5050 RGB LED with Integrated Drivers, WS2812, WS2811 or SK6812)   1x Adafruit Bicolor 8x8 LED Matrix with I2C backpack (LED DOT MATRIX BL-M12X883 XX, HT16K33 driver)   4x Adafruit Thumb Joystick breakout board with select buttons   1x Mini breadboard   6x Potentiometers (10k, 20k, 50 works well)   8x Resistors 1/4 watt, (10kohms works well)   4x Momentary push buttons   2x PC401 proto board (14 cm x 10 cm)   2x On-On SPDT Switch   2x On-Off-On SPDT Switch   2x Wires AWG - red, blue, etc   1x Male and female pin headers   1x Powerbank + USB cable   - Standoffs, screws, hex, and nuts for enclosure   - Lasercut acrylic for enclosure    Receiver  1x - Arduino Micro micro controller 1x - nrf24l01 breakout board 1x - Adafruit Neopixel Stick stick (8 x 5050 RGB LED with Integrated Drivers, WS2812, WS2811 or SK6812) |  Tools  Solder Soldering Iron Breadboards Wire stripper Desoldering Pump  Makeshift Multimeter (for Continuity / Connectivity testing and analog sensor testing)</description>
+      <description>Items used
+   # Item     1x Arduino Micro micro controller   2x CD74HC4067 Mux Breakout like Sparkfun 16-channel Analog/Digital MUX Breakout - CD74HC4067   1x nrf24l01 breakout board   1x LED DOT MATRIX BL-M12X883 XX, HT16K33 driver like Adafruit Bicolor 8x8 LED Matrix with I2C backpack   4x 2-axis Joystick like Adafruit Thumb Joystick breakout board with select buttons   1x Mini breadboard   5x Potentiometers (10k, 20k, 50k works well)   12x Resistors 1/4 watt, (10kohms works well)   4x Momentary push buttons   2x PC401 proto board (14 cm x 10 cm)   2x On-On SPDT Switch   2x On-Off-On SPDT Switch   - Wires AWG - red, blue, etc   - Male and female pin headers   - Powerbank + USB cable   - Standoffs, screws, hex, and nuts for enclosure   - Lasercut acrylic for enclosure    I found some really cheap and affordable alternatives to Adafruit and Sparkfun breakout boards.</description>
     </item>
     
     <item>

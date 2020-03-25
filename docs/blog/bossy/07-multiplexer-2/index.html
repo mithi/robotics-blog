@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="I hooked everything up to the multiplexers and it was really difficult, not only because of the soldering iron tip at hand, but also because I don&amp;rsquo;t have much available wires left. I cut six differently colored dupont cables and soldered the stranded wires which I hooked up to the multiplexer. It&amp;rsquo;s a bit of a delicate as of the moment. Will fix this to be more sturdy, maybe in the future." />
+<meta name="keywords" content=", bossy, general-purpose-controller" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://mithi.github.io/robotics-blog/blog/bossy/07-multiplexer-2/" />
+
+
+    <title>
+        
+            Bossy: Multiplexer Part 2 :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/robotics-blog/main.min.a71f1ccb2abf86c1f9d46cddfa6403b99497528c340efb7c3589023cc9808b15.css">
+
+
+
+
+<meta itemprop="name" content="Bossy: Multiplexer Part 2">
+<meta itemprop="description" content="I hooked everything up to the multiplexers and it was really difficult, not only because of the soldering iron tip at hand, but also because I don&rsquo;t have much available wires left. I cut six differently colored dupont cables and soldered the stranded wires which I hooked up to the multiplexer. It&rsquo;s a bit of a delicate as of the moment. Will fix this to be more sturdy, maybe in the future.">
+<meta itemprop="datePublished" content="2020-03-24T21:09:36&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-24T21:09:36&#43;08:00" />
+<meta itemprop="wordCount" content="703">
+<meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
+
+
+
+<meta itemprop="keywords" content="bossy,general-purpose-controller," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
+
+<meta name="twitter:title" content="Bossy: Multiplexer Part 2"/>
+<meta name="twitter:description" content="I hooked everything up to the multiplexers and it was really difficult, not only because of the soldering iron tip at hand, but also because I don&rsquo;t have much available wires left. I cut six differently colored dupont cables and soldered the stranded wires which I hooked up to the multiplexer. It&rsquo;s a bit of a delicate as of the moment. Will fix this to be more sturdy, maybe in the future."/>
+
+
+
+    <meta property="article:section" content="bossy" />
+
+
+
+    <meta property="article:published_time" content="2020-03-24 21:09:36 &#43;0800 PST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/robotics-blog" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Mithi&#39;s Robots</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://mithi.github.io/robotics-blog/blog">Blog</a></li><li><a href="https://mithi.github.io/robotics-blog/misc">Misc</a></li><li><a href="https://ko-fi.com/minimithi">☕</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/07-multiplexer-2/">Bossy: Multiplexer Part 2</a></h2>
+
+            
+
+            <div class="post-content">
+                <p>I hooked everything up to the multiplexers and it was really difficult, not only because of the
+soldering iron tip at hand, but also because I don&rsquo;t have much available wires left. I cut six differently colored dupont cables
+and soldered the stranded wires which I hooked up to the multiplexer. It&rsquo;s a bit of a delicate as of the moment. Will fix this to be
+more sturdy, maybe in the future.</p>
+<h2 id="protip-how-not-to-solder-101">PROTIP: How NOT to solder 101</h2>
+<p>step 1: Insist on using the worst soldering iron tip ever because it&rsquo;s the only one available at the moment
+step 2: Embarrass yourself by posting the result online</p>
+<p><img src="/robotics-blog/multiplexers-2.jpg" alt=""></p>
+<p>IMPORTANT! I found out that one of joysticks indeed has a faulty y-axis.</p>
+<p>IMPORTANT! I noticed that the select buttons of the joysticks when pressed correlates with the y-axis readings of the
+joysticks. I looked up the schematics again and realized that the select button didn&rsquo;t have
+a pull-down or pull-up resistor which I assumed (why did I assume this? Because I was being stupid, that&rsquo;s why, elementary mistake).
+Because of how delicate the whole setup is I&rsquo;m choosing not to solder such resistor for now. I&rsquo;ll try to compensate with code
+for the meantime. Maybe in the future I&rsquo;ll correct this mistake.</p>
+<p>Anyway, I test the connectivity of the wires by checking each and everyone of the inputs. And observing if it behaves the way I expected.</p>
+<p>Here&rsquo;s the code.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#66d9ef">int</span> s0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+<span style="color:#66d9ef">int</span> s1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+<span style="color:#66d9ef">int</span> s2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+<span style="color:#66d9ef">int</span> s3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+
+<span style="color:#66d9ef">int</span> mux1_enable_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>;
+<span style="color:#66d9ef">int</span> mux2_enable_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
+
+<span style="color:#66d9ef">int</span> value <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">int</span> value1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">int</span> value2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+<span style="color:#66d9ef">int</span> sig_pin <span style="color:#f92672">=</span> A1;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>(){
+  <span style="color:#a6e22e">pinMode</span>(s0, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(s1, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(s2, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(s3, <span style="color:#66d9ef">OUTPUT</span>);
+
+  <span style="color:#a6e22e">pinMode</span>(mux1_enable_pin, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(mux2_enable_pin, <span style="color:#66d9ef">OUTPUT</span>);
+
+  <span style="color:#a6e22e">digitalWrite</span>(s0, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(s1, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(s2, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(s3, <span style="color:#66d9ef">LOW</span>);
+
+  <span style="color:#75715e">// Pulling down enable pin to ground enables the multiplexer
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">digitalWrite</span>(mux1_enable_pin, <span style="color:#66d9ef">HIGH</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(mux2_enable_pin, <span style="color:#66d9ef">HIGH</span>);
+
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#ae81ff">9600</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>(){
+
+  <span style="color:#75715e">// mux 1 my left
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;mux1: &#34;</span>);
+  enable_mux1();
+
+  read_and_print(<span style="color:#ae81ff">0</span>); <span style="color:#75715e">// 0 - upper button - pushed is 0
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">3</span>); <span style="color:#75715e">// 3 - lower button - pushed is 0
+</span><span style="color:#75715e"></span>
+  <span style="color:#75715e">// lower left joystick labeled #2
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">4</span>); <span style="color:#75715e">// 4 - select button - pushed is 0
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">5</span>); <span style="color:#75715e">// 5 - y-axis up=0 , neutral=511, right=1022
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">6</span>); <span style="color:#75715e">// 6 - x-axis left=1022, neutral=508, right=0
+</span><span style="color:#75715e"></span>
+  <span style="color:#75715e">// upper left joystick labeled #3
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">7</span>); <span style="color:#75715e">// 7 - x-axis, left=1017, neutral=496, right=2
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">8</span>); <span style="color:#75715e">// 8 - y-axis, up=0, neutral=508, down=1021
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">9</span>); <span style="color:#75715e">// 9 - select button - pushed is 0
+</span><span style="color:#75715e"></span>
+  read_and_print(<span style="color:#ae81ff">10</span>); <span style="color:#75715e">// 10 - lower spdt switch - knob to the left is zero
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">11</span>); <span style="color:#75715e">// 11 - upper spdt switch - knob to the left is zero
+</span><span style="color:#75715e"></span>
+  read_and_print(<span style="color:#ae81ff">12</span>); <span style="color:#75715e">// 12 - 2nd to the left potentiometer
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">13</span>); <span style="color:#75715e">// 13 - center potentiometer
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">14</span>); <span style="color:#75715e">// 14 - most left potentiometer
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>();
+
+  <span style="color:#75715e">// mux 2 my right
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;mux2: &#34;</span>);
+  enable_mux2();
+
+  read_and_print(<span style="color:#ae81ff">13</span>); <span style="color:#75715e">// upper button - 1023 is pressed
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">12</span>); <span style="color:#75715e">// lower button - 1023 is pressed
+</span><span style="color:#75715e"></span>
+  <span style="color:#75715e">// lower right joystick - labeled #1
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">11</span>); <span style="color:#75715e">//yaxis- down=0, neutral=497,, up=1022
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">10</span>); <span style="color:#75715e">// select button - pushed is 0
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">9</span>); <span style="color:#75715e">// x-axis- left=0, 509=neutral, right=1022
+</span><span style="color:#75715e"></span>
+  <span style="color:#75715e">// upper right joystick labeled #4
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">8</span>); <span style="color:#75715e">// select button - pushed is 0
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">7</span>); <span style="color:#75715e">// The joystick y axis is not working, verified. Connection is good, the joystick is malfunctioning.
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">6</span>); <span style="color:#75715e">// xaxis left=zero, 518=neutral, 1022=right
+</span><span style="color:#75715e"></span>
+  read_and_print(<span style="color:#ae81ff">5</span>); <span style="color:#75715e">// lower spdt switch left=1023, neutral=510, right=0
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">4</span>); <span style="color:#75715e">// upper spdt switch left=1023, neutral=510, right=0
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">3</span>); <span style="color:#75715e">// second to the right potentiometer
+</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">2</span>); <span style="color:#75715e">// most right potentiometer
+</span><span style="color:#75715e"></span>
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>();
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;-&#34;</span>);
+  <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">1000</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">enable_mux1</span>() {
+  <span style="color:#a6e22e">digitalWrite</span>(mux1_enable_pin, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(mux2_enable_pin, <span style="color:#66d9ef">HIGH</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">enable_mux2</span>() {
+  <span style="color:#a6e22e">digitalWrite</span>(mux1_enable_pin, <span style="color:#66d9ef">HIGH</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(mux2_enable_pin, <span style="color:#66d9ef">LOW</span>);
+}
+
+<span style="color:#66d9ef">int</span> <span style="color:#a6e22e">readMux</span>(<span style="color:#66d9ef">int</span> channel){
+
+  <span style="color:#66d9ef">int</span> controlPin[] <span style="color:#f92672">=</span> {s0, s1, s2, s3};
+
+  <span style="color:#66d9ef">int</span> muxChannel[<span style="color:#ae81ff">16</span>][<span style="color:#ae81ff">4</span>]<span style="color:#f92672">=</span> {
+    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 0
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 1
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 2
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 3
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 4
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 5
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 6
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 7
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 8
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 9
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 10
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 11
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 12
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 13
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 14
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>}  <span style="color:#75715e">//channel 15
+</span><span style="color:#75715e"></span>  };
+
+  <span style="color:#75715e">//loop through the 4 control pins
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; i <span style="color:#f92672">++</span>){
+    <span style="color:#a6e22e">digitalWrite</span>(controlPin[i], muxChannel[channel][i]);
+  }
+
+  <span style="color:#75715e">//read the value at the SIG pin
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> val <span style="color:#f92672">=</span> <span style="color:#a6e22e">analogRead</span>(sig_pin);
+  <span style="color:#66d9ef">return</span> val;
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">read_and_print</span>(<span style="color:#66d9ef">int</span> ch) {
+  value <span style="color:#f92672">=</span> readMux(ch);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(value);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34; | &#34;</span>);
+}
+</code></pre></div>
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/bossy">bossy</a></span><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/general-purpose-controller">general-purpose-controller</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span>👾🤖 Mithi</span>
+            <span> <a href="https://mithi.github.io/robotics-blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/robotics-blog/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-142507629-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+    </body>
+</html>

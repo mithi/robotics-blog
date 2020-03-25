@@ -248,14 +248,20 @@ RF24 <span style="color:#a6e22e">radio</span>(CE_PIN, CSN_PIN);
 }
 </code></pre></div><h2 id="troubleshooting-tips">Troubleshooting Tips</h2>
 <ul>
-<li>Doublecheck all your connection wires, vcc should be connect to 3v, connecting it to 5V will fry your board.</li>
-<li>Be sure to include <code>#include &lt;printf.h&gt;</code> and <code>printf_begin();</code> to be able to print <code>radio.printDetails()</code> on Serial monitor</li>
-<li>If your nRF24l01 is working properly, you&rsquo;ll be able to print details with <code>radio.printDetails()</code> of your module in the serial monitor.
+<li>
+<p>Doublecheck all your connection wires, vcc should be connect to 3v, connecting it to 5V will fry your board.</p>
+</li>
+<li>
+<p>Be sure to include <code>#include &lt;printf.h&gt;</code> and <code>printf_begin();</code> to be able to print <code>radio.printDetails()</code> on Serial monitor</p>
+</li>
+<li>
+<p>If your nRF24l01 is working properly, you&rsquo;ll be able to print details with <code>radio.printDetails()</code> of your module in the serial monitor.</p>
 <ul>
 <li>Pay attention to the <code>Model</code>, <code>Data Rate</code> and <code>PA Power</code> rows.</li>
 <li>If you set the <code>Data Rate</code> to <code>RF24_2MBPS</code> is should reflect that.</li>
 <li>If you set <code>PA Power</code> to <code>RF24_PA_LOW</code>  it should reflect that.</li>
 </ul>
+<p><img src="/robotics-blog/print-radio.png" alt=""></p>
 </li>
 </ul>
 <h2 id="try-these-if-its-still-not-working-i-didnt-need-them">Try these if it&rsquo;s still not working (I didn&rsquo;t need them)</h2>

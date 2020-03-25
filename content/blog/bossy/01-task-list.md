@@ -33,13 +33,13 @@ draft: false
 - [x] .Test connectivity and routes on stripboard
 - [x] .Solder switches
 - [x] .Test switches
-- Solder wires to connect multiplexer to components
-- Test multiplexers with components
-- Test wireless connection
-- Test led matrix
+- [x] .Solder wires to connect multiplexer to components
+- [x] .Test multiplexers with components
+- [x] .Test wireless connection
+- [x] .Test led matrix
 
 ### Coding and finishing up
 
 - Add UI functionality for provide feedback of controls in the 8x8 led matrix (screen)
 - Make an enclosure to house our controller
-- Use controller to control the neopixels wirelessly
+- Use controller to control a different LED Matrix wirelessly

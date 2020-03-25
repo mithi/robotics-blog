@@ -7,9 +7,10 @@
 1.  Bossy: A custom general-purpose wireless controller
     -  Build controller Build with I already have
 
-2. Control Two custom robots with Bossy
+2. Control Three custom robots with Bossy
     - Robot #1 Arm Tank - MeArm 1.0 (Open-source 4-axis manipulator) on top of a metal tank chassis
-    - Robot #2  Hacked Toy RC car frame, with pan-tilt servos and brushless motor
+    - Robot #2 Hacked Toy RC car frame, with pan-tilt servos and brushless motor
+    - Robot #3 Xylophone Playing Machine with Servos
 
 3. 7Bot
     - Explore the the open-source 6-axis manipulator from the ground up
@@ -116,8 +117,10 @@
 
 ## Bossy Custom Controller derivatives
 - mini-bossy, tiny-bossy
+
 |![](/robotics-blog/mini-bossy.png)|![](/robotics-blog/tiny-bossy.png)|
 | ---------- | ---------- |
+
 
 ## Component Tester
 - Inspired by [VolorsR Instructable](https://www.instructables.com/id/Arduino-Multimeter-and-Components-Tester/)

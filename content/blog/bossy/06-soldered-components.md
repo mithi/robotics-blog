@@ -1,6 +1,8 @@
 ---
 title: "Bossy: Soldered Components"
 date: 2020-03-22T15:42:37+08:00
+categories: [bossy]
+tags: [bossy, general-purpose-controller]
 draft: false
 ---
 
@@ -21,8 +23,10 @@ Not gonna lie, it looks really ugly and dirty. With a better iron, I could do be
 sounding like I'm making excuses, but anyway. It looks dirty but hey, nothing is shorting and everything works.
 
 
-|![](/robotics-blog/soldered-components-1.jpg)|![](/robotics-blog/soldered-components-2.jpg)|
+|![](/robotics-blog/soldered-components-1.jpg)|![](/robotics-blog/soldered-components-4.jpg)|
 | ---------- | ---------- |
+|![](/robotics-blog/soldered-components-2.jpg)|![](/robotics-blog/soldered-components-5.jpg)|
+
 
 
 Here's how it's wired from the top

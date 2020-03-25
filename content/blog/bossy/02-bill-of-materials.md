@@ -6,32 +6,38 @@ tags: [bossy, general-purpose-controller]
 draft: false
 ---
 
+Items used
+
+![](/robotics-blog/bom-collage.jpg)
+
 |  # | Item |
 | ---------- | ---------- |
 | **1x**| [Arduino Micro micro controller](https://store.arduino.cc/usa/arduino-micro) |
-| **2x**| [Sparkfun 16-channel Analog/Digital MUX Breakout - CD74HC4067](https://www.sparkfun.com/products/9056) |
+| **2x**| CD74HC4067 Mux Breakout like [Sparkfun 16-channel Analog/Digital MUX Breakout - CD74HC4067](https://www.sparkfun.com/products/9056) |
 | **1x**| nrf24l01 breakout board |
-| **1x**| [Adafruit Neopixel Stick](https://www.adafruit.com/product/1426) stick (8 x 5050 RGB LED with Integrated Drivers, WS2812, WS2811 or SK6812) |
-| **1x**| [Adafruit Bicolor 8x8 LED Matrix with I2C backpack](https://www.adafruit.com/product/902) (LED DOT MATRIX BL-M12X883 XX, HT16K33 driver) |
-| **4x**| [Adafruit Thumb Joystick breakout board with select buttons](https://www.adafruit.com/product/512) |
+| **1x**| LED DOT MATRIX BL-M12X883 XX, HT16K33 driver like [Adafruit Bicolor 8x8 LED Matrix with I2C backpack](https://www.adafruit.com/product/902) |
+| **4x**| 2-axis Joystick like [Adafruit Thumb Joystick breakout board with select buttons](https://www.adafruit.com/product/512) |
 | **1x**| Mini breadboard |
-| **6x**| Potentiometers (10k, 20k, 50 works well) |
-| **8x**| Resistors 1/4 watt, (10kohms works well) |
+| **5x**| Potentiometers (10k, 20k, 50 works well) |
+| **12x**| Resistors 1/4 watt, (10kohms works well) |
 | **4x**| Momentary push buttons |
 | **2x**| PC401 proto board (14 cm x 10 cm) |
 | **2x**| On-On SPDT Switch |
 | **2x**| On-Off-On SPDT Switch |
-| **2x**| Wires AWG - red, blue, etc |
-| **1x**| Male and female pin headers |
-| **1x**| Powerbank + USB cable|
+| - | Wires AWG - red, blue, etc |
+| - | Male and female pin headers |
+| - | Powerbank + USB cable|
 | -  | Standoffs, screws, hex, and nuts for enclosure |
 | - | Lasercut acrylic for enclosure |
 
 
+I found some really cheap and affordable alternatives to Adafruit and Sparkfun breakout boards. These are manufactured and shipped from China.
+![](/robotics-blog/cheap-alternatives.jpg)
+
 ## Receiver
 - 1x - [Arduino Micro micro controller](https://store.arduino.cc/usa/arduino-micro)
 - 1x - nrf24l01 breakout board
-- 1x - [Adafruit Neopixel Stick](https://www.adafruit.com/product/1426) stick (8 x 5050 RGB LED with Integrated Drivers, WS2812, WS2811 or SK6812) |
+- 1x - Another led matrix?
 
 ## Tools
 - Solder
@@ -46,5 +52,4 @@ draft: false
 - Jumper Wires
 - Resistor
 
-![](/robotics-blog/bom-collage.jpg)
 

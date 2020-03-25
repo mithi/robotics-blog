@@ -119,6 +119,8 @@ void loop() {
   - If you set the `Data Rate` to `RF24_2MBPS` is should reflect that.
   - If you set `PA Power` to `RF24_PA_LOW`  it should reflect that.
 
+  ![](/robotics-blog/print-radio.png)
+
 ## Try these if it's still not working (I didn't need them)
 - Due to some manufacturers' poor soldering quality and improper storage, some modules might end up with a grey "crust" over the pins and the underside of the crystal oscillator This crust can affect the conductivity and/or create electrical noise. Remove the crust with a small flat screwdriver or tooth pick and wipe the remaining dust using a dry cloth -[Julio Vazquez Vexelius ](https://www.instructables.com/id/NRF24L01-Fixing-Connection-Issues/). Instructables
 - Solder a 10 uF electrolytic capacitor ground and power. Take note of the polarity. The capacitor is to make sure there is enough power being supplied when it needs it. Without the capacitor it causes unreliable communication.

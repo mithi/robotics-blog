@@ -10,8 +10,8 @@ draft: false
 - Breadboard, Schematic, pcb design
 
 ## Version 2
-- I had to remove one button and the neopixel stick because of the protoboard's constraints.
-- I also removed the capacitor as it wasn't necessary since there isn't a lot of possible sources of noise
+- I had to remove one button, one potentiometer, and the neopixel stick because of the protoboard's constraints.
+
 ![](/robotics-blog/v2-layout.png)
 
 |![](/robotics-blog/v2-wip-1.JPG)|![](/robotics-blog/v2-wip-2.JPG)|

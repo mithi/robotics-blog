@@ -40,6 +40,6 @@ draft: false
 
 ### Coding and finishing up
 
-- Add UI functionality for provide feedback of controls in the 8x8 led matrix (screen)
+- Add UI functionality for providing feedback of controls in the 8x8 led matrix (screen)
 - Make an enclosure to house our controller
 - Use controller to control a different LED Matrix wirelessly

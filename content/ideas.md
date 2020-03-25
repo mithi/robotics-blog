@@ -5,12 +5,12 @@
 
 ```
 1.  Bossy: A custom general-purpose wireless controller
-    -  Build controller Build with I already have
+    -  Build controller with I already have
 
 2. Control Three custom robots with Bossy
     - Robot #1 Arm Tank - MeArm 1.0 (Open-source 4-axis manipulator) on top of a metal tank chassis
     - Robot #2 Hacked Toy RC car frame, with pan-tilt servos and brushless motor
-    - Robot #3 Xylophone Playing Machine with Servos
+    - Robot #3 xylophone Playing Machine with servos
 
 3. 7Bot
     - Explore the the open-source 6-axis manipulator from the ground up

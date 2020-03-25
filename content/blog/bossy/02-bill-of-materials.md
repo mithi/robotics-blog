@@ -12,13 +12,13 @@ Items used
 
 |  # | Item |
 | ---------- | ---------- |
-| **1x**| [Arduino Micro micro controller](https://store.arduino.cc/usa/arduino-micro) |
+| **1x**| [Arduino Micro micro controller](https://store.arduino.cc/usa/arduino-micro) or similar |
 | **2x**| CD74HC4067 Mux Breakout like [Sparkfun 16-channel Analog/Digital MUX Breakout - CD74HC4067](https://www.sparkfun.com/products/9056) |
 | **1x**| nrf24l01 breakout board |
 | **1x**| LED DOT MATRIX BL-M12X883 XX, HT16K33 driver like [Adafruit Bicolor 8x8 LED Matrix with I2C backpack](https://www.adafruit.com/product/902) |
-| **4x**| 2-axis Joystick like [Adafruit Thumb Joystick breakout board with select buttons](https://www.adafruit.com/product/512) |
+| **4x**| 2-axis thumb joystick like [Adafruit Thumb Joystick breakout board with select buttons](https://www.adafruit.com/product/512) |
 | **1x**| Mini breadboard |
-| **5x**| Potentiometers (10k, 20k, 50k works well) |
+| **5x**| Potentiometers (10k, 20k, 50k ohms work well) |
 | **12x**| Resistors 1/4 watt, (10kohms works well) |
 | **4x**| Momentary push buttons |
 | **2x**| PC401 proto board (14 cm x 10 cm) |
@@ -49,6 +49,7 @@ I found some really cheap and affordable alternatives to Adafruit and Sparkfun b
 ## Makeshift Multimeter
 (for Continuity / Connectivity testing and analog sensor testing)
 - Adafruit Metro Mini
+- Mini breadboard
 - Jumper Wires
 - Resistor
 

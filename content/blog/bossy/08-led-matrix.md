@@ -16,6 +16,7 @@ as the current drawn from the Arduino by itself was insufficient to power the LE
 | back view | side view |
 
 I used the example code from Adafruit to test if the LED Matrix is working and that everything is hooked up properly.
+
 ```arduino
 
 /***************************************************

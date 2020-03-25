@@ -18,7 +18,7 @@ and one of the Stanley ones is a screw-in type.
 ![](/robotics-blog/soldering-irons.jpg)
 
 
-Despite this, I was able to solder everything in stripboard, except for spdt switches.
+Despite this, I was able to solder everything in stripboard.
 Not gonna lie, it looks really ugly and dirty. With a better iron, I could do better. I know I'm
 sounding like I'm making excuses, but anyway. It looks dirty but hey, nothing is shorting and everything works.
 
@@ -50,7 +50,7 @@ It would have been much cleaner!
 instead of a digital pin to test the continuity. This is because
 if you put a 10k ohm resistor inbetween the two wires, a digital pin will
 still read a `LOW`. I used `A0` pin pulled up. While I'm at it I also used
-this setup to test the joysticks, buttons, and potentiometer.
+this setup to test the joysticks, buttons, potentiometer, spdt switches etc.
 
 > IMPORTANT: All the joystick pins were perfectly fine, except for Yout of one of the joysticks,
 it wasn't as consistent but can be compensated with code

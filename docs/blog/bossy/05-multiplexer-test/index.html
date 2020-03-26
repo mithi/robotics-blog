@@ -5,16 +5,18 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="I hooked everything up to the multiplexers and it was really difficult, not only because of the soldering iron tip at hand, but also because I don&amp;rsquo;t have much available wires left. I cut six differently colored dupont cables and soldered the stranded wires which I hooked up to the multiplexer. It&amp;rsquo;s a bit delicate as of the moment. Might fix this to be more sturdy, maybe in the future." />
+<meta name="description" content="I tested the multiplexers if they&amp;rsquo;re working. To save time, I only tested two channels for each multiplexer, channel 0, and 15.
+I used two potentiometers which I connect randomly at channel 0 or channel 15 of multiplexer 1 or multiplexer 2 (four possibilities). I also randomly pull the remaining two channels either down to ground or up to 5 volts.
+Then I check the Serial monitor if it behaves the way I expect." />
 <meta name="keywords" content=", bossy, general-purpose-controller" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
-<link rel="canonical" href="https://mithi.github.io/robotics-blog/blog/bossy/07-multiplexer-2/" />
+<link rel="canonical" href="https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-test/" />
 
 
     <title>
         
-            Bossy: Multiplexers Part 2 :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+            Bossy: Multiplexer Test :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
         
     </title>
 
@@ -30,11 +32,13 @@
 
 
 
-<meta itemprop="name" content="Bossy: Multiplexers Part 2">
-<meta itemprop="description" content="I hooked everything up to the multiplexers and it was really difficult, not only because of the soldering iron tip at hand, but also because I don&rsquo;t have much available wires left. I cut six differently colored dupont cables and soldered the stranded wires which I hooked up to the multiplexer. It&rsquo;s a bit delicate as of the moment. Might fix this to be more sturdy, maybe in the future.">
-<meta itemprop="datePublished" content="2020-03-24T21:09:36&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-24T21:09:36&#43;08:00" />
-<meta itemprop="wordCount" content="701">
+<meta itemprop="name" content="Bossy: Multiplexer Test">
+<meta itemprop="description" content="I tested the multiplexers if they&rsquo;re working. To save time, I only tested two channels for each multiplexer, channel 0, and 15.
+I used two potentiometers which I connect randomly at channel 0 or channel 15 of multiplexer 1 or multiplexer 2 (four possibilities). I also randomly pull the remaining two channels either down to ground or up to 5 volts.
+Then I check the Serial monitor if it behaves the way I expect.">
+<meta itemprop="datePublished" content="2020-03-22T14:28:34&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-22T14:28:34&#43;08:00" />
+<meta itemprop="wordCount" content="334">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -42,8 +46,10 @@
 <meta itemprop="keywords" content="bossy,general-purpose-controller," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
 
-<meta name="twitter:title" content="Bossy: Multiplexers Part 2"/>
-<meta name="twitter:description" content="I hooked everything up to the multiplexers and it was really difficult, not only because of the soldering iron tip at hand, but also because I don&rsquo;t have much available wires left. I cut six differently colored dupont cables and soldered the stranded wires which I hooked up to the multiplexer. It&rsquo;s a bit delicate as of the moment. Might fix this to be more sturdy, maybe in the future."/>
+<meta name="twitter:title" content="Bossy: Multiplexer Test"/>
+<meta name="twitter:description" content="I tested the multiplexers if they&rsquo;re working. To save time, I only tested two channels for each multiplexer, channel 0, and 15.
+I used two potentiometers which I connect randomly at channel 0 or channel 15 of multiplexer 1 or multiplexer 2 (four possibilities). I also randomly pull the remaining two channels either down to ground or up to 5 volts.
+Then I check the Serial monitor if it behaves the way I expect."/>
 
 
 
@@ -51,7 +57,7 @@
 
 
 
-    <meta property="article:published_time" content="2020-03-24 21:09:36 &#43;0800 PST" />
+    <meta property="article:published_time" content="2020-03-22 14:28:34 &#43;0800 PST" />
 
 
 
@@ -117,29 +123,22 @@
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/07-multiplexer-2/">Bossy: Multiplexers Part 2</a></h2>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-test/">Bossy: Multiplexer Test</a></h2>
 
             
 
             <div class="post-content">
-                <p>I hooked everything up to the multiplexers and it was really difficult, not only because of the
-soldering iron tip at hand, but also because I don&rsquo;t have much available wires left. I cut six differently colored dupont cables
-and soldered the stranded wires which I hooked up to the multiplexer. It&rsquo;s a bit  delicate as of the moment. Might fix this to be more sturdy, maybe in the future.</p>
-<h2 id="protip-how-not-to-solder-101">PROTIP: How NOT to solder 101</h2>
-<ul>
-<li>step 1: Insist on using the worst soldering iron tip ever because it&rsquo;s the only one available at the moment</li>
-<li>step 2: Embarrass yourself by posting the result online</li>
-</ul>
-<p><img src="/robotics-blog/multiplexers-2.jpg" alt=""></p>
-<p>IMPORTANT! I found out that one of joysticks indeed has a faulty y-axis.</p>
-<p>IMPORTANT! I noticed that the select buttons of the joysticks when pressed correlates with the y-axis readings of the
-joysticks. I looked up the schematics again and realized that the select button didn&rsquo;t have
-a pull-down or pull-up resistor which I assumed (why did I assume this? Because I was being stupid, that&rsquo;s why, elementary mistake).
-Because of how delicate the whole setup is I&rsquo;m choosing not to solder such resistor for now. I&rsquo;ll try to compensate with code
-for the meantime. Maybe in the future I&rsquo;ll correct this mistake.</p>
-<p>Anyway, I test the connectivity of the wires by checking each and everyone of the inputs. And observing if it behaves the way I expected.</p>
-<p>Here&rsquo;s the code.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#66d9ef">int</span> s0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+                <p><img src="/robotics-blog/multiplexers.png" alt=""></p>
+<p>I tested the multiplexers if they&rsquo;re working.
+To save time, I only tested two channels for each multiplexer,
+channel 0, and 15.</p>
+<p>I used two potentiometers which I connect randomly at
+channel 0 or channel 15 of multiplexer 1 or multiplexer 2
+(four possibilities). I also randomly pull the remaining
+two channels either down to ground or up to 5 volts.</p>
+<p>Then I check the Serial monitor if it behaves the way I expect.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
+<span style="color:#66d9ef">int</span> s0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
 <span style="color:#66d9ef">int</span> s1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
 <span style="color:#66d9ef">int</span> s2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
 <span style="color:#66d9ef">int</span> s3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
@@ -147,11 +146,10 @@ for the meantime. Maybe in the future I&rsquo;ll correct this mistake.</p>
 <span style="color:#66d9ef">int</span> mux1_enable_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>;
 <span style="color:#66d9ef">int</span> mux2_enable_pin <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
 
-<span style="color:#66d9ef">int</span> value <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 <span style="color:#66d9ef">int</span> value1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 <span style="color:#66d9ef">int</span> value2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
 
-<span style="color:#66d9ef">int</span> sig_pin <span style="color:#f92672">=</span> A1;
+<span style="color:#66d9ef">int</span> sig_pin <span style="color:#f92672">=</span> A0;
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>(){
   <span style="color:#a6e22e">pinMode</span>(s0, <span style="color:#66d9ef">OUTPUT</span>);
@@ -176,55 +174,20 @@ for the meantime. Maybe in the future I&rsquo;ll correct this mistake.</p>
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>(){
 
-  <span style="color:#75715e">// mux 1 my left
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;mux1: &#34;</span>);
+  <span style="color:#75715e">// Read and display values at channel 0 and channel 15
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//for mux 1 and mux 2 every 1 second
+</span><span style="color:#75715e"></span>
   enable_mux1();
+  value1 <span style="color:#f92672">=</span> readMux(<span style="color:#ae81ff">0</span>);
+  value2 <span style="color:#f92672">=</span> readMux(<span style="color:#ae81ff">15</span>);
+  print_mux_values(<span style="color:#ae81ff">1</span>, value1, value2);
 
-  read_and_print(<span style="color:#ae81ff">0</span>); <span style="color:#75715e">// 0 - upper button - pushed is 0
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">3</span>); <span style="color:#75715e">// 3 - lower button - pushed is 0
-</span><span style="color:#75715e"></span>
-  <span style="color:#75715e">// lower left joystick labeled #2
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">4</span>); <span style="color:#75715e">// 4 - select button - pushed is 0
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">5</span>); <span style="color:#75715e">// 5 - y-axis up=0 , neutral=511, right=1022
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">6</span>); <span style="color:#75715e">// 6 - x-axis left=1022, neutral=508, right=0
-</span><span style="color:#75715e"></span>
-  <span style="color:#75715e">// upper left joystick labeled #3
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">7</span>); <span style="color:#75715e">// 7 - x-axis, left=1017, neutral=496, right=2
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">8</span>); <span style="color:#75715e">// 8 - y-axis, up=0, neutral=508, down=1021
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">9</span>); <span style="color:#75715e">// 9 - select button - pushed is 0
-</span><span style="color:#75715e"></span>
-  read_and_print(<span style="color:#ae81ff">10</span>); <span style="color:#75715e">// 10 - lower spdt switch - knob to the left is zero
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">11</span>); <span style="color:#75715e">// 11 - upper spdt switch - knob to the left is zero
-</span><span style="color:#75715e"></span>
-  read_and_print(<span style="color:#ae81ff">12</span>); <span style="color:#75715e">// 12 - 2nd to the left potentiometer
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">13</span>); <span style="color:#75715e">// 13 - center potentiometer
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">14</span>); <span style="color:#75715e">// 14 - most left potentiometer
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>();
-
-  <span style="color:#75715e">// mux 2 my right
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;mux2: &#34;</span>);
   enable_mux2();
+  value1 <span style="color:#f92672">=</span> readMux(<span style="color:#ae81ff">0</span>);
+  value2 <span style="color:#f92672">=</span> readMux(<span style="color:#ae81ff">15</span>);
+  print_mux_values(<span style="color:#ae81ff">2</span>, value1, value2);
 
-  read_and_print(<span style="color:#ae81ff">13</span>); <span style="color:#75715e">// upper button - 1023 is pressed
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">12</span>); <span style="color:#75715e">// lower button - 1023 is pressed
-</span><span style="color:#75715e"></span>
-  <span style="color:#75715e">// lower right joystick - labeled #1
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">11</span>); <span style="color:#75715e">//yaxis- down=0, neutral=497,, up=1022
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">10</span>); <span style="color:#75715e">// select button - pushed is 0
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">9</span>); <span style="color:#75715e">// x-axis- left=0, 509=neutral, right=1022
-</span><span style="color:#75715e"></span>
-  <span style="color:#75715e">// upper right joystick labeled #4
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">8</span>); <span style="color:#75715e">// select button - pushed is 0
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">7</span>); <span style="color:#75715e">// The joystick y axis is not working, verified. Connection is good, the joystick is malfunctioning.
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">6</span>); <span style="color:#75715e">// xaxis left=zero, 518=neutral, 1022=right
-</span><span style="color:#75715e"></span>
-  read_and_print(<span style="color:#ae81ff">5</span>); <span style="color:#75715e">// lower spdt switch left=1023, neutral=510, right=0
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">4</span>); <span style="color:#75715e">// upper spdt switch left=1023, neutral=510, right=0
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">3</span>); <span style="color:#75715e">// second to the right potentiometer
-</span><span style="color:#75715e"></span>  read_and_print(<span style="color:#ae81ff">2</span>); <span style="color:#75715e">// most right potentiometer
-</span><span style="color:#75715e"></span>
   <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>();
-  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;-&#34;</span>);
   <span style="color:#a6e22e">delay</span>(<span style="color:#ae81ff">1000</span>);
 }
 
@@ -237,6 +200,7 @@ for the meantime. Maybe in the future I&rsquo;ll correct this mistake.</p>
   <span style="color:#a6e22e">digitalWrite</span>(mux1_enable_pin, <span style="color:#66d9ef">HIGH</span>);
   <span style="color:#a6e22e">digitalWrite</span>(mux2_enable_pin, <span style="color:#66d9ef">LOW</span>);
 }
+
 
 <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">readMux</span>(<span style="color:#66d9ef">int</span> channel){
 
@@ -271,12 +235,22 @@ for the meantime. Maybe in the future I&rsquo;ll correct this mistake.</p>
   <span style="color:#66d9ef">return</span> val;
 }
 
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">read_and_print</span>(<span style="color:#66d9ef">int</span> ch) {
-  value <span style="color:#f92672">=</span> readMux(ch);
-  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(value);
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_mux_values</span>(<span style="color:#66d9ef">int</span> mux_id, <span style="color:#66d9ef">int</span> value1, <span style="color:#66d9ef">int</span> value2) {
+
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;mux&#34;</span>);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(mux_id);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34;: &#34;</span>);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(value1);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34; | &#34;</span>);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(value2);
   <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34; | &#34;</span>);
 }
-</code></pre></div>
+
+</code></pre></div><h1 id="references">References</h1>
+<ul>
+<li>2011-feb-1 <a href="https://bildr.org/2011/02/cd74hc4067-arduino/">Bildr: Muxing Around With The CD74HC4067 + Arduino </a></li>
+</ul>
+
             </div>
         </article>
 

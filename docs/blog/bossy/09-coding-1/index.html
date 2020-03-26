@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="The full draft version of the code is here:
+Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+ I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&amp;rsquo;d structure my code. There are many ways to go about it, but ultimately, here&amp;rsquo;s how I ended up doing it." />
+<meta name="keywords" content=", bossy, general-purpose-controller" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://mithi.github.io/robotics-blog/blog/bossy/09-coding-1/" />
+
+
+    <title>
+        
+            Bossy Inputs: Coding 1 - How to use :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/robotics-blog/main.min.a71f1ccb2abf86c1f9d46cddfa6403b99497528c340efb7c3589023cc9808b15.css">
+
+
+
+
+<meta itemprop="name" content="Bossy Inputs: Coding 1 - How to use">
+<meta itemprop="description" content="The full draft version of the code is here:
+Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+ I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&rsquo;d structure my code. There are many ways to go about it, but ultimately, here&rsquo;s how I ended up doing it.">
+<meta itemprop="datePublished" content="2020-03-26T23:38:51&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-26T23:38:51&#43;08:00" />
+<meta itemprop="wordCount" content="662">
+<meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
+
+
+
+<meta itemprop="keywords" content="bossy,general-purpose-controller," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
+
+<meta name="twitter:title" content="Bossy Inputs: Coding 1 - How to use"/>
+<meta name="twitter:description" content="The full draft version of the code is here:
+Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+ I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&rsquo;d structure my code. There are many ways to go about it, but ultimately, here&rsquo;s how I ended up doing it."/>
+
+
+
+    <meta property="article:section" content="bossy" />
+
+
+
+    <meta property="article:published_time" content="2020-03-26 23:38:51 &#43;0800 PST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/robotics-blog" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Mithi&#39;s Robots</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://mithi.github.io/robotics-blog/blog">Blog</a></li><li><a href="https://mithi.github.io/robotics-blog/misc">Misc</a></li><li><a href="https://ko-fi.com/minimithi">☕</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/09-coding-1/">Bossy Inputs: Coding 1 - How to use</a></h2>
+
+            
+
+            <div class="post-content">
+                <blockquote>
+<p>The full draft version of the code is here:</p>
+<h1 id="bossy-inputs-code-drafthttpsgithubcommithialgorithm-playgroundtreemasterbossy"><a href="https://github.com/mithi/algorithm-playground/tree/master/bossy">Bossy Inputs Code Draft</a></h1>
+<p>IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet</p>
+</blockquote>
+<p>I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on
+how I&rsquo;d structure my code. There are many ways to go about it, but ultimately, here&rsquo;s
+how I ended up doing it. I prioritized readability over taxonomy, so it might not be
+the most decoubled code with a bunch of small classes, but for my purpose I believe this will do.</p>
+<p>Here&rsquo;s some of the articles I&rsquo;ve read:</p>
+<h3 id="object-oriented-arduino-and-arduino-project-directory-structure">Object Oriented Arduino and Arduino Project Directory Structure</h3>
+<ul>
+<li>Nov 18, 2019 | Arduino Github: <a href="https://github.com/arduino/Arduino/wiki/Arduino-IDE-1.5%3a-Library-specification">Arduno IDE 1.5 Library Specification</a></li>
+<li>Jul 22, 2018 | Stack Exchange: <a href="https://arduino.stackexchange.com/questions/54651/arduino-ide-and-subfolders">Arduino IDE and subfolders</a></li>
+<li>Arduino.cc: <a href="https://www.arduino.cc/en/Hacking/libraryTutorial">Writing a Library for Arduino</a></li>
+<li>Arduino.cc: <a href="https://www.arduino.cc/en/Reference/APIStyleGuide">Arduino Style Guide for Writing Libraries</a></li>
+<li><a href="http://paulmurraycbr.github.io/ArduinoTheOOWay.html">Arduino the Object Oriented Way</a></li>
+<li><a href="https://roboticsbackend.com/arduino-object-oriented-programming-oop/">Arduino Object Oriented Programming (OOP)</a></li>
+</ul>
+<h1 id="quickstart">Quickstart</h1>
+<p>Using this tiny library should be easy enough:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;src/Bossy.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+Bossy bossy;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#ae81ff">9600</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+  <span style="color:#66d9ef">int</span> reading <span style="color:#f92672">=</span> bossy.readValue(LEFT_JOYSTICK_UPPER_X);
+  <span style="color:#66d9ef">int</span> state <span style="color:#f92672">=</span> bossy.readState(RIGHT_SWITCH_LOWER);
+
+  <span style="color:#75715e">// access the same reading and state by calling
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> saved_reading <span style="color:#f92672">=</span> bossy.savedReading(LEFT_JOYSTICK_UPPER_X);
+  <span style="color:#66d9ef">int</span> saved_state <span style="color:#f92672">=</span> bossy.savedState(RIGHT_SWITCH_LOWER);
+
+  <span style="color:#75715e">//both print true
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(reading <span style="color:#f92672">==</span> saved_reading);
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(state <span style="color:#f92672">==</span> saved_state);
+
+  <span style="color:#75715e">// maps the raw value from the range 0-1023 to the range 0-255
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> low_res_reading <span style="color:#f92672">=</span> bossy.savedReadingLowRes(POT_LEFT_CENTER);
+}
+
+</code></pre></div><ul>
+<li>
+<p>There are 25 constants (aka <code>input_ids</code>) defined in total which range from 0 to 24, all of which are pretty self-explanatory.</p>
+</li>
+<li>
+<p>Everytime you call <code>bossy.readValue(input_id)</code> or <code>bossy.readState(input_id)</code>, the microcontroller gets the raw signal (<code>reading</code>) from
+the appropriate channel of the appropriate multiplexer and saves it in memory.</p>
+</li>
+<li>
+<p>The <code>reading</code> is a value between <code>0</code> and <code>1023</code>.</p>
+</li>
+<li>
+<p>It also converts this raw <code>reading</code> into a predefined <code>state</code> which is also saved.</p>
+</li>
+<li>
+<p>You can access these saved reading and state with <code>bossy.savedReading(input_id)</code> and <code>bossy.savedState(input_id)</code>.</p>
+</li>
+<li>
+<p>It is important to note that the two latter function doesn&rsquo;t read a new signal,
+it just gets the most recently read ones.</p>
+</li>
+<li>
+<p><code>bossy.savedReadingLowRes(input_id)</code> maps the raw value from the range 0-1023 to the range 0-255. This is particularly useful
+if you only want the reading to fit only one byte, and don&rsquo;t mind downgrading the resolution.</p>
+</li>
+</ul>
+<h1 id="states">States</h1>
+<p>For reference the predefined state is a number between 0 and 4 and the number&rsquo;s meaning is dependent on
+the what type of input it is.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">#define PUSHED 4
+</span><span style="color:#75715e">#define NOT_PUSHED 0
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define NEUTRAL 2
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define DOWN 0
+</span><span style="color:#75715e">#define DOWN_CENTER 1
+</span><span style="color:#75715e">#define UP_CENTER 3
+</span><span style="color:#75715e">#define UP 4
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define LEFT 0
+</span><span style="color:#75715e">#define LEFT_CENTER 1
+</span><span style="color:#75715e">#define RIGHT_CENTER 3
+</span><span style="color:#75715e">#define RIGHT 4
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define SCALE_0 0
+</span><span style="color:#75715e">#define SCALE_1 1
+</span><span style="color:#75715e">#define SCALE_2 2
+</span><span style="color:#75715e">#define SCALE_3 3
+</span><span style="color:#75715e">#define SCALE_4 4
+</span></code></pre></div><p>It&rsquo;s more easily visualized like this:</p>
+<pre><code>
+ 0------------1------------2------------3------------4            &gt; SCALE
+ |            |            |            |            |
+ PUSH.........|............|............|............NOT_PUSHED   &gt; button
+ LEFT.........|............|............|............RIGHT        &gt; spdt switch on-on
+ LEFT.........|.........NEUTRAL.........|............RIGHT        &gt; spdt switch on-off-on
+ LEFT....LEFT_CENTER....NEUTRAL.....RIGHT_CENTER.....RIGHT        &gt; joystick x axis
+ UP......UP_CENTER......NEUTRAL.....DOWN_CENTER......DOWN         &gt; joystick y axis
+ UP...........|.........NEUTRAL.........|............DOWN
+ UP...........|............|............|............DOWN
+ |            |            |            |            |
+ 0------------1------------2------------3------------4            &gt; SCALE
+
+</code></pre><h1 id="only-on-state-or-reading-change">Only on state or reading change.</h1>
+<p>Most of the time, we only care about the input&rsquo;s value if and only if
+the value has changed. We can do this by calling the <code>bossy.hasChangedState(input_id)</code> or <code>bossy.hasChangedReading(input_id)</code>
+which outputs a boolean: either <code>true</code> or <code>false</code>. These two functions also reads and processes a new raw signal
+and saves the results in memory that can be immediately accessed by calling <code>bossy.savedState(input_id)</code>,
+<code>bossy.savedReading(input_id)</code>, <code>bossy.savedReadingLowRes(input_id)</code></p>
+<p>When button has changed state</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#66d9ef">if</span> (bossy.hasChangedState(LEFT_BUTTON_UPPER)) {
+  <span style="color:#66d9ef">if</span> (bossy.savedState(LEFT_JOYSTICK_UPPER_X)<span style="color:#f92672">==</span>PUSHED) {
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;just pressed&#34;</span>)
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;just released&#34;</span>)
+  }
+}
+</code></pre></div><p>When joystick is moved</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
+<span style="color:#66d9ef">if</span> (bossy.hasChangedState(RIGHT_JOYSTICK_UPPER_Y)) {
+  <span style="color:#66d9ef">int</span> state <span style="color:#f92672">=</span> bossy.savedState(RIGHT_JOYSTICK_UPPER_Y);
+  <span style="color:#66d9ef">switch</span> (state) {
+    <span style="color:#66d9ef">case</span> DOWN:
+      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;LOWEST&#34;</span>)
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> DOWN_CENTER:
+      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;LOW&#34;</span>)
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> NEUTRAL:
+      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;NEUTRAL&#34;</span>)
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> UP_CENTER:
+      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;HIGH&#34;</span>)
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">case</span> UP:
+      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;HIGHEST&#34;</span>)
+      <span style="color:#66d9ef">break</span>;
+    <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
+      <span style="color:#66d9ef">break</span>;
+  }
+}
+</code></pre></div><p>When potentiometer is turned</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#66d9ef">if</span> (bossy.hasChangedReading(input_id)) {
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(bossy.savedReadingLowRes(POT_RIGHT));
+}
+</code></pre></div><blockquote>
+<p>The full draft version of the code is here:</p>
+<h1 id="bossy-inputs-code-drafthttpsgithubcommithialgorithm-playgroundtreemasterbossy-1"><a href="https://github.com/mithi/algorithm-playground/tree/master/bossy">Bossy Inputs Code Draft</a></h1>
+<p>IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet</p>
+</blockquote>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/bossy">bossy</a></span><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/general-purpose-controller">general-purpose-controller</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span>👾🤖 Mithi</span>
+            <span> <a href="https://mithi.github.io/robotics-blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/robotics-blog/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-142507629-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+    </body>
+</html>

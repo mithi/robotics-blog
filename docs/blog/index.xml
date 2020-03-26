@@ -7,10 +7,44 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>👾🤖 Mithi</copyright>
-    <lastBuildDate>Wed, 25 Mar 2020 16:28:14 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 01:01:40 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Bossy Inputs: Coding 3 -  All together now</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/</link>
+      <pubDate>Fri, 27 Mar 2020 01:01:40 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/</guid>
+      <description>The full draft version of the code is here:
+Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+ When compiled in the Arduino Micro
+Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes.</description>
+    </item>
+    
+    <item>
+      <title>Bossy Inputs: Coding 2 - Modifiable constants</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/10-coding-2/</link>
+      <pubDate>Fri, 27 Mar 2020 00:36:52 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/10-coding-2/</guid>
+      <description>The full draft version of the code is here:
+Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+ IMPORTANT QUICK SIDETRACK: Debouncing Buttons Befor continuing the code discussion. I just want to put this here: As I&amp;rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons.</description>
+    </item>
+    
+    <item>
+      <title>Bossy Inputs: Coding 1 - How to use</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/09-coding-1/</link>
+      <pubDate>Thu, 26 Mar 2020 23:38:51 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/09-coding-1/</guid>
+      <description>The full draft version of the code is here:
+Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+ I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&amp;rsquo;d structure my code. There are many ways to go about it, but ultimately, here&amp;rsquo;s how I ended up doing it.</description>
+    </item>
     
     <item>
       <title>Bossy: Led Matrix</title>
@@ -23,12 +57,12 @@
     </item>
     
     <item>
-      <title>Bossy: Multiplexer Part 2</title>
+      <title>Bossy: Multiplexers Part 2</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/07-multiplexer-2/</link>
       <pubDate>Tue, 24 Mar 2020 21:09:36 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/07-multiplexer-2/</guid>
-      <description>I hooked everything up to the multiplexers and it was really difficult, not only because of the soldering iron tip at hand, but also because I don&amp;rsquo;t have much available wires left. I cut six differently colored dupont cables and soldered the stranded wires which I hooked up to the multiplexer. It&amp;rsquo;s a bit of a delicate as of the moment. Will fix this to be more sturdy, maybe in the future.</description>
+      <description>I hooked everything up to the multiplexers and it was really difficult, not only because of the soldering iron tip at hand, but also because I don&amp;rsquo;t have much available wires left. I cut six differently colored dupont cables and soldered the stranded wires which I hooked up to the multiplexer. It&amp;rsquo;s a bit delicate as of the moment. Might fix this to be more sturdy, maybe in the future.</description>
     </item>
     
     <item>
@@ -42,11 +76,11 @@ I can&amp;rsquo;t buy right now having the extreme quarantine due to covid19, so
     </item>
     
     <item>
-      <title>Bossy: Multiplexer Tests</title>
-      <link>https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-tests/</link>
+      <title>Bossy: Multiplexer Test</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-test/</link>
       <pubDate>Sun, 22 Mar 2020 14:28:34 +0800</pubDate>
       
-      <guid>https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-tests/</guid>
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-test/</guid>
       <description>I tested the multiplexers if they&amp;rsquo;re working. To save time, I only tested two channels for each multiplexer, channel 0, and 15.
 I used two potentiometers which I connect randomly at channel 0 or channel 15 of multiplexer 1 or multiplexer 2 (four possibilities). I also randomly pull the remaining two channels either down to ground or up to 5 volts.
 Then I check the Serial monitor if it behaves the way I expect.</description>
@@ -87,7 +121,7 @@ Then I check the Serial monitor if it behaves the way I expect.</description>
       <pubDate>Mon, 16 Mar 2020 15:44:53 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/01-task-list/</guid>
-      <description>Objective: Build a a wireless custom general-purpose controller project  The custom controller&amp;rsquo;s name is Bossy Build a custom controller with parts I already have at home  Preliminaries  .List bill of materials .Install arduino .Install fritzing .Test Arduino micro is working .Make continuity tester with adafruit metro mini .Find out uniqe values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons .</description>
+      <description>Objective: Build a a wireless custom general-purpose controller project  The custom controller&amp;rsquo;s name is Bossy Build a custom controller with parts I already have at home  Preliminaries  .List bill of materials .Install arduino .Install fritzing .Test if Arduino Micro is working .Make continuity tester with adafruit metro mini .Find out unique values of up, down and neutral for each joystick .Verify connectivity of switches, potentiometer, and momentary buttons .</description>
     </item>
     
     <item>

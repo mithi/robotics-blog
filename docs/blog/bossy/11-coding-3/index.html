@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="The full draft version of the code is here:
+Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+ When compiled in the Arduino Micro
+Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes." />
+<meta name="keywords" content=", bossy, general-purpose-controller" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/" />
+
+
+    <title>
+        
+            Bossy Inputs: Coding 3 -  All together now :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/robotics-blog/main.min.a71f1ccb2abf86c1f9d46cddfa6403b99497528c340efb7c3589023cc9808b15.css">
+
+
+
+
+<meta itemprop="name" content="Bossy Inputs: Coding 3 -  All together now">
+<meta itemprop="description" content="The full draft version of the code is here:
+Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+ When compiled in the Arduino Micro
+Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes.">
+<meta itemprop="datePublished" content="2020-03-27T01:01:40&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-27T01:01:40&#43;08:00" />
+<meta itemprop="wordCount" content="1708">
+<meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
+
+
+
+<meta itemprop="keywords" content="bossy,general-purpose-controller," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
+
+<meta name="twitter:title" content="Bossy Inputs: Coding 3 -  All together now"/>
+<meta name="twitter:description" content="The full draft version of the code is here:
+Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+ When compiled in the Arduino Micro
+Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes."/>
+
+
+
+    <meta property="article:section" content="bossy" />
+
+
+
+    <meta property="article:published_time" content="2020-03-27 01:01:40 &#43;0800 PST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/robotics-blog" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Mithi&#39;s Robots</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://mithi.github.io/robotics-blog/blog">Blog</a></li><li><a href="https://mithi.github.io/robotics-blog/misc">Misc</a></li><li><a href="https://ko-fi.com/minimithi">☕</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/">Bossy Inputs: Coding 3 -  All together now</a></h2>
+
+            
+
+            <div class="post-content">
+                <blockquote>
+<p>The full draft version of the code is here:</p>
+<h1 id="bossy-inputs-code-drafthttpsgithubcommithialgorithm-playgroundtreemasterbossy"><a href="https://github.com/mithi/algorithm-playground/tree/master/bossy">Bossy Inputs Code Draft</a></h1>
+<p>IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet</p>
+</blockquote>
+<p>When compiled in the Arduino Micro</p>
+<pre><code>Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes.
+Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes.
+</code></pre><p>When compuled in the Arduino Uno</p>
+<pre><code>Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes.
+Global variables use 563 bytes (27%) of dynamic memory, leaving 1485 bytes for local variables. Maximum is 2048 bytes.
+</code></pre><h1 id="sketch-bossyino">Sketch <code>bossy.ino</code></h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;src/Bossy.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+Bossy bossy;
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
+  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#ae81ff">9600</span>);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
+  <span style="color:#75715e">//int value = bossy.readValue(LEFT_JOYSTICK_UPPER_X);
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//int value = bossy.readState(LEFT_BUTTON_UPPER);
+</span><span style="color:#75715e"></span>
+  print_on_pot_reading_change(<span style="color:#e6db74">&#34;p0: &#34;</span>, POT_LEFT);
+  print_on_pot_reading_change(<span style="color:#e6db74">&#34;p1: &#34;</span>, POT_LEFT_CENTER);
+  print_on_pot_reading_change(<span style="color:#e6db74">&#34;p2: &#34;</span>, POT_CENTER);
+  print_on_pot_reading_change(<span style="color:#e6db74">&#34;p3: &#34;</span>, POT_RIGHT_CENTER);
+  print_on_pot_reading_change(<span style="color:#e6db74">&#34;p4: &#34;</span>, POT_RIGHT);
+
+  print_on_button_state_change(<span style="color:#e6db74">&#34;b-UL: &#34;</span>, LEFT_BUTTON_UPPER);
+  print_on_button_state_change(<span style="color:#e6db74">&#34;b-LL: &#34;</span>, LEFT_BUTTON_LOWER);
+  print_on_button_state_change(<span style="color:#e6db74">&#34;b-UR: &#34;</span>, RIGHT_BUTTON_UPPER);
+  print_on_button_state_change(<span style="color:#e6db74">&#34;b-LR: &#34;</span>, RIGHT_BUTTON_LOWER);
+
+  print_on_button_state_change(<span style="color:#e6db74">&#34;jb-UL: &#34;</span>, LEFT_JOYSTICK_UPPER_BUTTON);
+  print_on_button_state_change(<span style="color:#e6db74">&#34;jb-LL: &#34;</span>, LEFT_JOYSTICK_LOWER_BUTTON);
+  print_on_button_state_change(<span style="color:#e6db74">&#34;jb-UR: &#34;</span>, RIGHT_JOYSTICK_UPPER_BUTTON);
+  print_on_button_state_change(<span style="color:#e6db74">&#34;jb-LR: &#34;</span>, RIGHT_JOYSTICK_LOWER_BUTTON);
+
+  print_on_scale_change(<span style="color:#e6db74">&#34;jx-UL: &#34;</span>, LEFT_JOYSTICK_UPPER_X);
+  print_on_scale_change(<span style="color:#e6db74">&#34;jx-LL: &#34;</span>, LEFT_JOYSTICK_LOWER_X);
+  print_on_scale_change(<span style="color:#e6db74">&#34;jx-UR: &#34;</span>, RIGHT_JOYSTICK_UPPER_X);
+  print_on_scale_change(<span style="color:#e6db74">&#34;jx-LR: &#34;</span>, RIGHT_JOYSTICK_LOWER_X);
+
+  print_on_scale_change(<span style="color:#e6db74">&#34;jy-UL: &#34;</span>, LEFT_JOYSTICK_UPPER_Y);
+  print_on_scale_change(<span style="color:#e6db74">&#34;jy-LL: &#34;</span>, LEFT_JOYSTICK_LOWER_Y);
+  print_on_scale_change(<span style="color:#e6db74">&#34;jy-UR: &#34;</span>, RIGHT_JOYSTICK_UPPER_Y);
+  print_on_scale_change(<span style="color:#e6db74">&#34;jy-LR: &#34;</span>, RIGHT_JOYSTICK_LOWER_Y);
+
+  print_on_scale_change(<span style="color:#e6db74">&#34;sw-UL: &#34;</span>, LEFT_SWITCH_UPPER);
+  print_on_scale_change(<span style="color:#e6db74">&#34;sw-LL: &#34;</span>, LEFT_SWITCH_LOWER);
+  print_on_scale_change(<span style="color:#e6db74">&#34;sw-UR: &#34;</span>, RIGHT_SWITCH_UPPER);
+  print_on_scale_change(<span style="color:#e6db74">&#34;sw-RL: &#34;</span>, RIGHT_SWITCH_LOWER);
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_on_button_state_change</span>(<span style="color:#66d9ef">String</span> prefix, <span style="color:#66d9ef">int</span> input_id) {
+  <span style="color:#66d9ef">if</span> (bossy.hasChangedState(input_id)) {
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(prefix);
+    bossy.savedState(input_id)<span style="color:#f92672">==</span>PUSHED <span style="color:#f92672">?</span>
+      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;pressed&#34;</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;not_pressed&#34;</span>);
+  }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_on_pot_reading_change</span>(<span style="color:#66d9ef">String</span> prefix, <span style="color:#66d9ef">int</span> input_id) {
+  <span style="color:#66d9ef">if</span> (bossy.hasChangedReading(input_id)) {
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(prefix);
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(bossy.savedReading(input_id));
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34; &#34;</span>);
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(bossy.savedReadingLowRes(input_id));
+  }
+}
+
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_on_scale_change</span>(<span style="color:#66d9ef">String</span> prefix, <span style="color:#66d9ef">int</span> input_id) {
+  <span style="color:#66d9ef">if</span> (bossy.hasChangedState(input_id)) {
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(prefix);
+    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(bossy.savedState(input_id));
+  }
+}
+
+</code></pre></div><h1 id="header-srcbossyh">Header <code>src/Bossy.h</code></h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">#ifndef Bossy_h
+</span><span style="color:#75715e">#define Bossy_h
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Arduino.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+
+<span style="color:#75715e">/**********************
+</span><span style="color:#75715e">  MULTIPLEXER PINS
+</span><span style="color:#75715e">*************************/</span>
+<span style="color:#75715e">#define PIN_ENABLE_LEFT_MUX 11
+</span><span style="color:#75715e">#define PIN_ENABLE_RIGHT_MUX 12
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define s0 5
+</span><span style="color:#75715e">#define s1 6
+</span><span style="color:#75715e">#define s2 7
+</span><span style="color:#75715e">#define s3 8
+</span><span style="color:#75715e">#define PIN_SIGNAL A1
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/**********************
+</span><span style="color:#75715e"> CHANNELS
+</span><span style="color:#75715e">*************************/</span>
+<span style="color:#75715e">#define NUMBER_OF_CHANNELS 25
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// map of input id to channel in the multiplexer
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> INPUT_CHANNEL[NUMBER_OF_CHANNELS] <span style="color:#f92672">=</span> {
+
+  <span style="color:#ae81ff">11</span>, <span style="color:#75715e">// LEFT_SWITCH_UPPER
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">10</span>, <span style="color:#75715e">// LEFT_SWITCH_LOWER
+</span><span style="color:#75715e"></span>
+   <span style="color:#ae81ff">8</span>, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_Y
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">7</span>, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_X
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">9</span>, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_BUTTON
+</span><span style="color:#75715e"></span>
+   <span style="color:#ae81ff">5</span>, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_Y
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">6</span>, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_X
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">4</span>, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_BUTTON
+</span><span style="color:#75715e"></span>
+   <span style="color:#ae81ff">0</span>, <span style="color:#75715e">// LEFT_BUTTON_UPPER
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">3</span>, <span style="color:#75715e">// LEFT_BUTTON_LOWER
+</span><span style="color:#75715e"></span>
+  <span style="color:#ae81ff">14</span>, <span style="color:#75715e">// POT_LEFT
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">12</span>, <span style="color:#75715e">// POT_LEFT_CENTER
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">13</span>, <span style="color:#75715e">// POT_CENTER
+</span><span style="color:#75715e"></span>
+  <span style="color:#ae81ff">4</span>, <span style="color:#75715e">// RIGHT_SWITCH_UPPER
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">5</span>, <span style="color:#75715e">// RIGHT_SWITCH_LOWER
+</span><span style="color:#75715e"></span>
+  <span style="color:#ae81ff">7</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_Y
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">6</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_X
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">8</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_BUTTON
+</span><span style="color:#75715e"></span>
+  <span style="color:#ae81ff">11</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_Y
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">9</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_X
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">10</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_BUTTON
+</span><span style="color:#75715e"></span>
+  <span style="color:#ae81ff">13</span>, <span style="color:#75715e">// RIGHT_BUTTON_UPPER
+</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">12</span>, <span style="color:#75715e">// RIGHT_BUTTON_LOWER
+</span><span style="color:#75715e"></span>
+   <span style="color:#ae81ff">3</span>, <span style="color:#75715e">// POT_RIGHT_CENTER
+</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">2</span>  <span style="color:#75715e">// POT_RIGHT
+</span><span style="color:#75715e"></span>};
+
+<span style="color:#75715e">/**********************
+</span><span style="color:#75715e"> INPUT TYPE (normal or inverted)
+</span><span style="color:#75715e">*************************/</span>
+<span style="color:#75715e">// The input type is normal when:
+</span><span style="color:#75715e">// button: pressed is HIGH
+</span><span style="color:#75715e">// joystick y axis: UP is HIGH
+</span><span style="color:#75715e">// joystick x axis: RIGHT is HIGH
+</span><span style="color:#75715e">// switch: RIGHT is HIGH
+</span><span style="color:#75715e">// it is inverted if otherwise
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define NORMAL true
+</span><span style="color:#75715e">#define INVERTED false
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// map of input id to its input type (
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span> INPUT_TYPE[NUMBER_OF_CHANNELS] <span style="color:#f92672">=</span> {
+  NORMAL, <span style="color:#75715e">// LEFT_SWITCH_UPPER
+</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// LEFT_SWITCH_LOWER
+</span><span style="color:#75715e"></span>
+  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_Y
+</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_X
+</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_BUTTON
+</span><span style="color:#75715e"></span>
+  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_Y
+</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_X
+</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_BUTTON
+</span><span style="color:#75715e"></span>
+  INVERTED, <span style="color:#75715e">// LEFT_BUTTON_UPPER
+</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// LEFT_BUTTON_LOWER
+</span><span style="color:#75715e"></span>
+  NORMAL, <span style="color:#75715e">// POT_LEFT
+</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// POT_LEFT_CENTER
+</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// POT_CENTER
+</span><span style="color:#75715e"></span>
+  INVERTED, <span style="color:#75715e">// RIGHT_SWITCH_UPPER
+</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// RIGHT_SWITCH_LOWER
+</span><span style="color:#75715e"></span>
+  NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_Y
+</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_X
+</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_BUTTON
+</span><span style="color:#75715e"></span>
+  NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_Y
+</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_X
+</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_BUTTON
+</span><span style="color:#75715e"></span>
+  NORMAL, <span style="color:#75715e">// RIGHT_BUTTON_UPPER
+</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// RIGHT_BUTTON_LOWER
+</span><span style="color:#75715e"></span>
+  NORMAL, <span style="color:#75715e">// POT_RIGHT_CENTER
+</span><span style="color:#75715e"></span>  NORMAL <span style="color:#75715e">// POT_RIGHT
+</span><span style="color:#75715e"></span>};
+
+
+<span style="color:#75715e">/**********************
+</span><span style="color:#75715e"> INPUT IDs
+</span><span style="color:#75715e">*************************/</span>
+
+<span style="color:#75715e">// left inputs
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define LEFT_SWITCH_UPPER 0
+</span><span style="color:#75715e">#define LEFT_SWITCH_LOWER 1
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define LEFT_JOYSTICK_UPPER_Y 2
+</span><span style="color:#75715e">#define LEFT_JOYSTICK_UPPER_X 3
+</span><span style="color:#75715e">#define LEFT_JOYSTICK_UPPER_BUTTON 4
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define LEFT_JOYSTICK_LOWER_Y 5
+</span><span style="color:#75715e">#define LEFT_JOYSTICK_LOWER_X 6
+</span><span style="color:#75715e">#define LEFT_JOYSTICK_LOWER_BUTTON 7
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define LEFT_BUTTON_UPPER 8
+</span><span style="color:#75715e">#define LEFT_BUTTON_LOWER 9
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define POT_LEFT 10
+</span><span style="color:#75715e">#define POT_LEFT_CENTER 11
+</span><span style="color:#75715e">#define POT_CENTER 12
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// right inputs
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define RIGHT_SWITCH_UPPER 13
+</span><span style="color:#75715e">#define RIGHT_SWITCH_LOWER 14
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define RIGHT_JOYSTICK_UPPER_Y 15
+</span><span style="color:#75715e">#define RIGHT_JOYSTICK_UPPER_X 16
+</span><span style="color:#75715e">#define RIGHT_JOYSTICK_UPPER_BUTTON 17
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define RIGHT_JOYSTICK_LOWER_Y 18
+</span><span style="color:#75715e">#define RIGHT_JOYSTICK_LOWER_X 19
+</span><span style="color:#75715e">#define RIGHT_JOYSTICK_LOWER_BUTTON 20
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define RIGHT_BUTTON_UPPER 21
+</span><span style="color:#75715e">#define RIGHT_BUTTON_LOWER 22
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define POT_RIGHT_CENTER 23
+</span><span style="color:#75715e">#define POT_RIGHT 24
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/**********************
+</span><span style="color:#75715e"> MAP input id to multiplexer id (left or right)
+</span><span style="color:#75715e">*************************/</span>
+
+<span style="color:#75715e">// the ids for the left multiplexer is 0 to 12
+</span><span style="color:#75715e">// the ids for the right multiplexer is 13 to 24
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define MUX_LEFT_MIN 0
+</span><span style="color:#75715e">#define MUX_LEFT_MAX 12
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define MULTIPLEXER_RIGHT_MIN 13
+</span><span style="color:#75715e">#define MULTIPLEXER_RIGHT_MAX 24
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/**********************
+</span><span style="color:#75715e">  AGGREGATED BUTTONS
+</span><span style="color:#75715e">*************************/</span>
+
+<span style="color:#75715e">#define NUMBER_OF_BOOLEAN_INPUTS 8
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">// which channels are boolean inputs/ie buttons
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> BOOLEAN_INPUTS[NUMBER_OF_BOOLEAN_INPUTS] <span style="color:#f92672">=</span> {
+  LEFT_BUTTON_LOWER,
+  LEFT_BUTTON_UPPER,
+  LEFT_JOYSTICK_LOWER_BUTTON,
+  LEFT_JOYSTICK_UPPER_BUTTON,
+  RIGHT_BUTTON_LOWER,
+  RIGHT_BUTTON_UPPER,
+  RIGHT_JOYSTICK_LOWER_BUTTON,
+  RIGHT_JOYSTICK_UPPER_BUTTON
+};
+
+<span style="color:#75715e">// which buttons are not pulled up to 5v
+</span><span style="color:#75715e">// temporary software hack
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> BROKEN_BUTTONS[NUMBER_OF_BOOLEAN_INPUTS] <span style="color:#f92672">=</span> {
+  LEFT_JOYSTICK_LOWER_BUTTON,
+  LEFT_JOYSTICK_UPPER_BUTTON,
+  RIGHT_JOYSTICK_LOWER_BUTTON,
+  RIGHT_JOYSTICK_UPPER_BUTTON
+};
+
+<span style="color:#75715e">/**********************
+</span><span style="color:#75715e">  POSSIBLE STATES
+</span><span style="color:#75715e">*************************/</span>
+
+<span style="color:#75715e">// these are the possible states
+</span><span style="color:#75715e"></span><span style="color:#75715e">#define PUSHED 4
+</span><span style="color:#75715e">#define NOT_PUSHED 0
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define NEUTRAL 2
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define DOWN 0
+</span><span style="color:#75715e">#define DOWN_CENTER 1
+</span><span style="color:#75715e">#define UP_CENTER 3
+</span><span style="color:#75715e">#define UP 4
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define LEFT 0
+</span><span style="color:#75715e">#define LEFT_CENTER 1
+</span><span style="color:#75715e">#define RIGHT_CENTER 3
+</span><span style="color:#75715e">#define RIGHT 4
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">#define SCALE_0 0
+</span><span style="color:#75715e">#define SCALE_1 1
+</span><span style="color:#75715e">#define SCALE_2 2
+</span><span style="color:#75715e">#define SCALE_3 3
+</span><span style="color:#75715e">#define SCALE_4 4
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">
+</span><span style="color:#75715e"> 0------------1------------2------------3------------4            &gt; SCALE
+</span><span style="color:#75715e"> |            |            |            |            |
+</span><span style="color:#75715e"> PUSH.........|............|............|............NOT_PUSHED   &gt; button
+</span><span style="color:#75715e"> LEFT.........|............|............|............RIGHT        &gt; spdt switch on-on
+</span><span style="color:#75715e"> LEFT.........|.........NEUTRAL.........|............RIGHT        &gt; spdt switch on-off-on
+</span><span style="color:#75715e"> LEFT....LEFT_CENTER....NEUTRAL.....RIGHT_CENTER.....RIGHT        &gt; joystick x axis
+</span><span style="color:#75715e"> UP......UP_CENTER......NEUTRAL.....DOWN_CENTER......DOWN         &gt; joystick y axis
+</span><span style="color:#75715e"> UP...........|.........NEUTRAL.........|............DOWN
+</span><span style="color:#75715e"> UP...........|............|............|............DOWN
+</span><span style="color:#75715e"> |            |            |            |            |
+</span><span style="color:#75715e"> 0------------1------------2------------3------------4            &gt; SCALE
+</span><span style="color:#75715e">
+</span><span style="color:#75715e">*/</span>
+
+<span style="color:#75715e">/**********************
+</span><span style="color:#75715e">  BOSSY CONTROLLER CLASS
+</span><span style="color:#75715e">*************************/</span>
+<span style="color:#960050;background-color:#1e0010">class </span><span style="color:#a6e22e">Bossy</span> {
+<span style="color:#66d9ef">public</span><span style="color:#f92672">:</span>
+  Bossy(<span style="color:#66d9ef">void</span>);
+  <span style="color:#75715e">// these three functions are READ-ONLY
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// reads the last saved readings &amp; states
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// does NOT update or read new signals
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">uint16_t</span> <span style="color:#a6e22e">savedReading</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">uint16_t</span> <span style="color:#a6e22e">savedState</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">uint8_t</span> <span style="color:#a6e22e">savedReadingLowRes</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+
+  <span style="color:#75715e">// these four functions has WRITE access
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// updates readings &amp; states
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">uint16_t</span> <span style="color:#a6e22e">readValue</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">uint8_t</span> <span style="color:#a6e22e">readState</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">hasChangedState</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">hasChangedReading</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+
+<span style="color:#66d9ef">private</span><span style="color:#f92672">:</span>
+  <span style="color:#66d9ef">uint16_t</span> _readings[NUMBER_OF_CHANNELS];
+  <span style="color:#66d9ef">uint8_t</span> _states[NUMBER_OF_CHANNELS];
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">_update</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">_updateReading</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">_updateState</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">_enableRightMux</span>(<span style="color:#66d9ef">void</span>);
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">_enableLeftMux</span>(<span style="color:#66d9ef">void</span>);
+  <span style="color:#66d9ef">uint16_t</span> <span style="color:#a6e22e">_readMux</span>(<span style="color:#66d9ef">uint8_t</span> channel);
+  <span style="color:#66d9ef">uint8_t</span> <span style="color:#a6e22e">_constrain</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">_saveDebouncedReading</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">_isButton</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">bool</span> <span style="color:#a6e22e">_isBrokenButton</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+  <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">_updateBrokenButton</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id);
+};
+
+<span style="color:#75715e">#endif
+</span><span style="color:#75715e"></span>
+</code></pre></div><h1 id="source-srcbossycpp">Source <code>src/Bossy.cpp</code></h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Arduino.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;Bossy.h&#34;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span>
+Bossy<span style="color:#f92672">::</span>Bossy(<span style="color:#66d9ef">void</span>) {
+  <span style="color:#a6e22e">pinMode</span>(s0, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(s1, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(s2, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(s3, <span style="color:#66d9ef">OUTPUT</span>);
+
+  <span style="color:#a6e22e">pinMode</span>(PIN_ENABLE_LEFT_MUX, <span style="color:#66d9ef">OUTPUT</span>);
+  <span style="color:#a6e22e">pinMode</span>(PIN_ENABLE_RIGHT_MUX, <span style="color:#66d9ef">OUTPUT</span>);
+
+  <span style="color:#a6e22e">digitalWrite</span>(s0, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(s1, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(s2, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(s3, <span style="color:#66d9ef">LOW</span>);
+
+  <span style="color:#75715e">// pulling down enable pin to ground enables the multiplexer
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">digitalWrite</span>(PIN_ENABLE_LEFT_MUX, <span style="color:#66d9ef">HIGH</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(PIN_ENABLE_RIGHT_MUX, <span style="color:#66d9ef">HIGH</span>);
+
+  <span style="color:#75715e">// set all readings to a nonsense number
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">uint8_t</span> input_id <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; input_id <span style="color:#f92672">&lt;</span> NUMBER_OF_CHANNELS; input_id<span style="color:#f92672">++</span>) {
+    _update(input_id);
+  }
+}
+
+<span style="color:#66d9ef">uint16_t</span> Bossy<span style="color:#f92672">::</span>savedReading(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> i <span style="color:#f92672">=</span> _constrain(input_id);
+  <span style="color:#66d9ef">return</span> _readings[i];
+}
+
+<span style="color:#66d9ef">uint16_t</span> Bossy<span style="color:#f92672">::</span>savedState(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> i <span style="color:#f92672">=</span> _constrain(input_id);
+  <span style="color:#66d9ef">return</span> _states[i];
+}
+
+<span style="color:#66d9ef">uint8_t</span> Bossy<span style="color:#f92672">::</span>savedReadingLowRes(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id){
+  <span style="color:#75715e">// convert reading from range 0-1023 to 0-255
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> i <span style="color:#f92672">=</span> _constrain(input_id);
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span>(_readings[i] <span style="color:#f92672">/</span> <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">255</span>);
+}
+
+<span style="color:#66d9ef">uint16_t</span> Bossy<span style="color:#f92672">::</span>readValue(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> i <span style="color:#f92672">=</span> _constrain(input_id);
+  _update(i);
+  <span style="color:#66d9ef">return</span> _readings[i];
+}
+
+<span style="color:#66d9ef">uint8_t</span> Bossy<span style="color:#f92672">::</span>readState(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> i <span style="color:#f92672">=</span> _constrain(input_id);
+  _update(i);
+  <span style="color:#66d9ef">return</span> _states[i];
+}
+
+<span style="color:#66d9ef">bool</span> Bossy<span style="color:#f92672">::</span>hasChangedState(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> i <span style="color:#f92672">=</span> _constrain(input_id);
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint16_t</span> old_state <span style="color:#f92672">=</span> _states[i];
+  _update(i);
+  <span style="color:#66d9ef">return</span> old_state <span style="color:#f92672">!=</span> _states[i] <span style="color:#f92672">?</span> true<span style="color:#f92672">:</span> false;
+}
+
+<span style="color:#66d9ef">bool</span> Bossy<span style="color:#f92672">::</span>hasChangedReading(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> i <span style="color:#f92672">=</span> _constrain(input_id);
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint16_t</span> old_reading <span style="color:#f92672">=</span> _readings[i];
+  _update(i);
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint16_t</span> new_reading <span style="color:#f92672">=</span> _readings[i];
+
+  <span style="color:#75715e">// remove noise, especially of potentiometer
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint16_t</span> TOL <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+  <span style="color:#66d9ef">if</span> (old_reading <span style="color:#f92672">&gt;</span> new_reading) {
+    <span style="color:#66d9ef">return</span> old_reading <span style="color:#f92672">-</span> new_reading <span style="color:#f92672">&gt;</span> TOL;
+  }
+  <span style="color:#66d9ef">return</span> new_reading <span style="color:#f92672">-</span> old_reading <span style="color:#f92672">&gt;</span> TOL;
+}
+
+<span style="color:#66d9ef">void</span> Bossy<span style="color:#f92672">::</span>_update(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#75715e">//temporarily makeshift function for joystick buttons without pullup resistors
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (_isBrokenButton(input_id)) {
+    _updateBrokenButton(input_id);
+    <span style="color:#66d9ef">return</span>;
+  }
+
+  _updateReading(input_id);
+  _updateState(input_id);
+}
+
+<span style="color:#66d9ef">void</span> Bossy<span style="color:#f92672">::</span>_updateState(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint16_t</span> reading <span style="color:#f92672">=</span> _readings[input_id];
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span> input_type <span style="color:#f92672">=</span> INPUT_TYPE[input_id];
+
+  <span style="color:#66d9ef">if</span> (input_type <span style="color:#f92672">==</span> NORMAL) {
+    <span style="color:#66d9ef">if</span> (reading <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">200</span>) { _states[input_id] <span style="color:#f92672">=</span> SCALE_0; <span style="color:#66d9ef">return</span>; }
+    <span style="color:#66d9ef">if</span> (reading <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">400</span>) { _states[input_id] <span style="color:#f92672">=</span> SCALE_1; <span style="color:#66d9ef">return</span>; }
+    <span style="color:#66d9ef">if</span> (reading <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">600</span>) { _states[input_id] <span style="color:#f92672">=</span> SCALE_2; <span style="color:#66d9ef">return</span>; }
+    <span style="color:#66d9ef">if</span> (reading <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">800</span>) { _states[input_id] <span style="color:#f92672">=</span> SCALE_3; <span style="color:#66d9ef">return</span>; }
+    _states[input_id] <span style="color:#f92672">=</span> SCALE_4; <span style="color:#66d9ef">return</span>;
+  } <span style="color:#66d9ef">else</span> {
+    <span style="color:#66d9ef">if</span> (reading <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">800</span>) { _states[input_id] <span style="color:#f92672">=</span> SCALE_0; <span style="color:#66d9ef">return</span>; }
+    <span style="color:#66d9ef">if</span> (reading <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">600</span>) { _states[input_id] <span style="color:#f92672">=</span> SCALE_1; <span style="color:#66d9ef">return</span>; }
+    <span style="color:#66d9ef">if</span> (reading <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">400</span>) { _states[input_id] <span style="color:#f92672">=</span> SCALE_2; <span style="color:#66d9ef">return</span>; }
+    <span style="color:#66d9ef">if</span> (reading <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">200</span>) { _states[input_id] <span style="color:#f92672">=</span> SCALE_3; <span style="color:#66d9ef">return</span>; }
+    _states[input_id] <span style="color:#f92672">=</span> SCALE_4; <span style="color:#66d9ef">return</span>;
+  }
+}
+
+<span style="color:#66d9ef">void</span> Bossy<span style="color:#f92672">::</span>_updateReading(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#75715e">// check and enable multiplexer we are suppose to read from
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span> is_left_mux <span style="color:#f92672">=</span> input_id <span style="color:#f92672">&gt;=</span> MUX_LEFT_MIN <span style="color:#f92672">&amp;&amp;</span> input_id <span style="color:#f92672">&lt;=</span> MUX_LEFT_MAX;
+  is_left_mux <span style="color:#f92672">?</span> _enableLeftMux() <span style="color:#f92672">:</span> _enableRightMux();
+
+  <span style="color:#75715e">//debounce if it&#39;s a button else just save the reading
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">if</span> (_isButton(input_id)) {
+    _saveDebouncedReading(input_id);
+    <span style="color:#66d9ef">return</span>;
+  }
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> channel <span style="color:#f92672">=</span> INPUT_CHANNEL[input_id];
+  _readings[input_id] <span style="color:#f92672">=</span> _readMux(channel);
+}
+
+<span style="color:#66d9ef">void</span> Bossy<span style="color:#f92672">::</span>_enableLeftMux(<span style="color:#66d9ef">void</span>) {
+  <span style="color:#a6e22e">digitalWrite</span>(PIN_ENABLE_LEFT_MUX, <span style="color:#66d9ef">LOW</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(PIN_ENABLE_RIGHT_MUX, <span style="color:#66d9ef">HIGH</span>);
+}
+
+<span style="color:#66d9ef">void</span> Bossy<span style="color:#f92672">::</span>_enableRightMux(<span style="color:#66d9ef">void</span>) {
+  <span style="color:#a6e22e">digitalWrite</span>(PIN_ENABLE_LEFT_MUX, <span style="color:#66d9ef">HIGH</span>);
+  <span style="color:#a6e22e">digitalWrite</span>(PIN_ENABLE_RIGHT_MUX, <span style="color:#66d9ef">LOW</span>);
+}
+
+<span style="color:#66d9ef">uint16_t</span> Bossy<span style="color:#f92672">::</span>_readMux(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> channel) {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> controlPin[] <span style="color:#f92672">=</span> {s0, s1, s2, s3};
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> muxChannel[<span style="color:#ae81ff">16</span>][<span style="color:#ae81ff">4</span>]<span style="color:#f92672">=</span> {
+    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 0
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 1
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 2
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 3
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 4
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 5
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 6
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, <span style="color:#75715e">//channel 7
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 8
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 9
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 10
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 11
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 12
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 13
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}, <span style="color:#75715e">//channel 14
+</span><span style="color:#75715e"></span>    {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">1</span>}  <span style="color:#75715e">//channel 15
+</span><span style="color:#75715e"></span>  };
+
+  <span style="color:#75715e">//Send the appropriate signals
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; i <span style="color:#f92672">++</span>){
+    <span style="color:#a6e22e">digitalWrite</span>(controlPin[i], muxChannel[channel][i]);
+  }
+
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">analogRead</span>(PIN_SIGNAL);
+}
+
+<span style="color:#66d9ef">bool</span> Bossy<span style="color:#f92672">::</span>_isButton(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">uint8_t</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> NUMBER_OF_BOOLEAN_INPUTS; i<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">if</span> (BOOLEAN_INPUTS[i] <span style="color:#f92672">==</span> input_id) { <span style="color:#66d9ef">return</span> true; }
+  }
+  <span style="color:#66d9ef">return</span> false;
+}
+
+<span style="color:#66d9ef">void</span> Bossy<span style="color:#f92672">::</span>_saveDebouncedReading(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint16_t</span> saved_reading <span style="color:#f92672">=</span>  _readings[input_id];
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> channel <span style="color:#f92672">=</span> INPUT_CHANNEL[input_id];
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint16_t</span> reading <span style="color:#f92672">=</span> _readMux(channel);
+
+  <span style="color:#66d9ef">if</span> (saved_reading <span style="color:#f92672">!=</span> reading) {
+    _delay_ms(<span style="color:#ae81ff">5</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint16_t</span> second_reading <span style="color:#f92672">=</span> _readMux(channel);
+    <span style="color:#66d9ef">if</span> (second_reading <span style="color:#f92672">==</span> reading) {
+      _readings[input_id] <span style="color:#f92672">=</span> reading;
+    }
+  }
+}
+
+<span style="color:#66d9ef">uint8_t</span> Bossy<span style="color:#f92672">::</span>_constrain(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#75715e">// input id can only be within 0-24
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">min</span>(<span style="color:#a6e22e">max</span>(<span style="color:#ae81ff">0</span>, input_id), NUMBER_OF_CHANNELS <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>);
+}
+
+<span style="color:#66d9ef">bool</span> Bossy<span style="color:#f92672">::</span>_isBrokenButton(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">uint8_t</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; i<span style="color:#f92672">++</span>) {
+    <span style="color:#66d9ef">if</span> (BROKEN_BUTTONS[i]<span style="color:#f92672">==</span>input_id) { <span style="color:#66d9ef">return</span> true; }
+  }
+  <span style="color:#66d9ef">return</span> false;
+}
+
+<span style="color:#66d9ef">void</span> Bossy<span style="color:#f92672">::</span>_updateBrokenButton(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> input_id) {
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint16_t</span> saved_reading <span style="color:#f92672">=</span> _readings[input_id];
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span> is_left_mux <span style="color:#f92672">=</span> input_id <span style="color:#f92672">&gt;=</span> MUX_LEFT_MIN <span style="color:#f92672">&amp;&amp;</span> input_id <span style="color:#f92672">&lt;=</span> MUX_LEFT_MAX;
+  is_left_mux <span style="color:#f92672">?</span> _enableLeftMux() <span style="color:#f92672">:</span> _enableRightMux();
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> channel <span style="color:#f92672">=</span> INPUT_CHANNEL[input_id];
+  <span style="color:#66d9ef">uint16_t</span> reading <span style="color:#f92672">=</span> _readMux(channel);
+  reading <span style="color:#f92672">=</span> reading <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1023</span>;
+
+  <span style="color:#66d9ef">if</span> (saved_reading <span style="color:#f92672">!=</span> reading) {
+    _delay_ms(<span style="color:#ae81ff">50</span>);
+    <span style="color:#66d9ef">uint16_t</span> second_reading <span style="color:#f92672">=</span> _readMux(channel);
+    second_reading <span style="color:#f92672">=</span> second_reading <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">:</span> <span style="color:#ae81ff">1023</span>;
+
+    <span style="color:#66d9ef">if</span> (second_reading <span style="color:#f92672">==</span> reading) {
+      _readings[input_id] <span style="color:#f92672">=</span> reading;
+    }
+  }
+
+  _states[input_id] <span style="color:#f92672">=</span> _readings[input_id] <span style="color:#f92672">==</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">?</span> PUSHED : NOT_PUSHED;
+}
+
+</code></pre></div><blockquote>
+<p>The full draft version of the code is here:</p>
+<h1 id="bossy-inputs-code-drafthttpsgithubcommithialgorithm-playgroundtreemasterbossy-1"><a href="https://github.com/mithi/algorithm-playground/tree/master/bossy">Bossy Inputs Code Draft</a></h1>
+<p>IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet</p>
+</blockquote>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/bossy">bossy</a></span><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/general-purpose-controller">general-purpose-controller</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span>👾🤖 Mithi</span>
+            <span> <a href="https://mithi.github.io/robotics-blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/robotics-blog/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-142507629-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+    </body>
+</html>

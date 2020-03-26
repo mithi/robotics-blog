@@ -5,7 +5,7 @@
 
 ```
 1.  Bossy: A custom general-purpose wireless controller
-    -  Build controller with I already have
+    -  Build controller with parts I already have
 
 2. Control Three custom robots with Bossy
     - Robot #1 Arm Tank - MeArm 1.0 (Open-source 4-axis manipulator) on top of a metal tank chassis
@@ -118,8 +118,8 @@
 ## Bossy Custom Controller derivatives
 - mini-bossy, tiny-bossy
 
-|![](/robotics-blog/mini-bossy.png)|![](/robotics-blog/tiny-bossy.png)|
-| ---------- | ---------- |
+|![](/robotics-blog/mini-bossy.png)|![](/robotics-blog/tiny-bossy.png)|![](/robotics-blog/mini-bossy-2.png)|
+| ---------- | ---------- | ---------- |
 
 
 ## Component Tester

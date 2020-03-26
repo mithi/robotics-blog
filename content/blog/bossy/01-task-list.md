@@ -15,9 +15,9 @@ draft: false
 - [x] .List bill of materials
 - [x] .Install arduino
 - [x] .Install fritzing
-- [x] .Test Arduino micro is working
+- [x] .Test if Arduino Micro is working
 - [x] .Make continuity tester with adafruit metro mini
-- [x] .Find out uniqe values of up, down and neutral for each joystick
+- [x] .Find out unique values of up, down and neutral for each joystick
 - [x] .Verify connectivity of switches, potentiometer, and momentary buttons
 - [x] .Finalize breadboard schematic, pcb design
 
@@ -40,6 +40,8 @@ draft: false
 
 ### Coding and finishing up
 
+- [x] .Make a class wrapper for elegantly reading, processing, and accessing the input signals
 - Add UI functionality for providing feedback of controls in the 8x8 led matrix (screen)
-- Make an enclosure to house our controller
+- Send commands by user from controller to receiver.
 - Use controller to control a different LED Matrix wirelessly
+- Make an enclosure to house our controller

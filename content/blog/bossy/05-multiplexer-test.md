@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Multiplexer Tests"
+title: "Bossy: Multiplexer Test"
 date: 2020-03-22T14:28:34+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]
@@ -58,7 +58,7 @@ void setup(){
 
 void loop(){
 
-  // Read and distplay values at channel 0 and channel 15
+  // Read and display values at channel 0 and channel 15
   //for mux 1 and mux 2 every 1 second
 
   enable_mux1();
@@ -69,7 +69,7 @@ void loop(){
   enable_mux2();
   value1 = readMux(0);
   value2 = readMux(15);
-  print_mux_values(1, value1, value2);
+  print_mux_values(2, value1, value2);
 
   Serial.println();
   delay(1000);

@@ -35,7 +35,7 @@ I found some really cheap and affordable alternatives to Adafruit and Sparkfun b
 ![](/robotics-blog/cheap-alternatives.jpg)
 
 ## Receiver
-- 1x - [Arduino Micro micro controller](https://store.arduino.cc/usa/arduino-micro)
+- 1x - [Arduino Micro](https://store.arduino.cc/usa/arduino-micro)
 - 1x - nrf24l01 breakout board
 - 1x - Another led matrix?
 
@@ -52,5 +52,8 @@ I found some really cheap and affordable alternatives to Adafruit and Sparkfun b
 - Mini breadboard
 - Jumper Wires
 - Resistor
+
+## Power source
+- [ROMOSS Cute Mini Portable Powerbank IPhone Android Micro USB Type C Small Light gift](https://shopee.ph/ROMOSS-Cute-Mini-Portable-Powerbank-IPhone-Android-Micro-USB-Type-C-Small-Light-gift-i.171502354.2827293829)
 
 

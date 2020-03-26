@@ -14,7 +14,7 @@ draft: false
 
 ![](/robotics-blog/v2-layout.png)
 
-|![](/robotics-blog/v2-wip-1.JPG)|![](/robotics-blog/v2-wip-2.JPG)|
+|![](/robotics-blog/v2-wip-1.JPG)|![](/robotics-blog/soldered-components-5.jpg)|
 | ---------- | ---------- |
 
 ## Version 1

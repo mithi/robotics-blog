@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Multiplexer Part 2"
+title: "Bossy: Multiplexers Part 2"
 date: 2020-03-24T21:09:36+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]
@@ -8,13 +8,12 @@ draft: False
 
 I hooked everything up to the multiplexers and it was really difficult, not only because of the
 soldering iron tip at hand, but also because I don't have much available wires left. I cut six differently colored dupont cables
-and soldered the stranded wires which I hooked up to the multiplexer. It's a bit of a delicate as of the moment. Will fix this to be
-more sturdy, maybe in the future.
+and soldered the stranded wires which I hooked up to the multiplexer. It's a bit  delicate as of the moment. Might fix this to be more sturdy, maybe in the future.
 
 ## PROTIP: How NOT to solder 101
 
-step 1: Insist on using the worst soldering iron tip ever because it's the only one available at the moment
-step 2: Embarrass yourself by posting the result online
+- step 1: Insist on using the worst soldering iron tip ever because it's the only one available at the moment
+- step 2: Embarrass yourself by posting the result online
 
 ![](/robotics-blog/multiplexers-2.jpg)
 

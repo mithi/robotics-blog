@@ -7,10 +7,9 @@ draft: False
 ---
 
 
->The full draft version of the code is here:
-># [Bossy Inputs Code Draft](https://github.com/mithi/algorithm-playground/tree/master/bossy)
->IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
-
+> Inspect the code here:
+># [Code [WIP]](https://github.com/mithi/bossy)
+>
 
 
 ## IMPORTANT QUICK SIDETRACK: Debouncing Buttons
@@ -27,9 +26,10 @@ I read about different ways to debouncing buttons and right now I just implement
 - December 9, 2015 | Hackaday: Elliot Williams [Embed With Elliot: Debounce Your Noisy Buttons](https://hackaday.com/2015/12/09/embed-with-elliot-debounce-your-noisy-buttons-part-i/)
 
 # Back to regular programming
-Now that's out of the way. Let's go examine the `Bossy` class... its header and implementation files.
+Now that's out of the way. Let's go examine the [`BossyConstant.h`](https://github.com/mithi/bossy/blob/master/src/BossyConstants.h)
+If you want to make modifications based on your specific setup, you can fiddle around the values here.
 
-# Header
+
 The first few lines is where you'd define the PIN signals
 
 ```arduino
@@ -203,7 +203,7 @@ const bool INPUT_TYPE[NUMBER_OF_CHANNELS] = {
 I think those are the most important things to be aware of, in case
 you want to do some modifications.
 
->The full draft version of the code is here:
-># [Bossy Inputs Code Draft](https://github.com/mithi/algorithm-playground/tree/master/bossy)
->IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+> Inspect the code here:
+># [Code [WIP]](https://github.com/mithi/bossy)
+>
 

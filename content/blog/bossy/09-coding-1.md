@@ -6,9 +6,9 @@ tags: [bossy, general-purpose-controller]
 draft: False
 ---
 
->The full draft version of the code is here:
-># [Bossy Inputs Code Draft](https://github.com/mithi/algorithm-playground/tree/master/bossy)
->IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+> Inspect the code here:
+># [Code [WIP]](https://github.com/mithi/bossy)
+>
 
 I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on
 how I'd structure my code. There are many ways to go about it, but ultimately, here's
@@ -172,9 +172,9 @@ if (bossy.hasChangedReading(input_id)) {
 }
 ```
 
->The full draft version of the code is here:
-># [Bossy Inputs Code Draft](https://github.com/mithi/algorithm-playground/tree/master/bossy)
->IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
+> Inspect the code here:
+># [Code [WIP]](https://github.com/mithi/bossy)
+>
 
 
 

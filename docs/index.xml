@@ -7,25 +7,37 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>👾🤖 Mithi</copyright>
-    <lastBuildDate>Fri, 27 Mar 2020 01:01:40 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 01:43:49 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Bossy Inputs: Coding 3 -  All together now</title>
+      <title>Bossy Matrix: Feedback Test with LEDs</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/12-coding-4/</link>
+      <pubDate>Sat, 28 Mar 2020 01:43:49 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/12-coding-4/</guid>
+      <description>Inspect the code here:
+Code [WIP]  The next I needed to do is to provide feedback to the user that her input is indeed registered. We have the LED matrix for this.
+The code for this sketch when compiled in the Arduino Micro:
+Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes. Global variables use 780 bytes (30%) of dynamic memory, leaving 1780 bytes for local variables.</description>
+    </item>
+    
+    <item>
+      <title>Bossy Inputs: Feedback test with Serial</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/</link>
       <pubDate>Fri, 27 Mar 2020 01:01:40 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/</guid>
       <description>Inspect the code here:
-Code [WIP]  So far, whenthe particular example sketch bossy_serial.ino is compiled in the Arduino Micro
+Code [WIP]  So far, when the particular example sketch bossy_serial.ino is compiled in the Arduino Micro
 Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes. When compiled in the Arduino Uno
 Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes.</description>
     </item>
     
     <item>
-      <title>Bossy Inputs: Coding 2 - Modifiable constants</title>
+      <title>Bossy Inputs: Modifiable constants</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/10-coding-2/</link>
       <pubDate>Fri, 27 Mar 2020 00:36:52 +0800</pubDate>
       
@@ -36,7 +48,7 @@ I hacked away this problem through software through temporary methods isBrokenBu
     </item>
     
     <item>
-      <title>Bossy Inputs: Coding 1 - How to use</title>
+      <title>Bossy Inputs: How to use</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/09-coding-1/</link>
       <pubDate>Thu, 26 Mar 2020 23:38:51 +0800</pubDate>
       
@@ -56,7 +68,7 @@ Code [WIP]  I have managed to read a couple of articles on object-oriented ardui
     </item>
     
     <item>
-      <title>Bossy: Multiplexers Part 2</title>
+      <title>Bossy: Multiplexer Test 2</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/07-multiplexer-2/</link>
       <pubDate>Tue, 24 Mar 2020 21:09:36 +0800</pubDate>
       
@@ -101,7 +113,7 @@ Then I check the Serial monitor if it behaves the way I expect.</description>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/03-initial-design/</guid>
       <description> Breadboard, Schematic, pcb design  Version 2  I had to remove one button, one potentiometer, and the neopixel stick because of the protoboard&amp;rsquo;s constraints.          Version 1   Here&amp;rsquo;s my testing setup   Here&amp;rsquo;s my pathetic attempt to design the schematics. After several hours of pain, i decided to give up. lol
-          Arduino Micro Pinouts  For future reference   </description>
+           Arduino Micro Pinouts  For future reference   </description>
     </item>
     
     <item>

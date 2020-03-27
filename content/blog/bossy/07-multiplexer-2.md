@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Multiplexers Part 2"
+title: "Bossy: Multiplexer Test 2"
 date: 2020-03-24T21:09:36+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]

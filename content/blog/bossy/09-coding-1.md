@@ -1,5 +1,5 @@
 ---
-title: "Bossy Inputs: Coding 1 - How to use"
+title: "Bossy Inputs: How to use"
 date: 2020-03-26T23:38:51+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]

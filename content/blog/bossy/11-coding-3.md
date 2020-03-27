@@ -1,5 +1,5 @@
 ---
-title: "Bossy Inputs: Coding 3 -  All together now"
+title: "Bossy Inputs: Feedback test with Serial"
 date: 2020-03-27T01:01:40+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]
@@ -8,7 +8,7 @@ draft: False
 > Inspect the code here:
 ># [Code [WIP]](https://github.com/mithi/bossy)
 
-So far, whenthe particular example sketch [`bossy_serial.ino`](https://github.com/mithi/bossy)
+So far, when the particular example sketch [`bossy_serial.ino`](https://github.com/mithi/bossy)
 is compiled in the Arduino Micro
 ```
 Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes.

@@ -41,7 +41,7 @@ draft: false
 ### Coding and finishing up
 
 - [x] .Make a class wrapper for elegantly reading, processing, and accessing the input signals
-- Add UI functionality for providing feedback of controls in the 8x8 led matrix (screen)
+- [x] .Add UI functionality for providing feedback of controls in the 8x8 led matrix (screen)
 - Send commands by user from controller to receiver.
 - Use controller to control a different LED Matrix wirelessly
 - Make an enclosure to house our controller

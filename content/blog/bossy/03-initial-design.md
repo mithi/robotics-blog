@@ -24,8 +24,9 @@ draft: false
 
 - Here's my pathetic attempt to design the schematics. After several hours of pain, i decided to give up. lol
 
-|![](/robotics-blog/v1-messy-pcb.png)|![](/robotics-blog/v1-messy-schematic.png)|
-| ---------- | ---------- |
+|![](/robotics-blog/v1-messy-pcb.png)|![](/robotics-blog/v1-messy-schematic.png)|![](/robotics-blog/breadboard.png)|
+| ---------- | ---------- | ---------- |
+
 
 ## Arduino Micro Pinouts
 - For future reference

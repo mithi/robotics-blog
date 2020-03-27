@@ -1,5 +1,5 @@
 ---
-title: "Bossy Inputs: Coding 2 - Modifiable constants"
+title: "Bossy Inputs: Modifiable constants"
 date: 2020-03-27T00:36:52+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]

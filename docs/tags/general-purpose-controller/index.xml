@@ -18,10 +18,10 @@
       <pubDate>Fri, 27 Mar 2020 01:01:40 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/</guid>
-      <description>The full draft version of the code is here:
-Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
- When compiled in the Arduino Micro
-Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes.</description>
+      <description>Inspect the code here:
+Code [WIP]  So far, whenthe particular example sketch bossy_serial.ino is compiled in the Arduino Micro
+Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes. When compiled in the Arduino Uno
+Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes.</description>
     </item>
     
     <item>
@@ -30,9 +30,9 @@ Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. G
       <pubDate>Fri, 27 Mar 2020 00:36:52 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/10-coding-2/</guid>
-      <description>The full draft version of the code is here:
-Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
- IMPORTANT QUICK SIDETRACK: Debouncing Buttons Befor continuing the code discussion. I just want to put this here: As I&amp;rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons.</description>
+      <description>Inspect the code here:
+Code [WIP]  IMPORTANT QUICK SIDETRACK: Debouncing Buttons Befor continuing the code discussion. I just want to put this here: As I&amp;rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons. So when it is not pressed it&amp;rsquo;s just dangling in the air.
+I hacked away this problem through software through temporary methods isBrokenButton() and _updateBrokenButton() methods.</description>
     </item>
     
     <item>
@@ -41,9 +41,8 @@ Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no ou
       <pubDate>Thu, 26 Mar 2020 23:38:51 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/09-coding-1/</guid>
-      <description>The full draft version of the code is here:
-Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
- I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&amp;rsquo;d structure my code. There are many ways to go about it, but ultimately, here&amp;rsquo;s how I ended up doing it.</description>
+      <description>Inspect the code here:
+Code [WIP]  I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&amp;rsquo;d structure my code. There are many ways to go about it, but ultimately, here&amp;rsquo;s how I ended up doing it. I prioritized readability over taxonomy, so it might not be the most decoubled code with a bunch of small classes, but for my purpose I believe this will do.</description>
     </item>
     
     <item>

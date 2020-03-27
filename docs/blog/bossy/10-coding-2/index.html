@@ -5,9 +5,9 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="The full draft version of the code is here:
-Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
- IMPORTANT QUICK SIDETRACK: Debouncing Buttons Befor continuing the code discussion. I just want to put this here: As I&amp;rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons." />
+<meta name="description" content="Inspect the code here:
+Code [WIP]  IMPORTANT QUICK SIDETRACK: Debouncing Buttons Befor continuing the code discussion. I just want to put this here: As I&amp;rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons. So when it is not pressed it&amp;rsquo;s just dangling in the air.
+I hacked away this problem through software through temporary methods isBrokenButton() and _updateBrokenButton() methods." />
 <meta name="keywords" content=", bossy, general-purpose-controller" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -33,12 +33,12 @@ Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no ou
 
 
 <meta itemprop="name" content="Bossy Inputs: Coding 2 - Modifiable constants">
-<meta itemprop="description" content="The full draft version of the code is here:
-Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
- IMPORTANT QUICK SIDETRACK: Debouncing Buttons Befor continuing the code discussion. I just want to put this here: As I&rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons.">
+<meta itemprop="description" content="Inspect the code here:
+Code [WIP]  IMPORTANT QUICK SIDETRACK: Debouncing Buttons Befor continuing the code discussion. I just want to put this here: As I&rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons. So when it is not pressed it&rsquo;s just dangling in the air.
+I hacked away this problem through software through temporary methods isBrokenButton() and _updateBrokenButton() methods.">
 <meta itemprop="datePublished" content="2020-03-27T00:36:52&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-27T00:36:52&#43;08:00" />
-<meta itemprop="wordCount" content="651">
+<meta itemprop="wordCount" content="610">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -47,9 +47,9 @@ Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no ou
 <meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
 
 <meta name="twitter:title" content="Bossy Inputs: Coding 2 - Modifiable constants"/>
-<meta name="twitter:description" content="The full draft version of the code is here:
-Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet
- IMPORTANT QUICK SIDETRACK: Debouncing Buttons Befor continuing the code discussion. I just want to put this here: As I&rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons."/>
+<meta name="twitter:description" content="Inspect the code here:
+Code [WIP]  IMPORTANT QUICK SIDETRACK: Debouncing Buttons Befor continuing the code discussion. I just want to put this here: As I&rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons. So when it is not pressed it&rsquo;s just dangling in the air.
+I hacked away this problem through software through temporary methods isBrokenButton() and _updateBrokenButton() methods."/>
 
 
 
@@ -129,9 +129,8 @@ Bossy Inputs Code Draft IMPORTANT: The code is for processing inputs only, no ou
 
             <div class="post-content">
                 <blockquote>
-<p>The full draft version of the code is here:</p>
-<h1 id="bossy-inputs-code-drafthttpsgithubcommithialgorithm-playgroundtreemasterbossy"><a href="https://github.com/mithi/algorithm-playground/tree/master/bossy">Bossy Inputs Code Draft</a></h1>
-<p>IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet</p>
+<p>Inspect the code here:</p>
+<h1 id="code-wiphttpsgithubcommithibossy"><a href="https://github.com/mithi/bossy">Code [WIP]</a></h1>
 </blockquote>
 <h2 id="important-quick-sidetrack-debouncing-buttons">IMPORTANT QUICK SIDETRACK: Debouncing Buttons</h2>
 <p>Befor continuing the code discussion. I just want to put this here:
@@ -144,8 +143,8 @@ the joystick select buttons. So when it is not pressed it&rsquo;s just dangling 
 <li>December 9, 2015 | Hackaday: Elliot Williams <a href="https://hackaday.com/2015/12/09/embed-with-elliot-debounce-your-noisy-buttons-part-i/">Embed With Elliot: Debounce Your Noisy Buttons</a></li>
 </ul>
 <h1 id="back-to-regular-programming">Back to regular programming</h1>
-<p>Now that&rsquo;s out of the way. Let&rsquo;s go examine the <code>Bossy</code> class&hellip; its header and implementation files.</p>
-<h1 id="header">Header</h1>
+<p>Now that&rsquo;s out of the way. Let&rsquo;s go examine the <a href="https://github.com/mithi/bossy/blob/master/src/BossyConstants.h"><code>BossyConstant.h</code></a>
+If you want to make modifications based on your specific setup, you can fiddle around the values here.</p>
 <p>The first few lines is where you&rsquo;d define the PIN signals</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">#define PIN_ENABLE_LEFT_MUX 11
 </span><span style="color:#75715e">#define PIN_ENABLE_RIGHT_MUX 12
@@ -298,9 +297,8 @@ which is dependent on how the circuit is wired.</p>
 </code></pre></div><p>I think those are the most important things to be aware of, in case
 you want to do some modifications.</p>
 <blockquote>
-<p>The full draft version of the code is here:</p>
-<h1 id="bossy-inputs-code-drafthttpsgithubcommithialgorithm-playgroundtreemasterbossy-1"><a href="https://github.com/mithi/algorithm-playground/tree/master/bossy">Bossy Inputs Code Draft</a></h1>
-<p>IMPORTANT: The code is for processing inputs only, no output on the led matrix or sending data wirelessly yet</p>
+<p>Inspect the code here:</p>
+<h1 id="code-wiphttpsgithubcommithibossy-1"><a href="https://github.com/mithi/bossy">Code [WIP]</a></h1>
 </blockquote>
 
             </div>

@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Multiplexer Test"
+title: "🎮 Bossy: Multiplexer Test"
 date: 2020-03-22T14:28:34+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]
@@ -110,7 +110,7 @@ int readMux(int channel){
   };
 
   //loop through the 4 control pins
-  for(int i = 0; i < 4; i ++){
+  for (int i = 0; i < 4; i ++){
     digitalWrite(controlPin[i], muxChannel[channel][i]);
   }
 

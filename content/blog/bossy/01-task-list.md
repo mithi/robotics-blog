@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Task List"
+title: "🎮 Bossy: Task List"
 date: 2020-03-16T15:44:53+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]
@@ -42,6 +42,6 @@ draft: false
 
 - [x] .Make a class wrapper for elegantly reading, processing, and accessing the input signals
 - [x] .Add UI functionality for providing feedback of controls in the 8x8 led matrix (screen)
-- Send commands by user from controller to receiver.
-- Use controller to control a different LED Matrix wirelessly
+- [x] .Send commands by user from controller to receiver.
+-
 - Make an enclosure to house our controller

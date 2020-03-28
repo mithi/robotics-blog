@@ -1,5 +1,5 @@
 ---
-title: "Bossy Inputs: Modifiable constants"
+title: "🎮 Bossy Inputs: Modifiable Constants"
 date: 2020-03-27T00:36:52+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]
@@ -7,13 +7,11 @@ draft: False
 ---
 
 
-> Inspect the code here:
-># [Code [WIP]](https://github.com/mithi/bossy)
->
+> View bossy's working code: 🎮 [here](https://github.com/mithi/bossy)
 
 
 ## IMPORTANT QUICK SIDETRACK: Debouncing Buttons
-Befor continuing the code discussion. I just want to put this here:
+Before continuing with the code discussion, I just want to put this here:
 As I've mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for
 the joystick select buttons. So when it is not pressed it's just dangling in the air.
 
@@ -202,8 +200,3 @@ const bool INPUT_TYPE[NUMBER_OF_CHANNELS] = {
 
 I think those are the most important things to be aware of, in case
 you want to do some modifications.
-
-> Inspect the code here:
-># [Code [WIP]](https://github.com/mithi/bossy)
->
-

@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Initial Design"
+title: "🎮 Bossy: Initial Design"
 date: 2020-03-19T03:39:01+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]

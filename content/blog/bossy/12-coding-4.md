@@ -1,15 +1,12 @@
 ---
-title: "Bossy Matrix: Feedback Test with LEDs"
+title: "🎮 Bossy Matrix: Feedback Test with LEDs"
 date: 2020-03-28T01:43:49+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]
 draft: False
 ---
 
-
-> Inspect the code here:
-># [Code [WIP]](https://github.com/mithi/bossy)
->
+> View bossy's working code: 🎮 [here](https://github.com/mithi/bossy)
 
 ![](/robotics-blog/bossy-matrix-1.gif)
 
@@ -24,7 +21,7 @@ Global variables use 780 bytes (30%) of dynamic memory, leaving 1780 bytes for l
 
 ```
 
-With the Arduino Uno
+With the Arduino Uno:
 
 ```
 Sketch uses 9780 bytes (30%) of program storage space. Maximum is 32256 bytes.
@@ -80,7 +77,7 @@ Updating the display given current state of the input could look something like 
 ```arduino
 const uint8_t button_colors[NUMBER_OF_STATES] =  {LED_GREEN, LED_GREEN, LED_GREEN, LED_GREEN, LED_RED};
 
-void update_button_display(const struct Button button) {
+void update_button_display(const struct Button &button) {
   uint8_t state = bossy.savedState(button.id);
   uint8_t color = button_colors[state];
   uint8_t x = button.pixel[Xi];
@@ -195,7 +192,3 @@ const uint8_t potentiometers[NUMBER_OF_POTENTIOMETERS] = {POT_LEFT, POT_LEFT_CEN
 
 #endif
 ```
-
-> Inspect the code here:
-># [Code [WIP]](https://github.com/mithi/bossy)
->

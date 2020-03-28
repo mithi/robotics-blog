@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Led Matrix"
+title: "🎮 Bossy: Led Matrix Test"
 date: 2020-03-25T16:28:14+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]

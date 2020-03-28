@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Soldered Components"
+title: "🎮 Bossy: Soldered Components"
 date: 2020-03-22T15:42:37+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]

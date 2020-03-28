@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Bill of Materials"
+title: "🎮 Bossy: Bill of Materials"
 date: 2020-03-16T19:57:53+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]
@@ -38,7 +38,6 @@ I found some really cheap and affordable alternatives to Adafruit and Sparkfun b
 ## Receiver
 - 1x - [Arduino Micro](https://store.arduino.cc/usa/arduino-micro)
 - 1x - nrf24l01 breakout board
-- 1x - Another led matrix?
 
 ## Tools
 - Solder

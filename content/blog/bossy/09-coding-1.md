@@ -1,14 +1,12 @@
 ---
-title: "Bossy Inputs: How to use"
+title: "🎮 Bossy Inputs: How to Use"
 date: 2020-03-26T23:38:51+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]
 draft: False
 ---
 
-> Inspect the code here:
-># [Code [WIP]](https://github.com/mithi/bossy)
->
+> View bossy's working code: 🎮 [here](https://github.com/mithi/bossy)
 
 I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on
 how I'd structure my code. There are many ways to go about it, but ultimately, here's
@@ -47,7 +45,7 @@ void loop() {
   int saved_reading = bossy.savedReading(LEFT_JOYSTICK_UPPER_X);
   int saved_state = bossy.savedState(RIGHT_SWITCH_LOWER);
 
-  //both print true
+  // both will print true because it doesn't read a new value
   Serial.println(reading == saved_reading);
   Serial.println(state == saved_state);
 
@@ -171,10 +169,6 @@ if (bossy.hasChangedReading(input_id)) {
   Serial.println(bossy.savedReadingLowRes(POT_RIGHT));
 }
 ```
-
-> Inspect the code here:
-># [Code [WIP]](https://github.com/mithi/bossy)
->
 
 
 

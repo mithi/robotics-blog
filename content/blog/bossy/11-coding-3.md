@@ -1,12 +1,12 @@
 ---
-title: "Bossy Inputs: Feedback test with Serial"
+title: "🎮 Bossy Inputs: Feedback Test with Serial"
 date: 2020-03-27T01:01:40+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]
 draft: False
 ---
-> Inspect the code here:
-># [Code [WIP]](https://github.com/mithi/bossy)
+
+> View bossy's working code: 🎮 [here](https://github.com/mithi/bossy)
 
 So far, when the particular example sketch [`bossy_serial.ino`](https://github.com/mithi/bossy)
 is compiled in the Arduino Micro
@@ -33,8 +33,8 @@ void setup() {
 }
 
 void loop() {
-  //int value = bossy.readValue(LEFT_JOYSTICK_UPPER_X);
-  //int value = bossy.readState(LEFT_BUTTON_UPPER);
+  //uint16_t value = bossy.readValue(LEFT_JOYSTICK_UPPER_X);
+  //uint8_t value = bossy.readState(LEFT_BUTTON_UPPER);
 
   print_on_pot_reading_change("p0: ", POT_LEFT);
   print_on_pot_reading_change("p1: ", POT_LEFT_CENTER);
@@ -91,7 +91,3 @@ void print_on_scale_change(String prefix, int input_id) {
     Serial.println(bossy.savedState(input_id));
   }
 }
-
-```
-> Inspect the code here:
-># [Code [WIP]](https://github.com/mithi/bossy)

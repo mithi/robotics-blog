@@ -1,5 +1,5 @@
 ---
-title: "Bossy: Wireless Test"
+title: "🎮 Bossy: Wireless Test"
 date: 2020-03-20T20:50:00+08:00
 categories: [bossy]
 tags: [bossy, general-purpose-controller]

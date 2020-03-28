@@ -16,7 +16,7 @@ Then I check the Serial monitor if it behaves the way I expect." />
 
     <title>
         
-            Bossy: Multiplexer Test :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+            🎮 Bossy: Multiplexer Test :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
         
     </title>
 
@@ -32,13 +32,13 @@ Then I check the Serial monitor if it behaves the way I expect." />
 
 
 
-<meta itemprop="name" content="Bossy: Multiplexer Test">
+<meta itemprop="name" content="🎮 Bossy: Multiplexer Test">
 <meta itemprop="description" content="I tested the multiplexers if they&rsquo;re working. To save time, I only tested two channels for each multiplexer, channel 0, and 15.
 I used two potentiometers which I connect randomly at channel 0 or channel 15 of multiplexer 1 or multiplexer 2 (four possibilities). I also randomly pull the remaining two channels either down to ground or up to 5 volts.
 Then I check the Serial monitor if it behaves the way I expect.">
 <meta itemprop="datePublished" content="2020-03-22T14:28:34&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-22T14:28:34&#43;08:00" />
-<meta itemprop="wordCount" content="334">
+<meta itemprop="wordCount" content="335">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -46,7 +46,7 @@ Then I check the Serial monitor if it behaves the way I expect.">
 <meta itemprop="keywords" content="bossy,general-purpose-controller," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
 
-<meta name="twitter:title" content="Bossy: Multiplexer Test"/>
+<meta name="twitter:title" content="🎮 Bossy: Multiplexer Test"/>
 <meta name="twitter:description" content="I tested the multiplexers if they&rsquo;re working. To save time, I only tested two channels for each multiplexer, channel 0, and 15.
 I used two potentiometers which I connect randomly at channel 0 or channel 15 of multiplexer 1 or multiplexer 2 (four possibilities). I also randomly pull the remaining two channels either down to ground or up to 5 volts.
 Then I check the Serial monitor if it behaves the way I expect."/>
@@ -123,7 +123,7 @@ Then I check the Serial monitor if it behaves the way I expect."/>
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-test/">Bossy: Multiplexer Test</a></h2>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-test/">🎮 Bossy: Multiplexer Test</a></h2>
 
             
 
@@ -226,7 +226,7 @@ two channels either down to ground or up to 5 volts.</p>
 </span><span style="color:#75715e"></span>  };
 
   <span style="color:#75715e">//loop through the 4 control pins
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span>(<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; i <span style="color:#f92672">++</span>){
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">4</span>; i <span style="color:#f92672">++</span>){
     <span style="color:#a6e22e">digitalWrite</span>(controlPin[i], muxChannel[channel][i]);
   }
 

@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Inspect the code here:
-Code [WIP]  The next I needed to do is to provide feedback to the user that her input is indeed registered. We have the LED matrix for this.
+<meta name="description" content="View bossy&amp;rsquo;s working code: 🎮 here
+ The next I needed to do is to provide feedback to the user that her input is indeed registered. We have the LED matrix for this.
 The code for this sketch when compiled in the Arduino Micro:
 Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes. Global variables use 780 bytes (30%) of dynamic memory, leaving 1780 bytes for local variables." />
 <meta name="keywords" content=", bossy, general-purpose-controller" />
@@ -17,7 +17,7 @@ Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes. 
 
     <title>
         
-            Bossy Matrix: Feedback Test with LEDs :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+            🎮 Bossy Matrix: Feedback Test with LEDs :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
         
     </title>
 
@@ -33,14 +33,14 @@ Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes. 
 
 
 
-<meta itemprop="name" content="Bossy Matrix: Feedback Test with LEDs">
-<meta itemprop="description" content="Inspect the code here:
-Code [WIP]  The next I needed to do is to provide feedback to the user that her input is indeed registered. We have the LED matrix for this.
+<meta itemprop="name" content="🎮 Bossy Matrix: Feedback Test with LEDs">
+<meta itemprop="description" content="View bossy&rsquo;s working code: 🎮 here
+ The next I needed to do is to provide feedback to the user that her input is indeed registered. We have the LED matrix for this.
 The code for this sketch when compiled in the Arduino Micro:
 Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes. Global variables use 780 bytes (30%) of dynamic memory, leaving 1780 bytes for local variables.">
 <meta itemprop="datePublished" content="2020-03-28T01:43:49&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-28T01:43:49&#43;08:00" />
-<meta itemprop="wordCount" content="719">
+<meta itemprop="wordCount" content="713">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -48,9 +48,9 @@ Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes. 
 <meta itemprop="keywords" content="bossy,general-purpose-controller," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
 
-<meta name="twitter:title" content="Bossy Matrix: Feedback Test with LEDs"/>
-<meta name="twitter:description" content="Inspect the code here:
-Code [WIP]  The next I needed to do is to provide feedback to the user that her input is indeed registered. We have the LED matrix for this.
+<meta name="twitter:title" content="🎮 Bossy Matrix: Feedback Test with LEDs"/>
+<meta name="twitter:description" content="View bossy&rsquo;s working code: 🎮 here
+ The next I needed to do is to provide feedback to the user that her input is indeed registered. We have the LED matrix for this.
 The code for this sketch when compiled in the Arduino Micro:
 Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes. Global variables use 780 bytes (30%) of dynamic memory, leaving 1780 bytes for local variables."/>
 
@@ -126,14 +126,13 @@ Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes. 
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/12-coding-4/">Bossy Matrix: Feedback Test with LEDs</a></h2>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/12-coding-4/">🎮 Bossy Matrix: Feedback Test with LEDs</a></h2>
 
             
 
             <div class="post-content">
                 <blockquote>
-<p>Inspect the code here:</p>
-<h1 id="code-wiphttpsgithubcommithibossy"><a href="https://github.com/mithi/bossy">Code [WIP]</a></h1>
+<p>View bossy&rsquo;s working code: 🎮 <a href="https://github.com/mithi/bossy">here</a></p>
 </blockquote>
 <p><img src="/robotics-blog/bossy-matrix-1.gif" alt=""></p>
 <p>The next I needed to do is to provide feedback to the user that her input is indeed registered.
@@ -142,7 +141,7 @@ We have the LED matrix for this.</p>
 <pre><code>Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes.
 Global variables use 780 bytes (30%) of dynamic memory, leaving 1780 bytes for local variables. Maximum is 2560 bytes.
 
-</code></pre><p>With the Arduino Uno</p>
+</code></pre><p>With the Arduino Uno:</p>
 <pre><code>Sketch uses 9780 bytes (30%) of program storage space. Maximum is 32256 bytes.
 Global variables use 640 bytes (31%) of dynamic memory, leaving 1408 bytes for local variables. Maximum is 2048 bytes.
 </code></pre><p>The sketch is pretty simple, the Microcontroller listens for any change of state given the 25
@@ -189,7 +188,7 @@ check if the state of that input has changed, and then proceeds to update the LE
 </code></pre></div><p>Updating the display given current state of the input could look something like this</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> button_colors[NUMBER_OF_STATES] <span style="color:#f92672">=</span>  {LED_GREEN, LED_GREEN, LED_GREEN, LED_GREEN, LED_RED};
 
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update_button_display</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button button) {
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update_button_display</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button <span style="color:#f92672">&amp;</span>button) {
   <span style="color:#66d9ef">uint8_t</span> state <span style="color:#f92672">=</span> bossy.savedState(button.id);
   <span style="color:#66d9ef">uint8_t</span> color <span style="color:#f92672">=</span> button_colors[state];
   <span style="color:#66d9ef">uint8_t</span> x <span style="color:#f92672">=</span> button.pixel[Xi];
@@ -299,11 +298,7 @@ matrix.writeDisplay();
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> potentiometers[NUMBER_OF_POTENTIOMETERS] <span style="color:#f92672">=</span> {POT_LEFT, POT_LEFT_CENTER, POT_CENTER, POT_RIGHT_CENTER, POT_RIGHT};
 
 <span style="color:#75715e">#endif
-</span></code></pre></div><blockquote>
-<p>Inspect the code here:</p>
-<h1 id="code-wiphttpsgithubcommithibossy-1"><a href="https://github.com/mithi/bossy">Code [WIP]</a></h1>
-</blockquote>
-
+</span></code></pre></div>
             </div>
         </article>
 

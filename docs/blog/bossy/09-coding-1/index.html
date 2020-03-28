@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Inspect the code here:
-Code [WIP]  I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&amp;rsquo;d structure my code. There are many ways to go about it, but ultimately, here&amp;rsquo;s how I ended up doing it. I prioritized readability over taxonomy, so it might not be the most decoubled code with a bunch of small classes, but for my purpose I believe this will do." />
+<meta name="description" content="View bossy&amp;rsquo;s working code: 🎮 here
+ I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&amp;rsquo;d structure my code. There are many ways to go about it, but ultimately, here&amp;rsquo;s how I ended up doing it. I prioritized readability over taxonomy, so it might not be the most decoubled code with a bunch of small classes, but for my purpose I believe this will do." />
 <meta name="keywords" content=", bossy, general-purpose-controller" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -15,7 +15,7 @@ Code [WIP]  I have managed to read a couple of articles on object-oriented ardui
 
     <title>
         
-            Bossy Inputs: How to use :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+            🎮 Bossy Inputs: How to Use :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
         
     </title>
 
@@ -31,12 +31,12 @@ Code [WIP]  I have managed to read a couple of articles on object-oriented ardui
 
 
 
-<meta itemprop="name" content="Bossy Inputs: How to use">
-<meta itemprop="description" content="Inspect the code here:
-Code [WIP]  I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&rsquo;d structure my code. There are many ways to go about it, but ultimately, here&rsquo;s how I ended up doing it. I prioritized readability over taxonomy, so it might not be the most decoubled code with a bunch of small classes, but for my purpose I believe this will do.">
+<meta itemprop="name" content="🎮 Bossy Inputs: How to Use">
+<meta itemprop="description" content="View bossy&rsquo;s working code: 🎮 here
+ I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&rsquo;d structure my code. There are many ways to go about it, but ultimately, here&rsquo;s how I ended up doing it. I prioritized readability over taxonomy, so it might not be the most decoubled code with a bunch of small classes, but for my purpose I believe this will do.">
 <meta itemprop="datePublished" content="2020-03-26T23:38:51&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-26T23:38:51&#43;08:00" />
-<meta itemprop="wordCount" content="610">
+<meta itemprop="wordCount" content="613">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -44,9 +44,9 @@ Code [WIP]  I have managed to read a couple of articles on object-oriented ardui
 <meta itemprop="keywords" content="bossy,general-purpose-controller," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
 
-<meta name="twitter:title" content="Bossy Inputs: How to use"/>
-<meta name="twitter:description" content="Inspect the code here:
-Code [WIP]  I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&rsquo;d structure my code. There are many ways to go about it, but ultimately, here&rsquo;s how I ended up doing it. I prioritized readability over taxonomy, so it might not be the most decoubled code with a bunch of small classes, but for my purpose I believe this will do."/>
+<meta name="twitter:title" content="🎮 Bossy Inputs: How to Use"/>
+<meta name="twitter:description" content="View bossy&rsquo;s working code: 🎮 here
+ I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&rsquo;d structure my code. There are many ways to go about it, but ultimately, here&rsquo;s how I ended up doing it. I prioritized readability over taxonomy, so it might not be the most decoubled code with a bunch of small classes, but for my purpose I believe this will do."/>
 
 
 
@@ -120,14 +120,13 @@ Code [WIP]  I have managed to read a couple of articles on object-oriented ardui
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/09-coding-1/">Bossy Inputs: How to use</a></h2>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/09-coding-1/">🎮 Bossy Inputs: How to Use</a></h2>
 
             
 
             <div class="post-content">
                 <blockquote>
-<p>Inspect the code here:</p>
-<h1 id="code-wiphttpsgithubcommithibossy"><a href="https://github.com/mithi/bossy">Code [WIP]</a></h1>
+<p>View bossy&rsquo;s working code: 🎮 <a href="https://github.com/mithi/bossy">here</a></p>
 </blockquote>
 <p>I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on
 how I&rsquo;d structure my code. There are many ways to go about it, but ultimately, here&rsquo;s
@@ -162,7 +161,7 @@ Bossy bossy;
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> saved_reading <span style="color:#f92672">=</span> bossy.savedReading(LEFT_JOYSTICK_UPPER_X);
   <span style="color:#66d9ef">int</span> saved_state <span style="color:#f92672">=</span> bossy.savedState(RIGHT_SWITCH_LOWER);
 
-  <span style="color:#75715e">//both print true
+  <span style="color:#75715e">// both will print true because it doesn&#39;t read a new value
 </span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(reading <span style="color:#f92672">==</span> saved_reading);
   <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(state <span style="color:#f92672">==</span> saved_state);
 
@@ -275,11 +274,7 @@ and saves the results in memory that can be immediately accessed by calling <cod
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#66d9ef">if</span> (bossy.hasChangedReading(input_id)) {
   <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(bossy.savedReadingLowRes(POT_RIGHT));
 }
-</code></pre></div><blockquote>
-<p>Inspect the code here:</p>
-<h1 id="code-wiphttpsgithubcommithibossy-1"><a href="https://github.com/mithi/bossy">Code [WIP]</a></h1>
-</blockquote>
-
+</code></pre></div>
             </div>
         </article>
 

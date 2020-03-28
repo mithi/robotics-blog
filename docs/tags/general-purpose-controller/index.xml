@@ -7,58 +7,69 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>👾🤖 Mithi</copyright>
-    <lastBuildDate>Sat, 28 Mar 2020 01:43:49 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2020 22:46:30 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/tags/general-purpose-controller/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Bossy Matrix: Feedback Test with LEDs</title>
+      <title>🎮 Bossy Wireless! </title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/13-coding-5/</link>
+      <pubDate>Sat, 28 Mar 2020 22:46:30 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/13-coding-5/</guid>
+      <description>View bossy&amp;rsquo;s working code: 🎮 here
+ Finally I&amp;rsquo;ve managed to test detected changes form Bossy to another microcontroller with a NRF24L01 module.
+Everytime Bossy detects a change made by the user handling the controller it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&amp;rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255).</description>
+    </item>
+    
+    <item>
+      <title>🎮 Bossy Matrix: Feedback Test with LEDs</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/12-coding-4/</link>
       <pubDate>Sat, 28 Mar 2020 01:43:49 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/12-coding-4/</guid>
-      <description>Inspect the code here:
-Code [WIP]  The next I needed to do is to provide feedback to the user that her input is indeed registered. We have the LED matrix for this.
+      <description>View bossy&amp;rsquo;s working code: 🎮 here
+ The next I needed to do is to provide feedback to the user that her input is indeed registered. We have the LED matrix for this.
 The code for this sketch when compiled in the Arduino Micro:
 Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes. Global variables use 780 bytes (30%) of dynamic memory, leaving 1780 bytes for local variables.</description>
     </item>
     
     <item>
-      <title>Bossy Inputs: Feedback test with Serial</title>
+      <title>🎮 Bossy Inputs: Feedback Test with Serial</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/</link>
       <pubDate>Fri, 27 Mar 2020 01:01:40 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/</guid>
-      <description>Inspect the code here:
-Code [WIP]  So far, when the particular example sketch bossy_serial.ino is compiled in the Arduino Micro
+      <description>View bossy&amp;rsquo;s working code: 🎮 here
+ So far, when the particular example sketch bossy_serial.ino is compiled in the Arduino Micro
 Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes. When compiled in the Arduino Uno
 Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes.</description>
     </item>
     
     <item>
-      <title>Bossy Inputs: Modifiable constants</title>
+      <title>🎮 Bossy Inputs: Modifiable Constants</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/10-coding-2/</link>
       <pubDate>Fri, 27 Mar 2020 00:36:52 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/10-coding-2/</guid>
-      <description>Inspect the code here:
-Code [WIP]  IMPORTANT QUICK SIDETRACK: Debouncing Buttons Befor continuing the code discussion. I just want to put this here: As I&amp;rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons. So when it is not pressed it&amp;rsquo;s just dangling in the air.
+      <description>View bossy&amp;rsquo;s working code: 🎮 here
+ IMPORTANT QUICK SIDETRACK: Debouncing Buttons Before continuing with the code discussion, I just want to put this here: As I&amp;rsquo;ve mentioned in previous blog posts, I realized that there is no built-in pullup or pulldown resistor for the joystick select buttons. So when it is not pressed it&amp;rsquo;s just dangling in the air.
 I hacked away this problem through software through temporary methods isBrokenButton() and _updateBrokenButton() methods.</description>
     </item>
     
     <item>
-      <title>Bossy Inputs: How to use</title>
+      <title>🎮 Bossy Inputs: How to Use</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/09-coding-1/</link>
       <pubDate>Thu, 26 Mar 2020 23:38:51 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/09-coding-1/</guid>
-      <description>Inspect the code here:
-Code [WIP]  I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&amp;rsquo;d structure my code. There are many ways to go about it, but ultimately, here&amp;rsquo;s how I ended up doing it. I prioritized readability over taxonomy, so it might not be the most decoubled code with a bunch of small classes, but for my purpose I believe this will do.</description>
+      <description>View bossy&amp;rsquo;s working code: 🎮 here
+ I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&amp;rsquo;d structure my code. There are many ways to go about it, but ultimately, here&amp;rsquo;s how I ended up doing it. I prioritized readability over taxonomy, so it might not be the most decoubled code with a bunch of small classes, but for my purpose I believe this will do.</description>
     </item>
     
     <item>
-      <title>Bossy: Led Matrix</title>
+      <title>🎮 Bossy: Led Matrix Test</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/08-led-matrix/</link>
       <pubDate>Wed, 25 Mar 2020 16:28:14 +0800</pubDate>
       
@@ -68,7 +79,7 @@ Code [WIP]  I have managed to read a couple of articles on object-oriented ardui
     </item>
     
     <item>
-      <title>Bossy: Multiplexer Test 2</title>
+      <title>🎮 Bossy: Multiplexer Test 2</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/07-multiplexer-2/</link>
       <pubDate>Tue, 24 Mar 2020 21:09:36 +0800</pubDate>
       
@@ -77,7 +88,7 @@ Code [WIP]  I have managed to read a couple of articles on object-oriented ardui
     </item>
     
     <item>
-      <title>Bossy: Soldered Components</title>
+      <title>🎮 Bossy: Soldered Components</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/06-soldered-components/</link>
       <pubDate>Sun, 22 Mar 2020 15:42:37 +0800</pubDate>
       
@@ -87,7 +98,7 @@ I can&amp;rsquo;t buy right now having the extreme quarantine due to covid19, so
     </item>
     
     <item>
-      <title>Bossy: Multiplexer Test</title>
+      <title>🎮 Bossy: Multiplexer Test</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/05-multiplexer-test/</link>
       <pubDate>Sun, 22 Mar 2020 14:28:34 +0800</pubDate>
       
@@ -98,7 +109,7 @@ Then I check the Serial monitor if it behaves the way I expect.</description>
     </item>
     
     <item>
-      <title>Bossy: Wireless Test</title>
+      <title>🎮 Bossy: Wireless Test</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/04-wireless-test/</link>
       <pubDate>Fri, 20 Mar 2020 20:50:00 +0800</pubDate>
       
@@ -107,7 +118,7 @@ Then I check the Serial monitor if it behaves the way I expect.</description>
     </item>
     
     <item>
-      <title>Bossy: Initial Design</title>
+      <title>🎮 Bossy: Initial Design</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/03-initial-design/</link>
       <pubDate>Thu, 19 Mar 2020 03:39:01 +0800</pubDate>
       
@@ -117,7 +128,7 @@ Then I check the Serial monitor if it behaves the way I expect.</description>
     </item>
     
     <item>
-      <title>Bossy: Bill of Materials</title>
+      <title>🎮 Bossy: Bill of Materials</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/02-bill-of-materials/</link>
       <pubDate>Mon, 16 Mar 2020 19:57:53 +0800</pubDate>
       
@@ -127,7 +138,7 @@ Then I check the Serial monitor if it behaves the way I expect.</description>
     </item>
     
     <item>
-      <title>Bossy: Task List</title>
+      <title>🎮 Bossy: Task List</title>
       <link>https://mithi.github.io/robotics-blog/blog/bossy/01-task-list/</link>
       <pubDate>Mon, 16 Mar 2020 15:44:53 +0800</pubDate>
       

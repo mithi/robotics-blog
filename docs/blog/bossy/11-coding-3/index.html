@@ -5,8 +5,8 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
-<meta name="description" content="Inspect the code here:
-Code [WIP]  So far, when the particular example sketch bossy_serial.ino is compiled in the Arduino Micro
+<meta name="description" content="View bossy&amp;rsquo;s working code: 🎮 here
+ So far, when the particular example sketch bossy_serial.ino is compiled in the Arduino Micro
 Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes. When compiled in the Arduino Uno
 Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes." />
 <meta name="keywords" content=", bossy, general-purpose-controller" />
@@ -17,7 +17,7 @@ Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes." 
 
     <title>
         
-            Bossy Inputs: Feedback test with Serial :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+            🎮 Bossy Inputs: Feedback Test with Serial :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
         
     </title>
 
@@ -33,14 +33,14 @@ Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes." 
 
 
 
-<meta itemprop="name" content="Bossy Inputs: Feedback test with Serial">
-<meta itemprop="description" content="Inspect the code here:
-Code [WIP]  So far, when the particular example sketch bossy_serial.ino is compiled in the Arduino Micro
+<meta itemprop="name" content="🎮 Bossy Inputs: Feedback Test with Serial">
+<meta itemprop="description" content="View bossy&rsquo;s working code: 🎮 here
+ So far, when the particular example sketch bossy_serial.ino is compiled in the Arduino Micro
 Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes. When compiled in the Arduino Uno
 Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes.">
 <meta itemprop="datePublished" content="2020-03-27T01:01:40&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-27T01:01:40&#43;08:00" />
-<meta itemprop="wordCount" content="240">
+<meta itemprop="wordCount" content="234">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -48,9 +48,9 @@ Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes.">
 <meta itemprop="keywords" content="bossy,general-purpose-controller," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
 
-<meta name="twitter:title" content="Bossy Inputs: Feedback test with Serial"/>
-<meta name="twitter:description" content="Inspect the code here:
-Code [WIP]  So far, when the particular example sketch bossy_serial.ino is compiled in the Arduino Micro
+<meta name="twitter:title" content="🎮 Bossy Inputs: Feedback Test with Serial"/>
+<meta name="twitter:description" content="View bossy&rsquo;s working code: 🎮 here
+ So far, when the particular example sketch bossy_serial.ino is compiled in the Arduino Micro
 Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for local variables. Maximum is 2560 bytes. When compiled in the Arduino Uno
 Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes."/>
 
@@ -126,14 +126,13 @@ Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes."/
         </div>
 
         <article>
-            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/">Bossy Inputs: Feedback test with Serial</a></h2>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/bossy/11-coding-3/">🎮 Bossy Inputs: Feedback Test with Serial</a></h2>
 
             
 
             <div class="post-content">
                 <blockquote>
-<p>Inspect the code here:</p>
-<h1 id="code-wiphttpsgithubcommithibossy"><a href="https://github.com/mithi/bossy">Code [WIP]</a></h1>
+<p>View bossy&rsquo;s working code: 🎮 <a href="https://github.com/mithi/bossy">here</a></p>
 </blockquote>
 <p>So far, when the particular example sketch <a href="https://github.com/mithi/bossy"><code>bossy_serial.ino</code></a>
 is compiled in the Arduino Micro</p>
@@ -152,8 +151,8 @@ Bossy bossy;
 }
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
-  <span style="color:#75715e">//int value = bossy.readValue(LEFT_JOYSTICK_UPPER_X);
-</span><span style="color:#75715e"></span>  <span style="color:#75715e">//int value = bossy.readState(LEFT_BUTTON_UPPER);
+  <span style="color:#75715e">//uint16_t value = bossy.readValue(LEFT_JOYSTICK_UPPER_X);
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//uint8_t value = bossy.readState(LEFT_BUTTON_UPPER);
 </span><span style="color:#75715e"></span>
   print_on_pot_reading_change(<span style="color:#e6db74">&#34;p0: &#34;</span>, POT_LEFT);
   print_on_pot_reading_change(<span style="color:#e6db74">&#34;p1: &#34;</span>, POT_LEFT_CENTER);
@@ -210,12 +209,7 @@ Bossy bossy;
     <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(bossy.savedState(input_id));
   }
 }
-
-</code></pre></div><blockquote>
-<p>Inspect the code here:</p>
-<h1 id="code-wiphttpsgithubcommithibossy-1"><a href="https://github.com/mithi/bossy">Code [WIP]</a></h1>
-</blockquote>
-
+</code></pre></div>
             </div>
         </article>
 

@@ -43,5 +43,5 @@ draft: false
 - [x] .Make a class wrapper for elegantly reading, processing, and accessing the input signals
 - [x] .Add UI functionality for providing feedback of controls in the 8x8 led matrix (screen)
 - [x] .Send commands by user from controller to receiver.
--
-- Make an enclosure to house our controller
+- [x] .Build prototype #2
+- Make an enclosure to house Bossy

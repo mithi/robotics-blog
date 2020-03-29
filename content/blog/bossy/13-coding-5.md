@@ -50,9 +50,9 @@ Global variables use 636 bytes (31%) of dynamic memory, leaving 1412 bytes for l
 
 ```
 
-## Sketch 3. Full Bossy Wireless Controller Code Version 1.0.0
+## Sketch 3. All Features Combined!
 
-> # 🎮 [Full Code](https://github.com/mithi/bossy/blob/master/examples/bossy_matrix_transmitter/bossy_matrix_transmitter.ino)
+> # 🎮 [Code with all the features](https://github.com/mithi/bossy/blob/master/examples/bossy_matrix_transmitter/bossy_matrix_transmitter.ino)
 
 Here's the full working code.
 It sends two bytes at a time, the first byte contains the id of the input

@@ -27,9 +27,9 @@ Here's some of the articles I've read:
 
 Using this tiny library should be easy enough:
 
-```arduino
+```c++
 
-#include "src/Bossy.h"
+#include <Bossy.h>
 
 Bossy bossy;
 
@@ -77,43 +77,49 @@ if you only want the reading to fit only one byte, and don't mind downgrading th
 For reference the predefined state is a number between 0 and 4 and the number's meaning is dependent on
 the what type of input it is.
 
-```arduino
-#define PUSHED 4
-#define NOT_PUSHED 0
+```c++
+ const uint8_t NUMBER_OF_STATES = 5;
 
-#define NEUTRAL 2
+  // these are the possible states
+  const uint8_t PUSHED = 4;
+  const uint8_t NOT_PUSHED = 0;
 
-#define DOWN 0
-#define DOWN_CENTER 1
-#define UP_CENTER 3
-#define UP 4
+  const uint8_t NEUTRAL = 2;
 
-#define LEFT 0
-#define LEFT_CENTER 1
-#define RIGHT_CENTER 3
-#define RIGHT 4
+  const uint8_t DOWN = 0;
+  const uint8_t DOWN_CENTER = 1;
+  const uint8_t UP_CENTER = 3;
+  const uint8_t UP = 4;
 
-#define SCALE_0 0
-#define SCALE_1 1
-#define SCALE_2 2
-#define SCALE_3 3
-#define SCALE_4 4
+  const uint8_t LEFT = 0;
+  const uint8_t LEFT_CENTER = 1;
+  const uint8_t RIGHT_CENTER = 3;
+  const uint8_t RIGHT= 4;
+
+  const uint8_t SCALE_0 = 0;
+  const uint8_t SCALE_1 = 1;
+  const uint8_t SCALE_2 = 2;
+  const uint8_t SCALE_3 = 3;
+  const uint8_t SCALE_4 = 4;
 ```
 
 It's more easily visualized like this:
 ```
-
- 0------------1------------2------------3------------4            > SCALE
- |            |            |            |            |
- PUSH.........|............|............|............NOT_PUSHED   > button
- LEFT.........|............|............|............RIGHT        > spdt switch on-on
- LEFT.........|.........NEUTRAL.........|............RIGHT        > spdt switch on-off-on
- LEFT....LEFT_CENTER....NEUTRAL.....RIGHT_CENTER.....RIGHT        > joystick x axis
- UP......UP_CENTER......NEUTRAL.....DOWN_CENTER......DOWN         > joystick y axis
- UP...........|.........NEUTRAL.........|............DOWN
- UP...........|............|............|............DOWN
- |            |            |            |            |
- 0------------1------------2------------3------------4            > SCALE
+  /*
+  The possible states are just
+  different ways to interpret a number from 0 to 4
+   0------------1------------2------------3------------4            > SCALE
+   |            |            |            |            |
+   PUSH.........|............|............|............NOT_PUSHED   > button
+   LEFT.........|............|............|............RIGHT        > spdt switch on-on
+   LEFT.........|.........NEUTRAL.........|............RIGHT        > spdt switch on-off-on
+   LEFT....LEFT_CENTER....NEUTRAL.....RIGHT_CENTER.....RIGHT        > joystick x axis
+   UP......UP_CENTER......NEUTRAL.....DOWN_CENTER......DOWN         > joystick y axis
+   UP...........|.........NEUTRAL.........|............DOWN
+   UP...........|............|............|............DOWN
+   |            |            |            |            |
+   0------------1------------2------------3------------4            > SCALE
+  */
 
 ```
 
@@ -126,7 +132,7 @@ and saves the results in memory that can be immediately accessed by calling `bos
 `bossy.savedReading(input_id)`, `bossy.savedReadingLowRes(input_id)`
 
 When button has changed state
-```arduino
+```c++
 if (bossy.hasChangedState(LEFT_BUTTON_UPPER)) {
   if (bossy.savedState(LEFT_JOYSTICK_UPPER_X)==PUSHED) {
     Serial.println("just pressed")
@@ -137,7 +143,7 @@ if (bossy.hasChangedState(LEFT_BUTTON_UPPER)) {
 ```
 
 When joystick is moved
-```arduino
+```c++
 
 if (bossy.hasChangedState(RIGHT_JOYSTICK_UPPER_Y)) {
   int state = bossy.savedState(RIGHT_JOYSTICK_UPPER_Y);
@@ -164,7 +170,7 @@ if (bossy.hasChangedState(RIGHT_JOYSTICK_UPPER_Y)) {
 ```
 
 When potentiometer is turned
-```arduino
+```c++
 if (bossy.hasChangedReading(input_id)) {
   Serial.println(bossy.savedReadingLowRes(POT_RIGHT));
 }

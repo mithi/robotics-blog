@@ -23,8 +23,10 @@ Global variables use 563 bytes (27%) of dynamic memory, leaving 1485 bytes for l
 
 
 # Sketch `bossy.ino`
-```arduino
+
+```c++
 #include <Bossy.h>
+using namespace BossyConstants;
 
 Bossy bossy;
 

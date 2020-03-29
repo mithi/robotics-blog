@@ -36,7 +36,7 @@
  I have managed to read a couple of articles on object-oriented arduino to help me brainstorm on how I&rsquo;d structure my code. There are many ways to go about it, but ultimately, here&rsquo;s how I ended up doing it. I prioritized readability over taxonomy, so it might not be the most decoubled code with a bunch of small classes, but for my purpose I believe this will do.">
 <meta itemprop="datePublished" content="2020-03-26T23:38:51&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-26T23:38:51&#43;08:00" />
-<meta itemprop="wordCount" content="613">
+<meta itemprop="wordCount" content="672">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -144,13 +144,13 @@ the most decoubled code with a bunch of small classes, but for my purpose I beli
 </ul>
 <h1 id="quickstart">Quickstart</h1>
 <p>Using this tiny library should be easy enough:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
-<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;src/Bossy.h&#34;</span><span style="color:#75715e">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
+<span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;Bossy.h&gt;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
 Bossy bossy;
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
-  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#ae81ff">9600</span>);
+  Serial.println(<span style="color:#ae81ff">9600</span>);
 }
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
@@ -162,8 +162,8 @@ Bossy bossy;
   <span style="color:#66d9ef">int</span> saved_state <span style="color:#f92672">=</span> bossy.savedState(RIGHT_SWITCH_LOWER);
 
   <span style="color:#75715e">// both will print true because it doesn&#39;t read a new value
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(reading <span style="color:#f92672">==</span> saved_reading);
-  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(state <span style="color:#f92672">==</span> saved_state);
+</span><span style="color:#75715e"></span>  Serial.println(reading <span style="color:#f92672">==</span> saved_reading);
+  Serial.println(state <span style="color:#f92672">==</span> saved_state);
 
   <span style="color:#75715e">// maps the raw value from the range 0-1023 to the range 0-255
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">int</span> low_res_reading <span style="color:#f92672">=</span> bossy.savedReadingLowRes(POT_LEFT_CENTER);
@@ -198,39 +198,45 @@ if you only want the reading to fit only one byte, and don&rsquo;t mind downgrad
 <h1 id="states">States</h1>
 <p>For reference the predefined state is a number between 0 and 4 and the number&rsquo;s meaning is dependent on
 the what type of input it is.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">#define PUSHED 4
-</span><span style="color:#75715e">#define NOT_PUSHED 0
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define NEUTRAL 2
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define DOWN 0
-</span><span style="color:#75715e">#define DOWN_CENTER 1
-</span><span style="color:#75715e">#define UP_CENTER 3
-</span><span style="color:#75715e">#define UP 4
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define LEFT 0
-</span><span style="color:#75715e">#define LEFT_CENTER 1
-</span><span style="color:#75715e">#define RIGHT_CENTER 3
-</span><span style="color:#75715e">#define RIGHT 4
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define SCALE_0 0
-</span><span style="color:#75715e">#define SCALE_1 1
-</span><span style="color:#75715e">#define SCALE_2 2
-</span><span style="color:#75715e">#define SCALE_3 3
-</span><span style="color:#75715e">#define SCALE_4 4
-</span></code></pre></div><p>It&rsquo;s more easily visualized like this:</p>
-<pre><code>
- 0------------1------------2------------3------------4            &gt; SCALE
- |            |            |            |            |
- PUSH.........|............|............|............NOT_PUSHED   &gt; button
- LEFT.........|............|............|............RIGHT        &gt; spdt switch on-on
- LEFT.........|.........NEUTRAL.........|............RIGHT        &gt; spdt switch on-off-on
- LEFT....LEFT_CENTER....NEUTRAL.....RIGHT_CENTER.....RIGHT        &gt; joystick x axis
- UP......UP_CENTER......NEUTRAL.....DOWN_CENTER......DOWN         &gt; joystick y axis
- UP...........|.........NEUTRAL.........|............DOWN
- UP...........|............|............|............DOWN
- |            |            |            |            |
- 0------------1------------2------------3------------4            &gt; SCALE
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"> <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> NUMBER_OF_STATES <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+
+  <span style="color:#75715e">// these are the possible states
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> PUSHED <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> NOT_PUSHED <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> NEUTRAL <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> DOWN <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> DOWN_CENTER <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> UP_CENTER <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> UP <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_CENTER <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_CENTER <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT<span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> SCALE_0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> SCALE_1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> SCALE_2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> SCALE_3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> SCALE_4 <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+</code></pre></div><p>It&rsquo;s more easily visualized like this:</p>
+<pre><code>  /*
+  The possible states are just
+  different ways to interpret a number from 0 to 4
+   0------------1------------2------------3------------4            &gt; SCALE
+   |            |            |            |            |
+   PUSH.........|............|............|............NOT_PUSHED   &gt; button
+   LEFT.........|............|............|............RIGHT        &gt; spdt switch on-on
+   LEFT.........|.........NEUTRAL.........|............RIGHT        &gt; spdt switch on-off-on
+   LEFT....LEFT_CENTER....NEUTRAL.....RIGHT_CENTER.....RIGHT        &gt; joystick x axis
+   UP......UP_CENTER......NEUTRAL.....DOWN_CENTER......DOWN         &gt; joystick y axis
+   UP...........|.........NEUTRAL.........|............DOWN
+   UP...........|............|............|............DOWN
+   |            |            |            |            |
+   0------------1------------2------------3------------4            &gt; SCALE
+  */
 
 </code></pre><h1 id="only-on-state-or-reading-change">Only on state or reading change.</h1>
 <p>Most of the time, we only care about the input&rsquo;s value if and only if
@@ -239,40 +245,40 @@ which outputs a boolean: either <code>true</code> or <code>false</code>. These t
 and saves the results in memory that can be immediately accessed by calling <code>bossy.savedState(input_id)</code>,
 <code>bossy.savedReading(input_id)</code>, <code>bossy.savedReadingLowRes(input_id)</code></p>
 <p>When button has changed state</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#66d9ef">if</span> (bossy.hasChangedState(LEFT_BUTTON_UPPER)) {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">if</span> (bossy.hasChangedState(LEFT_BUTTON_UPPER)) {
   <span style="color:#66d9ef">if</span> (bossy.savedState(LEFT_JOYSTICK_UPPER_X)<span style="color:#f92672">==</span>PUSHED) {
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;just pressed&#34;</span>)
+    Serial.println(<span style="color:#e6db74">&#34;just pressed&#34;</span>)
   } <span style="color:#66d9ef">else</span> {
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;just released&#34;</span>)
+    Serial.println(<span style="color:#e6db74">&#34;just released&#34;</span>)
   }
 }
 </code></pre></div><p>When joystick is moved</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
 <span style="color:#66d9ef">if</span> (bossy.hasChangedState(RIGHT_JOYSTICK_UPPER_Y)) {
   <span style="color:#66d9ef">int</span> state <span style="color:#f92672">=</span> bossy.savedState(RIGHT_JOYSTICK_UPPER_Y);
   <span style="color:#66d9ef">switch</span> (state) {
     <span style="color:#66d9ef">case</span> DOWN:
-      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;LOWEST&#34;</span>)
+      Serial.println(<span style="color:#e6db74">&#34;LOWEST&#34;</span>)
       <span style="color:#66d9ef">break</span>;
     <span style="color:#66d9ef">case</span> DOWN_CENTER:
-      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;LOW&#34;</span>)
+      Serial.println(<span style="color:#e6db74">&#34;LOW&#34;</span>)
       <span style="color:#66d9ef">break</span>;
     <span style="color:#66d9ef">case</span> NEUTRAL:
-      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;NEUTRAL&#34;</span>)
+      Serial.println(<span style="color:#e6db74">&#34;NEUTRAL&#34;</span>)
       <span style="color:#66d9ef">break</span>;
     <span style="color:#66d9ef">case</span> UP_CENTER:
-      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;HIGH&#34;</span>)
+      Serial.println(<span style="color:#e6db74">&#34;HIGH&#34;</span>)
       <span style="color:#66d9ef">break</span>;
     <span style="color:#66d9ef">case</span> UP:
-      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;HIGHEST&#34;</span>)
+      Serial.println(<span style="color:#e6db74">&#34;HIGHEST&#34;</span>)
       <span style="color:#66d9ef">break</span>;
     <span style="color:#66d9ef">default</span><span style="color:#f92672">:</span>
       <span style="color:#66d9ef">break</span>;
   }
 }
 </code></pre></div><p>When potentiometer is turned</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#66d9ef">if</span> (bossy.hasChangedReading(input_id)) {
-  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(bossy.savedReadingLowRes(POT_RIGHT));
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">if</span> (bossy.hasChangedReading(input_id)) {
+  Serial.println(bossy.savedReadingLowRes(POT_RIGHT));
 }
 </code></pre></div>
             </div>

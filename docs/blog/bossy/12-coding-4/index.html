@@ -40,7 +40,7 @@ The code for this sketch when compiled in the Arduino Micro:
 Sketch uses 12844 bytes (44%) of program storage space. Maximum is 28672 bytes. Global variables use 780 bytes (30%) of dynamic memory, leaving 1780 bytes for local variables.">
 <meta itemprop="datePublished" content="2020-03-28T01:43:49&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-28T01:43:49&#43;08:00" />
-<meta itemprop="wordCount" content="713">
+<meta itemprop="wordCount" content="445">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -160,7 +160,7 @@ Both modes show current state of the 4 momentary switches (buttons) and 4 spdt s
 </table>
 <p>The loop contains code like this, which pretty much iterates through each input
 check if the state of that input has changed, and then proceeds to update the LED Matrix appropriately.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
   <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> NUMBER_OF_BUTTONS; i<span style="color:#f92672">++</span>) {
     <span style="color:#66d9ef">if</span> (bossy.hasChangedState(buttons[i].id)) {
       update_button_display(buttons[i]);
@@ -186,9 +186,9 @@ check if the state of that input has changed, and then proceeds to update the LE
   }
 
 </code></pre></div><p>Updating the display given current state of the input could look something like this</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> button_colors[NUMBER_OF_STATES] <span style="color:#f92672">=</span>  {LED_GREEN, LED_GREEN, LED_GREEN, LED_GREEN, LED_RED};
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> button_colors[NUMBER_OF_STATES] <span style="color:#f92672">=</span>  {LED_GREEN, LED_GREEN, LED_GREEN, LED_GREEN, LED_RED};
 
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update_button_display</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button <span style="color:#f92672">&amp;</span>button) {
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">update_button_display</span>(<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> <span style="color:#a6e22e">Button</span> <span style="color:#f92672">&amp;</span>button) {
   <span style="color:#66d9ef">uint8_t</span> state <span style="color:#f92672">=</span> bossy.savedState(button.id);
   <span style="color:#66d9ef">uint8_t</span> color <span style="color:#f92672">=</span> button_colors[state];
   <span style="color:#66d9ef">uint8_t</span> x <span style="color:#f92672">=</span> button.pixel[Xi];
@@ -198,104 +198,62 @@ check if the state of that input has changed, and then proceeds to update the LE
   matrix.writeDisplay();
 }
 matrix.writeDisplay();
-}
+
 </code></pre></div><p>I&rsquo;ve created a header file with structs to be able to do this smoothly</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
-<span style="color:#75715e">#ifndef MatrixHelpers_h
-</span><span style="color:#75715e">#define MatrixHelpers_h
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#ifndef BossyInputSets_h
+</span><span style="color:#75715e">#define BossyInputSets_h
+</span><span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;BossyConstants.h&#34;</span><span style="color:#75715e">
 </span><span style="color:#75715e"></span>
-<span style="color:#75715e">#include</span> <span style="color:#75715e">&#34;BossyConstants.h&#34;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">/**********************
-</span><span style="color:#75715e">  LED MATRIX DISPLAY HELPERS
-</span><span style="color:#75715e">*************************/</span>
-<span style="color:#75715e">// these structs are used for displaying state changes in the led matrix
-</span><span style="color:#75715e">// the pixels are the locations in the matrix that would change
-</span><span style="color:#75715e">// depending on the state of the joystick
-</span><span style="color:#75715e"></span><span style="color:#75715e">#define Xi 0
-</span><span style="color:#75715e">#define Yi 1
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define NUMBER_OF_STICKS 8
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">struct</span> Stick {
-  <span style="color:#66d9ef">uint8_t</span> id;
-  <span style="color:#66d9ef">uint8_t</span> first_pixel[<span style="color:#ae81ff">2</span>];
-  <span style="color:#66d9ef">uint8_t</span> second_pixel[<span style="color:#ae81ff">2</span>];
-};
+<span style="color:#66d9ef">namespace</span> BossyInputSets {
 
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Stick jxupleft <span style="color:#f92672">=</span> {LEFT_JOYSTICK_UPPER_X, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}, {<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Stick jyupleft <span style="color:#f92672">=</span> {LEFT_JOYSTICK_UPPER_Y, {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>}, {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">1</span>}};
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> stick_ids[BossyConstants<span style="color:#f92672">::</span>NUMBER_OF_STICKS] <span style="color:#f92672">=</span> {
+    BossyConstants<span style="color:#f92672">::</span>LEFT_JOYSTICK_UPPER_X,
+    BossyConstants<span style="color:#f92672">::</span>LEFT_JOYSTICK_UPPER_Y,
+    BossyConstants<span style="color:#f92672">::</span>LEFT_JOYSTICK_LOWER_X,
+    BossyConstants<span style="color:#f92672">::</span>LEFT_JOYSTICK_LOWER_Y,
 
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Stick jxdownleft <span style="color:#f92672">=</span> {LEFT_JOYSTICK_LOWER_X, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">5</span>}, {<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Stick jydownleft <span style="color:#f92672">=</span> {LEFT_JOYSTICK_LOWER_Y, {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">6</span>}, {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>}};
+    BossyConstants<span style="color:#f92672">::</span>RIGHT_JOYSTICK_UPPER_X,
+    BossyConstants<span style="color:#f92672">::</span>RIGHT_JOYSTICK_UPPER_Y,
+    BossyConstants<span style="color:#f92672">::</span>RIGHT_JOYSTICK_LOWER_X,
+    BossyConstants<span style="color:#f92672">::</span>RIGHT_JOYSTICK_LOWER_Y
+  };
 
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Stick jxupright <span style="color:#f92672">=</span> {RIGHT_JOYSTICK_UPPER_X, {<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>}, {<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">2</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Stick jyupright <span style="color:#f92672">=</span> {RIGHT_JOYSTICK_UPPER_Y, {<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">3</span>}, {<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">1</span>}};
+  <span style="color:#75715e">/*****************************
+</span><span style="color:#75715e">  * Buttons
+</span><span style="color:#75715e">  ******************************/</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> button_ids[BossyConstants<span style="color:#f92672">::</span>NUMBER_OF_BUTTONS] <span style="color:#f92672">=</span> {
+    BossyConstants<span style="color:#f92672">::</span>LEFT_BUTTON_UPPER,
+    BossyConstants<span style="color:#f92672">::</span>LEFT_BUTTON_LOWER,
+    BossyConstants<span style="color:#f92672">::</span>RIGHT_BUTTON_UPPER,
+    BossyConstants<span style="color:#f92672">::</span>RIGHT_BUTTON_LOWER,
 
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Stick jxdownright <span style="color:#f92672">=</span> {RIGHT_JOYSTICK_LOWER_X, {<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">5</span>}, {<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">5</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Stick jydownright <span style="color:#f92672">=</span> {RIGHT_JOYSTICK_LOWER_Y, {<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">6</span>}, {<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">4</span>}};
+    BossyConstants<span style="color:#f92672">::</span>LEFT_JOYSTICK_UPPER_BUTTON,
+    BossyConstants<span style="color:#f92672">::</span>LEFT_JOYSTICK_LOWER_BUTTON,
+    BossyConstants<span style="color:#f92672">::</span>RIGHT_JOYSTICK_UPPER_BUTTON,
+    BossyConstants<span style="color:#f92672">::</span>RIGHT_JOYSTICK_LOWER_BUTTON
+  };
 
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Stick sticks[NUMBER_OF_STICKS] <span style="color:#f92672">=</span> {
-  jxupleft,
-  jyupleft,
-  jxdownleft,
-  jydownleft,
+  <span style="color:#75715e">/*****************************
+</span><span style="color:#75715e">  * Switches
+</span><span style="color:#75715e">  ******************************/</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> switch_ids[BossyConstants<span style="color:#f92672">::</span>NUMBER_OF_SWITCHES] <span style="color:#f92672">=</span> {
+    BossyConstants<span style="color:#f92672">::</span>LEFT_SWITCH_UPPER,
+    BossyConstants<span style="color:#f92672">::</span>LEFT_SWITCH_LOWER,
+    BossyConstants<span style="color:#f92672">::</span>RIGHT_SWITCH_UPPER,
+    BossyConstants<span style="color:#f92672">::</span>RIGHT_SWITCH_LOWER
+  };
 
-  jxupright,
-  jyupright,
-  jxdownright,
-  jydownright
-};
-
-
-<span style="color:#75715e">#define NUMBER_OF_BUTTONS 8
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">struct</span> Button {
-  <span style="color:#66d9ef">uint8_t</span> id;
-  <span style="color:#66d9ef">uint8_t</span> pixel[<span style="color:#ae81ff">2</span>];
-};
-
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button bupleft <span style="color:#f92672">=</span> {LEFT_BUTTON_UPPER, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button bdownleft <span style="color:#f92672">=</span> {LEFT_BUTTON_LOWER, {<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">7</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button bupright <span style="color:#f92672">=</span> {RIGHT_BUTTON_UPPER, {<span style="color:#ae81ff">7</span> , <span style="color:#ae81ff">0</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button bdownright <span style="color:#f92672">=</span> {RIGHT_BUTTON_LOWER, {<span style="color:#ae81ff">7</span> , <span style="color:#ae81ff">7</span>}};
-
-<span style="color:#75715e">// joystick buttons
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button jupleft <span style="color:#f92672">=</span> {LEFT_JOYSTICK_UPPER_BUTTON, {<span style="color:#ae81ff">2</span> , <span style="color:#ae81ff">2</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button jdownleft <span style="color:#f92672">=</span> {LEFT_JOYSTICK_LOWER_BUTTON, {<span style="color:#ae81ff">2</span> , <span style="color:#ae81ff">5</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button jupright <span style="color:#f92672">=</span> {RIGHT_JOYSTICK_UPPER_BUTTON, {<span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">2</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button jdownright <span style="color:#f92672">=</span> {RIGHT_JOYSTICK_LOWER_BUTTON, {<span style="color:#ae81ff">5</span> , <span style="color:#ae81ff">5</span>}};
-
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> Button buttons[NUMBER_OF_BUTTONS] <span style="color:#f92672">=</span> {
-  bupleft,
-  bdownleft,
-  bupright,
-  bdownright,
-
-  jupleft,
-  jdownleft,
-  jupright,
-  jdownright,
-};
-
-<span style="color:#75715e">#define NUMBER_OF_SWITCHES 4
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">struct</span> SwitchSPDT {
-  <span style="color:#66d9ef">uint8_t</span> id;
-  <span style="color:#66d9ef">uint8_t</span> first_pixel[<span style="color:#ae81ff">2</span>];
-  <span style="color:#66d9ef">uint8_t</span> second_pixel[<span style="color:#ae81ff">2</span>];
-  <span style="color:#66d9ef">uint8_t</span> third_pixel[<span style="color:#ae81ff">2</span>];
-};
-
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> SwitchSPDT swupleft {LEFT_SWITCH_UPPER, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">0</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> SwitchSPDT swdownleft {LEFT_SWITCH_LOWER, {<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">7</span>}, {<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">7</span>}, {<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">7</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> SwitchSPDT swupright {RIGHT_SWITCH_UPPER, {<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">0</span>}, {<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">0</span>}};
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> SwitchSPDT swdownright {RIGHT_SWITCH_LOWER, {<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">7</span>}, {<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>}, {<span style="color:#ae81ff">6</span>, <span style="color:#ae81ff">7</span>}};
-
-<span style="color:#66d9ef">const</span> <span style="color:#66d9ef">struct</span> SwitchSPDT switches[NUMBER_OF_SWITCHES] <span style="color:#f92672">=</span> {swupleft, swdownleft, swupright, swdownright};
-
-<span style="color:#75715e">#define NUMBER_OF_POTENTIOMETERS 5
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> potentiometers[NUMBER_OF_POTENTIOMETERS] <span style="color:#f92672">=</span> {POT_LEFT, POT_LEFT_CENTER, POT_CENTER, POT_RIGHT_CENTER, POT_RIGHT};
+  <span style="color:#75715e">/*****************************
+</span><span style="color:#75715e">  * Potentiometers
+</span><span style="color:#75715e">  ******************************/</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> potentiometer_ids[BossyConstants<span style="color:#f92672">::</span>NUMBER_OF_POTENTIOMETERS] <span style="color:#f92672">=</span> {
+    BossyConstants<span style="color:#f92672">::</span>POT_LEFT,
+    BossyConstants<span style="color:#f92672">::</span>POT_LEFT_CENTER,
+    BossyConstants<span style="color:#f92672">::</span>POT_CENTER,
+    BossyConstants<span style="color:#f92672">::</span>POT_RIGHT_CENTER,
+    BossyConstants<span style="color:#f92672">::</span>POT_RIGHT
+  };
+}
 
 <span style="color:#75715e">#endif
 </span></code></pre></div>

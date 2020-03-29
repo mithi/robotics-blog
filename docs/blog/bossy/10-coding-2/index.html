@@ -38,7 +38,7 @@ I hacked away this problem through software through temporary methods isBrokenBu
 I hacked away this problem through software through temporary methods isBrokenButton() and _updateBrokenButton() methods.">
 <meta itemprop="datePublished" content="2020-03-27T00:36:52&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-27T00:36:52&#43;08:00" />
-<meta itemprop="wordCount" content="605">
+<meta itemprop="wordCount" content="712">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -145,154 +145,160 @@ the joystick select buttons. So when it is not pressed it&rsquo;s just dangling 
 <p>Now that&rsquo;s out of the way. Let&rsquo;s go examine the <a href="https://github.com/mithi/bossy/blob/master/src/BossyConstants.h"><code>BossyConstant.h</code></a>
 If you want to make modifications based on your specific setup, you can fiddle around the values here.</p>
 <p>The first few lines is where you&rsquo;d define the PIN signals</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">#define PIN_ENABLE_LEFT_MUX 11
-</span><span style="color:#75715e">#define PIN_ENABLE_RIGHT_MUX 12
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define s0 5
-</span><span style="color:#75715e">#define s1 6
-</span><span style="color:#75715e">#define s2 7
-</span><span style="color:#75715e">#define s3 8
-</span><span style="color:#75715e">#define PIN_SIGNAL A1
-</span></code></pre></div><p>Skipping a few lines, you see how the <code>input_ids</code> are named,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> PIN_ENABLE_LEFT_MUX <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> PIN_ENABLE_RIGHT_MUX <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> s0 <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> s1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> s2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> s3 <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> PIN_SIGNAL <span style="color:#f92672">=</span> A1;
+</code></pre></div><p>Skipping a few lines, you see how the <code>input_ids</code> are named,
 which are just numbers from  0 to 24.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">#define LEFT_SWITCH_UPPER 0
-</span><span style="color:#75715e">#define LEFT_SWITCH_LOWER 1
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define LEFT_JOYSTICK_UPPER_Y 2
-</span><span style="color:#75715e">#define LEFT_JOYSTICK_UPPER_X 3
-</span><span style="color:#75715e">#define LEFT_JOYSTICK_UPPER_BUTTON 4
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define LEFT_JOYSTICK_LOWER_Y 5
-</span><span style="color:#75715e">#define LEFT_JOYSTICK_LOWER_X 6
-</span><span style="color:#75715e">#define LEFT_JOYSTICK_LOWER_BUTTON 7
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define LEFT_BUTTON_UPPER 8
-</span><span style="color:#75715e">#define LEFT_BUTTON_LOWER 9
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define POT_LEFT 10
-</span><span style="color:#75715e">#define POT_LEFT_CENTER 11
-</span><span style="color:#75715e">#define POT_CENTER 12
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// right inputs
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define RIGHT_SWITCH_UPPER 13
-</span><span style="color:#75715e">#define RIGHT_SWITCH_LOWER 14
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define RIGHT_JOYSTICK_UPPER_Y 15
-</span><span style="color:#75715e">#define RIGHT_JOYSTICK_UPPER_X 16
-</span><span style="color:#75715e">#define RIGHT_JOYSTICK_UPPER_BUTTON 17
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define RIGHT_JOYSTICK_LOWER_Y 18
-</span><span style="color:#75715e">#define RIGHT_JOYSTICK_LOWER_X 19
-</span><span style="color:#75715e">#define RIGHT_JOYSTICK_LOWER_BUTTON 20
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define RIGHT_BUTTON_UPPER 21
-</span><span style="color:#75715e">#define RIGHT_BUTTON_LOWER 22
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define POT_RIGHT_CENTER 23
-</span><span style="color:#75715e">#define POT_RIGHT 24
-</span></code></pre></div><p>Going back up, we see an array
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_SWITCH_UPPER <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_SWITCH_LOWER <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_JOYSTICK_UPPER_Y <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_JOYSTICK_UPPER_X <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_JOYSTICK_UPPER_BUTTON <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_JOYSTICK_LOWER_Y <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_JOYSTICK_LOWER_X <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_JOYSTICK_LOWER_BUTTON <span style="color:#f92672">=</span> <span style="color:#ae81ff">7</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_BUTTON_UPPER <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> LEFT_BUTTON_LOWER <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> POT_LEFT <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> POT_LEFT_CENTER <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> POT_CENTER <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_SWITCH_UPPER <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_SWITCH_LOWER <span style="color:#f92672">=</span> <span style="color:#ae81ff">14</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_JOYSTICK_UPPER_Y <span style="color:#f92672">=</span> <span style="color:#ae81ff">15</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_JOYSTICK_UPPER_X <span style="color:#f92672">=</span> <span style="color:#ae81ff">16</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_JOYSTICK_UPPER_BUTTON <span style="color:#f92672">=</span> <span style="color:#ae81ff">17</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_JOYSTICK_LOWER_Y <span style="color:#f92672">=</span> <span style="color:#ae81ff">18</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_JOYSTICK_LOWER_X <span style="color:#f92672">=</span> <span style="color:#ae81ff">19</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_JOYSTICK_LOWER_BUTTON <span style="color:#f92672">=</span> <span style="color:#ae81ff">20</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_BUTTON_UPPER <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> RIGHT_BUTTON_LOWER <span style="color:#f92672">=</span> <span style="color:#ae81ff">22</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> POT_RIGHT_CENTER <span style="color:#f92672">=</span> <span style="color:#ae81ff">23</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> POT_RIGHT <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span>;
+</code></pre></div><p>Going back up, we see an array
 that maps the <code>input_id</code> to the corresponding
 channel of respective multiplexer</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
-<span style="color:#75715e">#define NUMBER_OF_CHANNELS 25
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// map of input id to channel in the multiplexer
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> INPUT_CHANNEL[NUMBER_OF_CHANNELS] <span style="color:#f92672">=</span> {
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> NUMBER_OF_CHANNELS <span style="color:#f92672">=</span> <span style="color:#ae81ff">25</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> NUMBER_OF_SWITCHES <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> NUMBER_OF_BUTTONS <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> NUMBER_OF_POTENTIOMETERS <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> NUMBER_OF_STICKS <span style="color:#f92672">=</span> <span style="color:#ae81ff">8</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> NUMBER_OF_BROKEN_BUTTONS <span style="color:#f92672">=</span> <span style="color:#ae81ff">4</span>;
 
-  <span style="color:#ae81ff">11</span>, <span style="color:#75715e">// LEFT_SWITCH_UPPER
-</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">10</span>, <span style="color:#75715e">// LEFT_SWITCH_LOWER
+  <span style="color:#75715e">// map of input id to channel in the multiplexer
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> INPUT_CHANNEL[NUMBER_OF_CHANNELS] <span style="color:#f92672">=</span> {
+
+    <span style="color:#ae81ff">11</span>, <span style="color:#75715e">// LEFT_SWITCH_UPPER
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">10</span>, <span style="color:#75715e">// LEFT_SWITCH_LOWER
 </span><span style="color:#75715e"></span>
-   <span style="color:#ae81ff">8</span>, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_Y
-</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">7</span>, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_X
-</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">9</span>, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_BUTTON
+     <span style="color:#ae81ff">8</span>, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_Y
+</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">7</span>, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_X
+</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">9</span>, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_BUTTON
 </span><span style="color:#75715e"></span>
-   <span style="color:#ae81ff">5</span>, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_Y
-</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">6</span>, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_X
-</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">4</span>, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_BUTTON
+     <span style="color:#ae81ff">5</span>, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_Y
+</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">6</span>, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_X
+</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">4</span>, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_BUTTON
 </span><span style="color:#75715e"></span>
-   <span style="color:#ae81ff">0</span>, <span style="color:#75715e">// LEFT_BUTTON_UPPER
-</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">3</span>, <span style="color:#75715e">// LEFT_BUTTON_LOWER
+     <span style="color:#ae81ff">0</span>, <span style="color:#75715e">// LEFT_BUTTON_UPPER
+</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">3</span>, <span style="color:#75715e">// LEFT_BUTTON_LOWER
 </span><span style="color:#75715e"></span>
-  <span style="color:#ae81ff">14</span>, <span style="color:#75715e">// POT_LEFT
-</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">12</span>, <span style="color:#75715e">// POT_LEFT_CENTER
-</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">13</span>, <span style="color:#75715e">// POT_CENTER
+    <span style="color:#ae81ff">14</span>, <span style="color:#75715e">// POT_LEFT
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">12</span>, <span style="color:#75715e">// POT_LEFT_CENTER
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">13</span>, <span style="color:#75715e">// POT_CENTER
 </span><span style="color:#75715e"></span>
-  <span style="color:#ae81ff">4</span>, <span style="color:#75715e">// RIGHT_SWITCH_UPPER
-</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">5</span>, <span style="color:#75715e">// RIGHT_SWITCH_LOWER
+    <span style="color:#ae81ff">4</span>, <span style="color:#75715e">// RIGHT_SWITCH_UPPER
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">5</span>, <span style="color:#75715e">// RIGHT_SWITCH_LOWER
 </span><span style="color:#75715e"></span>
-  <span style="color:#ae81ff">7</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_Y
-</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">6</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_X
-</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">8</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_BUTTON
+    <span style="color:#ae81ff">7</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_Y
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">6</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_X
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">8</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_BUTTON
 </span><span style="color:#75715e"></span>
-  <span style="color:#ae81ff">11</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_Y
-</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">9</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_X
-</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">10</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_BUTTON
+    <span style="color:#ae81ff">11</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_Y
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">9</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_X
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">10</span>, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_BUTTON
 </span><span style="color:#75715e"></span>
-  <span style="color:#ae81ff">13</span>, <span style="color:#75715e">// RIGHT_BUTTON_UPPER
-</span><span style="color:#75715e"></span>  <span style="color:#ae81ff">12</span>, <span style="color:#75715e">// RIGHT_BUTTON_LOWER
+    <span style="color:#ae81ff">13</span>, <span style="color:#75715e">// RIGHT_BUTTON_UPPER
+</span><span style="color:#75715e"></span>    <span style="color:#ae81ff">12</span>, <span style="color:#75715e">// RIGHT_BUTTON_LOWER
 </span><span style="color:#75715e"></span>
-   <span style="color:#ae81ff">3</span>, <span style="color:#75715e">// POT_RIGHT_CENTER
-</span><span style="color:#75715e"></span>   <span style="color:#ae81ff">2</span>  <span style="color:#75715e">// POT_RIGHT
-</span><span style="color:#75715e"></span>};
+     <span style="color:#ae81ff">3</span>, <span style="color:#75715e">// POT_RIGHT_CENTER
+</span><span style="color:#75715e"></span>     <span style="color:#ae81ff">2</span>  <span style="color:#75715e">// POT_RIGHT
+</span><span style="color:#75715e"></span>  };
+
 </code></pre></div><p>Skipping a few lines again, we see which
 inputs are connected to which multiplexer</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino">
-<span style="color:#75715e">// the ids for the left multiplexer is 0 to 12
-</span><span style="color:#75715e">// the ids for the right multiplexer is 13 to 24
-</span><span style="color:#75715e"></span><span style="color:#75715e">#define MUX_LEFT_MIN 0
-</span><span style="color:#75715e">#define MUX_LEFT_MAX 12
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">#define MULTIPLEXER_RIGHT_MIN 13
-</span><span style="color:#75715e">#define MULTIPLEXER_RIGHT_MAX 24
-</span></code></pre></div><p>We also specified the direction of states,
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#75715e">// the ids for the left multiplexer is 0 to 12
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// the ids for the right multiplexer is 13 to 24
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> MUX_LEFT_MIN <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> MUX_LEFT_MAX <span style="color:#f92672">=</span> <span style="color:#ae81ff">12</span>;
+
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> MULTIPLEXER_RIGHT_MIN <span style="color:#f92672">=</span> <span style="color:#ae81ff">13</span>;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">uint8_t</span> MULTIPLEXER_RIGHT_MAX <span style="color:#f92672">=</span> <span style="color:#ae81ff">24</span>;
+</code></pre></div><p>We also specified the direction of states,
 which is dependent on how the circuit is wired.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">// The input type is normal when:
-</span><span style="color:#75715e">// button: pressed is HIGH
-</span><span style="color:#75715e">// joystick y axis: UP is HIGH
-</span><span style="color:#75715e">// joystick x axis: RIGHT is HIGH
-</span><span style="color:#75715e">// switch: RIGHT is HIGH
-</span><span style="color:#75715e">// it is inverted if otherwise
-</span><span style="color:#75715e"></span><span style="color:#75715e">#define NORMAL true
-</span><span style="color:#75715e">#define INVERTED false
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++">  <span style="color:#75715e">/**********************
+</span><span style="color:#75715e">   INPUT TYPE (normal or inverted)
+</span><span style="color:#75715e">  *************************/</span>
+  <span style="color:#75715e">// The input type is normal when:
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// button: pressed is HIGH
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// joystick y axis: UP is HIGH
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// joystick x axis: RIGHT is HIGH
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// switch: RIGHT is HIGH
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// it is inverted if otherwise
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span> NORMAL <span style="color:#f92672">=</span> true;
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span> INVERTED <span style="color:#f92672">=</span> false;
+
+  <span style="color:#75715e">// map of input id to its input type (
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span> INPUT_TYPE[NUMBER_OF_CHANNELS] <span style="color:#f92672">=</span> {
+    NORMAL, <span style="color:#75715e">// LEFT_SWITCH_UPPER
+</span><span style="color:#75715e"></span>    NORMAL, <span style="color:#75715e">// LEFT_SWITCH_LOWER
 </span><span style="color:#75715e"></span>
-<span style="color:#75715e">// map of input id to its input type (
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#66d9ef">bool</span> INPUT_TYPE[NUMBER_OF_CHANNELS] <span style="color:#f92672">=</span> {
-  NORMAL, <span style="color:#75715e">// LEFT_SWITCH_UPPER
-</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// LEFT_SWITCH_LOWER
+    INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_Y
+</span><span style="color:#75715e"></span>    INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_X
+</span><span style="color:#75715e"></span>    INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_BUTTON
 </span><span style="color:#75715e"></span>
-  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_Y
-</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_X
-</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_UPPER_BUTTON
+    INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_Y
+</span><span style="color:#75715e"></span>    INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_X
+</span><span style="color:#75715e"></span>    INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_BUTTON
 </span><span style="color:#75715e"></span>
-  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_Y
-</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_X
-</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// LEFT_JOYSTICK_LOWER_BUTTON
+    INVERTED, <span style="color:#75715e">// LEFT_BUTTON_UPPER
+</span><span style="color:#75715e"></span>    INVERTED, <span style="color:#75715e">// LEFT_BUTTON_LOWER
 </span><span style="color:#75715e"></span>
-  INVERTED, <span style="color:#75715e">// LEFT_BUTTON_UPPER
-</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// LEFT_BUTTON_LOWER
+    NORMAL, <span style="color:#75715e">// POT_LEFT
+</span><span style="color:#75715e"></span>    NORMAL, <span style="color:#75715e">// POT_LEFT_CENTER
+</span><span style="color:#75715e"></span>    NORMAL, <span style="color:#75715e">// POT_CENTER
 </span><span style="color:#75715e"></span>
-  NORMAL, <span style="color:#75715e">// POT_LEFT
-</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// POT_LEFT_CENTER
-</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// POT_CENTER
+    INVERTED, <span style="color:#75715e">// RIGHT_SWITCH_UPPER
+</span><span style="color:#75715e"></span>    INVERTED, <span style="color:#75715e">// RIGHT_SWITCH_LOWER
 </span><span style="color:#75715e"></span>
-  INVERTED, <span style="color:#75715e">// RIGHT_SWITCH_UPPER
-</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// RIGHT_SWITCH_LOWER
+    NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_Y
+</span><span style="color:#75715e"></span>    NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_X
+</span><span style="color:#75715e"></span>    INVERTED, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_BUTTON
 </span><span style="color:#75715e"></span>
-  NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_Y
-</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_X
-</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// RIGHT_JOYSTICK_UPPER_BUTTON
+    NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_Y
+</span><span style="color:#75715e"></span>    NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_X
+</span><span style="color:#75715e"></span>    INVERTED, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_BUTTON
 </span><span style="color:#75715e"></span>
-  NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_Y
-</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_X
-</span><span style="color:#75715e"></span>  INVERTED, <span style="color:#75715e">// RIGHT_JOYSTICK_LOWER_BUTTON
+    NORMAL, <span style="color:#75715e">// RIGHT_BUTTON_UPPER
+</span><span style="color:#75715e"></span>    NORMAL, <span style="color:#75715e">// RIGHT_BUTTON_LOWER
 </span><span style="color:#75715e"></span>
-  NORMAL, <span style="color:#75715e">// RIGHT_BUTTON_UPPER
-</span><span style="color:#75715e"></span>  NORMAL, <span style="color:#75715e">// RIGHT_BUTTON_LOWER
-</span><span style="color:#75715e"></span>
-  NORMAL, <span style="color:#75715e">// POT_RIGHT_CENTER
-</span><span style="color:#75715e"></span>  NORMAL <span style="color:#75715e">// POT_RIGHT
-</span><span style="color:#75715e"></span>};
+    NORMAL, <span style="color:#75715e">// POT_RIGHT_CENTER
+</span><span style="color:#75715e"></span>    NORMAL <span style="color:#75715e">// POT_RIGHT
+</span><span style="color:#75715e"></span>  };
 </code></pre></div><p>I think those are the most important things to be aware of, in case
 you want to do some modifications.</p>
 

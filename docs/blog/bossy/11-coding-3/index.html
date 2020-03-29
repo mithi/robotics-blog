@@ -40,7 +40,7 @@ Sketch uses 7726 bytes (26%) of program storage space. Maximum is 28672 bytes. G
 Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes.">
 <meta itemprop="datePublished" content="2020-03-27T01:01:40&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-27T01:01:40&#43;08:00" />
-<meta itemprop="wordCount" content="234">
+<meta itemprop="wordCount" content="236">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -142,12 +142,13 @@ Global variables use 528 bytes (20%) of dynamic memory, leaving 2032 bytes for l
 <pre><code>Sketch uses 5564 bytes (17%) of program storage space. Maximum is 32256 bytes.
 Global variables use 563 bytes (27%) of dynamic memory, leaving 1485 bytes for local variables. Maximum is 2048 bytes.
 </code></pre><h1 id="sketch-bossyino">Sketch <code>bossy.ino</code></h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-arduino" data-lang="arduino"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;Bossy.h&gt;</span><span style="color:#75715e">
-</span><span style="color:#75715e"></span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">#include</span> <span style="color:#75715e">&lt;Bossy.h&gt;</span><span style="color:#75715e">
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">using</span> <span style="color:#66d9ef">namespace</span> BossyConstants;
+
 Bossy bossy;
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setup</span>() {
-  <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">begin</span>(<span style="color:#ae81ff">9600</span>);
+  Serial.begin(<span style="color:#ae81ff">9600</span>);
 }
 
 <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">loop</span>() {
@@ -186,27 +187,27 @@ Bossy bossy;
   print_on_scale_change(<span style="color:#e6db74">&#34;sw-RL: &#34;</span>, RIGHT_SWITCH_LOWER);
 }
 
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_on_button_state_change</span>(<span style="color:#66d9ef">String</span> prefix, <span style="color:#66d9ef">int</span> input_id) {
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_on_button_state_change</span>(String prefix, <span style="color:#66d9ef">int</span> input_id) {
   <span style="color:#66d9ef">if</span> (bossy.hasChangedState(input_id)) {
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(prefix);
+    Serial.print(prefix);
     bossy.savedState(input_id)<span style="color:#f92672">==</span>PUSHED <span style="color:#f92672">?</span>
-      <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;pressed&#34;</span>) <span style="color:#f92672">:</span> <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(<span style="color:#e6db74">&#34;not_pressed&#34;</span>);
+      Serial.println(<span style="color:#e6db74">&#34;pressed&#34;</span>) <span style="color:#f92672">:</span> Serial.println(<span style="color:#e6db74">&#34;not_pressed&#34;</span>);
   }
 }
 
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_on_pot_reading_change</span>(<span style="color:#66d9ef">String</span> prefix, <span style="color:#66d9ef">int</span> input_id) {
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_on_pot_reading_change</span>(String prefix, <span style="color:#66d9ef">int</span> input_id) {
   <span style="color:#66d9ef">if</span> (bossy.hasChangedReading(input_id)) {
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(prefix);
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(bossy.savedReading(input_id));
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(<span style="color:#e6db74">&#34; &#34;</span>);
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(bossy.savedReadingLowRes(input_id));
+    Serial.print(prefix);
+    Serial.print(bossy.savedReading(input_id));
+    Serial.print(<span style="color:#e6db74">&#34; &#34;</span>);
+    Serial.println(bossy.savedReadingLowRes(input_id));
   }
 }
 
-<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_on_scale_change</span>(<span style="color:#66d9ef">String</span> prefix, <span style="color:#66d9ef">int</span> input_id) {
+<span style="color:#66d9ef">void</span> <span style="color:#a6e22e">print_on_scale_change</span>(String prefix, <span style="color:#66d9ef">int</span> input_id) {
   <span style="color:#66d9ef">if</span> (bossy.hasChangedState(input_id)) {
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">print</span>(prefix);
-    <span style="color:#a6e22e">Serial</span>.<span style="color:#a6e22e">println</span>(bossy.savedState(input_id));
+    Serial.print(prefix);
+    Serial.println(bossy.savedState(input_id));
   }
 }
 </code></pre></div>

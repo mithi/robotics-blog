@@ -7,10 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>👾🤖 Mithi</copyright>
-    <lastBuildDate>Sat, 28 Mar 2020 22:46:30 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 16:30:58 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/tags/general-purpose-controller/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>🎮 Bossy Hiatus</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/16-hiatus/</link>
+      <pubDate>Sun, 29 Mar 2020 16:30:58 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/16-hiatus/</guid>
+      <description>I&amp;rsquo;ll be taking a little time away from Bossy. I have many features in store for it but right now because of the extreme lockdown in my city, I&amp;rsquo;m unable to get the parts I need for the second prototype.</description>
+    </item>
+    
+    <item>
+      <title>🎮 Bossy Code: Cleaner Code</title>
+      <link>https://mithi.github.io/robotics-blog/blog/bossy/15-coding-6/</link>
+      <pubDate>Sun, 29 Mar 2020 16:11:05 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/bossy/15-coding-6/</guid>
+      <description>View bossy&amp;rsquo;s working code: 🎮 here
+ Using namespaces and separating concerns!
+I started implementing namespaces as I noticed that some of names the constants I defined are a bit too generic.
+Here&amp;rsquo;s a good quick article by Lucky Resistor about implementing namespaces in Arduino 2014-Oct-31 | Lucky Resistor: How and Why to use Namespaces
+I also noticed that I&amp;rsquo;m using some structs I defined for helping toggle the pixels of the LED Matrix, only to iterate over the input ids of a specific type of input (button, potentiometer, switches), so decided make arrays containing just the input ids so we can do this without being tied to functionalities we don&amp;rsquo;t use.</description>
+    </item>
     
     <item>
       <title>🎮 Bossy Wireless! </title>

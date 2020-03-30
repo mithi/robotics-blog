@@ -56,4 +56,14 @@ I found some really cheap and affordable alternatives to Adafruit and Sparkfun b
 ## Power source
 - [ROMOSS Cute Mini Portable Powerbank IPhone Android Micro USB Type C Small Light gift](https://shopee.ph/ROMOSS-Cute-Mini-Portable-Powerbank-IPhone-Android-Micro-USB-Type-C-Small-Light-gift-i.171502354.2827293829)
 
+> For you to get an idea of the costs of each item, here's some screenshots of some possible parts for this project the prices are in Philippine Peso, items are shipped from China to the Philippines. Take note that some of them are sets of 5 or 100 even though you only need a few. Right click and select 'view image' to see the prices.
+
+|![](/robotics-blog/x-wires.png)|![](/robotics-blog/x-button-with-cap.png)|![](/robotics-blog/x-multiplexer.png)|
+| ---------- | ---------- | ---------- |
+|![](/robotics-blog/x-protoboard.png)|![](/robotics-blog/x-joysticks.png)|![](/robotics-blog/x-ht16k33-led-driver.png)|
+|![](/robotics-blog/x-jumper-cables.png)|![](/robotics-blog/x-resistors.png)|![](/robotics-blog/x-trimmers.png)|
+|![](/robotics-blog/x-headers.png)|![](/robotics-blog/x-potentiometers.png)|![](/robotics-blog/x-capacitors.png)|
+|![](/robotics-blog/x-joysticks.png)|![](/robotics-blog/x-nrf24l01.png)|![](/robotics-blog/x-tactile-push-button.png)|
+|![](/robotics-blog/x-spdt-on-off-on.png)|![](/robotics-blog/x-spdt-on-on.png)|- |
+
 

@@ -43,5 +43,8 @@ draft: false
 - [x] .Make a class wrapper for elegantly reading, processing, and accessing the input signals
 - [x] .Add UI functionality for providing feedback of controls in the 8x8 led matrix (screen)
 - [x] .Send commands by user from controller to receiver.
-- [x] .Build prototype #2
-- Make an enclosure to house Bossy
+- [x] .Brainstorm for prototype #2
+- Buy parts for prototype #2
+- Build prototype #2
+- Design an enclosure to house Prototype #2 with Tinkercad
+- Lasercut and assemble enclosure for prototype #2

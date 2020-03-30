@@ -4,7 +4,7 @@ theme = "hello-friend-ng"
 
 googleAnalytics = "UA-142507629-2"
 
-staticDir = ["static", "static/images", "static/images/bossy", "static/images/ideas"]
+staticDir = ["static", "static/images", "static/images/bossy", "static/images/ideas", "static/images/shopping-lists"]
 publishDir = "docs"
 
 [taxonomies]

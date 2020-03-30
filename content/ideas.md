@@ -47,6 +47,8 @@
 
 12. Build simple browser-based robot simulators
     - hexapod, quadruped, and manipulator configurations
+
+13. [Tilt-controlled Marble Maze, like the from Adafruit but with Lego](https://learn.adafruit.com/tilt-controlled-marble-maze/build-the-circuit)
 ```
 
 ## Part 2

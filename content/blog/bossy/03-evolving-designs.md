@@ -7,7 +7,7 @@ draft: false
 ---
 
 
-## Version X.X Ideas (Update: March 30, 2019)
+## Version X.X Ideas (Update: March 30, 2020)
 I'm experimenting with several possible designs for prototype 2.
 In this design, I added 2 additional buttons, and 4 trimmers at the bottom.
 Bring the total number of inputs from 25 to 31.

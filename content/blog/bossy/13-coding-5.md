@@ -9,10 +9,10 @@ draft: False
 > View bossy's working code: 🎮 [here](https://github.com/mithi/bossy)
 
 
-Finally I've managed to test detected changes form Bossy to another
-microcontroller with a NRF24L01 module.
+Finally, I've managed to test detected changes from Bossy to another
+microcontroller with an NRF24L01+ module.
 
-Everytime Bossy detects a change made by the user handling the controller
+Every time Bossy detects a change made by the user handling the controller,
 it updates the LED Matrix appropriately and sends a two-byte message.
 One byte contains the input idea (a number between 0 and 24 since there's 25
 input channel total) and the other byte contains either the state (a number
@@ -26,16 +26,15 @@ I've added three additional sketches.
 
 > # 🎮 [Simple Receiver Code](https://github.com/mithi/bossy/tree/master/examples/bossy_simple_receiver/bossy_simple_receiver.ino)
 
-One of them is the test code to  be used by the receiving Arduino that prints
+One of them is the test code to be used by the receiving Arduino. The receiver prints
 the two-byte message it picks up. This is the sample code to test if the receiver is successfully
-  able to get transmitted message from the Bossy Controller
+able to get transmitted message from the Bossy Controller
 
 ## Sketch 2: Bare minimum Transmitter Test Code
 
 > # 🎮 [Simple Transmitter Code](https://github.com/mithi/bossy/blob/master/examples/bossy_simple_transmitter/bossy_simple_transmitter.ino)
 
-This sketch communicates data wireless everytime Bossy detects a change. It also prints this data in the Serial monitor.
-This sketch does NOT use the LED Matrix.
+This sketch communicates data wireless every time Bossy detects a change from the user. It also prints this data in the Serial monitor. This sketch does NOT use the LED Matrix.
 
 Arduino Micro:
 ```
@@ -70,7 +69,7 @@ Sketch uses 17624 bytes (61%) of program storage space. Maximum is 28672 bytes.
 Global variables use 829 bytes (32%) of dynamic memory, leaving 1731 bytes for local variables. Maximum is 2560 bytes.
 ```
 
-Arduino Uno
+Arduino Uno:
 ```
 Sketch uses 15390 bytes (47%) of program storage space. Maximum is 32256 bytes.
 Global variables use 864 bytes (42%) of dynamic memory, leaving 1184 bytes for local variables. Maximum is 2048 bytes.

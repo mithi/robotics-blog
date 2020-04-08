@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>hexapod on Mithi&#39;s Robotics Blog</title>
+    <link>https://mithi.github.io/robotics-blog/tags/hexapod/</link>
+    <description>Recent content in hexapod on Mithi&#39;s Robotics Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>👾🤖 Mithi</copyright>
+    <lastBuildDate>Wed, 08 Apr 2020 16:33:32 +0800</lastBuildDate>
+    
+	<atom:link href="https://mithi.github.io/robotics-blog/tags/hexapod/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>🕷️ Hexapod Simulator: Version 1.1</title>
+      <link>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/2-version-1/</link>
+      <pubDate>Wed, 08 Apr 2020 16:33:32 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/2-version-1/</guid>
+      <description>My objective to build a hexapod robot simulator from first principles. I&amp;rsquo;ll be using solely homogenous transform matrix, and not quaternions. I&amp;rsquo;m aware that quaternions is inarguable the better solution if not the best, not only the elegant math, but the speed of calculation. My reason is that I&amp;rsquo;m not that familiar with quaternions. In the future, when I have time I&amp;rsquo;d study quaternions and reimplement the inverse kinematics.
+You can currently check it out on on heroku but I highly suggest that you run it on your own local server.</description>
+    </item>
+    
+    <item>
+      <title>🕷️ Hexapod Simulator: Boring useless ramblings</title>
+      <link>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/1-boring-useless-ramblings/</link>
+      <pubDate>Wed, 08 Apr 2020 07:03:15 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/1-boring-useless-ramblings/</guid>
+      <description>The obsession Back in 2013, I came across a kickstarter project by Arcbotics. It was an open-source hexapod kit. You can download the files and have it lasercut on a 5mm thick flat acrylic sheet or have them 3d printed. It was the cheapest hexapod robot that I knew off back then, about 1/10th the usual price of the popular hexapod robots on the market. But I didn&amp;rsquo;t have money. On 2016, I could finally own and build this hexapod, and I got obsessed with learning everything about hexapod robots.</description>
+    </item>
+    
+  </channel>
+</rss>

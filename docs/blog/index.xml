@@ -7,10 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>👾🤖 Mithi</copyright>
-    <lastBuildDate>Sun, 29 Mar 2020 16:30:58 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2020 16:33:32 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/blog/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>🕷️ Hexapod Simulator: Version 1.1</title>
+      <link>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/2-version-1/</link>
+      <pubDate>Wed, 08 Apr 2020 16:33:32 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/2-version-1/</guid>
+      <description>My objective to build a hexapod robot simulator from first principles. I&amp;rsquo;ll be using solely homogenous transform matrix, and not quaternions. I&amp;rsquo;m aware that quaternions is inarguable the better solution if not the best, not only the elegant math, but the speed of calculation. My reason is that I&amp;rsquo;m not that familiar with quaternions. In the future, when I have time I&amp;rsquo;d study quaternions and reimplement the inverse kinematics.
+You can currently check it out on on heroku but I highly suggest that you run it on your own local server.</description>
+    </item>
+    
+    <item>
+      <title>🕷️ Hexapod Simulator: Boring useless ramblings</title>
+      <link>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/1-boring-useless-ramblings/</link>
+      <pubDate>Wed, 08 Apr 2020 07:03:15 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/1-boring-useless-ramblings/</guid>
+      <description>The obsession Back in 2013, I came across a kickstarter project by Arcbotics. It was an open-source hexapod kit. You can download the files and have it lasercut on a 5mm thick flat acrylic sheet or have them 3d printed. It was the cheapest hexapod robot that I knew off back then, about 1/10th the usual price of the popular hexapod robots on the market. But I didn&amp;rsquo;t have money. On 2016, I could finally own and build this hexapod, and I got obsessed with learning everything about hexapod robots.</description>
+    </item>
     
     <item>
       <title>🎮 Bossy Hiatus</title>
@@ -42,8 +61,8 @@ Here&amp;rsquo;s a good quick article by Lucky Resistor about implementing names
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/13-coding-5/</guid>
       <description>View bossy&amp;rsquo;s working code: 🎮 here
- Finally I&amp;rsquo;ve managed to test detected changes form Bossy to another microcontroller with a NRF24L01 module.
-Everytime Bossy detects a change made by the user handling the controller it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&amp;rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255).</description>
+ Finally, I&amp;rsquo;ve managed to test detected changes from Bossy to another microcontroller with an NRF24L01+ module.
+Every time Bossy detects a change made by the user handling the controller, it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&amp;rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255).</description>
     </item>
     
     <item>
@@ -146,7 +165,7 @@ Then I check the Serial monitor if it behaves the way I expect.</description>
       <pubDate>Thu, 19 Mar 2020 03:39:01 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/03-evolving-designs/</guid>
-      <description>Version X.X Ideas (Update: March 30, 2019) I&amp;rsquo;m experimenting with several possible designs for prototype 2. In this design, I added 2 additional buttons, and 4 trimmers at the bottom. Bring the total number of inputs from 25 to 31.
+      <description>Version X.X Ideas (Update: March 30, 2020) I&amp;rsquo;m experimenting with several possible designs for prototype 2. In this design, I added 2 additional buttons, and 4 trimmers at the bottom. Bring the total number of inputs from 25 to 31.
 I realized that I wanted only a total of 8 potentiometers so that the visualization of all 8 potentiometers would fit when they occupy one bar each in the led matrix.</description>
     </item>
     

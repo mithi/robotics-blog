@@ -42,8 +42,8 @@ Here&amp;rsquo;s a good quick article by Lucky Resistor about implementing names
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/13-coding-5/</guid>
       <description>View bossy&amp;rsquo;s working code: 🎮 here
- Finally I&amp;rsquo;ve managed to test detected changes form Bossy to another microcontroller with a NRF24L01 module.
-Everytime Bossy detects a change made by the user handling the controller it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&amp;rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255).</description>
+ Finally, I&amp;rsquo;ve managed to test detected changes from Bossy to another microcontroller with an NRF24L01+ module.
+Every time Bossy detects a change made by the user handling the controller, it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&amp;rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255).</description>
     </item>
     
     <item>
@@ -146,7 +146,7 @@ Then I check the Serial monitor if it behaves the way I expect.</description>
       <pubDate>Thu, 19 Mar 2020 03:39:01 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/blog/bossy/03-evolving-designs/</guid>
-      <description>Version X.X Ideas (Update: March 30, 2019) I&amp;rsquo;m experimenting with several possible designs for prototype 2. In this design, I added 2 additional buttons, and 4 trimmers at the bottom. Bring the total number of inputs from 25 to 31.
+      <description>Version X.X Ideas (Update: March 30, 2020) I&amp;rsquo;m experimenting with several possible designs for prototype 2. In this design, I added 2 additional buttons, and 4 trimmers at the bottom. Bring the total number of inputs from 25 to 31.
 I realized that I wanted only a total of 8 potentiometers so that the visualization of all 8 potentiometers would fit when they occupy one bar each in the led matrix.</description>
     </item>
     

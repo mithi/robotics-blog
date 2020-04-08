@@ -4,7 +4,57 @@
   
   <url>
     <loc>https://mithi.github.io/robotics-blog/blog/</loc>
-    <lastmod>2020-03-29T16:30:58+08:00</lastmod>
+    <lastmod>2020-04-08T16:33:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/categories/</loc>
+    <lastmod>2020-04-08T16:33:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/tags/hexapod/</loc>
+    <lastmod>2020-04-08T16:33:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/tags/hexapod-robot-simulator/</loc>
+    <lastmod>2020-04-08T16:33:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/categories/hexapod-robot-simulator/</loc>
+    <lastmod>2020-04-08T16:33:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/tags/hexapod-simulator/</loc>
+    <lastmod>2020-04-08T16:33:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/categories/hexapod-simulator/</loc>
+    <lastmod>2020-04-08T16:33:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/</loc>
+    <lastmod>2020-04-08T16:33:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/tags/</loc>
+    <lastmod>2020-04-08T16:33:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/2-version-1/</loc>
+    <lastmod>2020-04-08T16:33:32+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/1-boring-useless-ramblings/</loc>
+    <lastmod>2020-04-08T07:03:15+08:00</lastmod>
   </url>
   
   <url>
@@ -18,22 +68,7 @@
   </url>
   
   <url>
-    <loc>https://mithi.github.io/robotics-blog/categories/</loc>
-    <lastmod>2020-03-29T16:30:58+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://mithi.github.io/robotics-blog/tags/general-purpose-controller/</loc>
-    <lastmod>2020-03-29T16:30:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithi.github.io/robotics-blog/</loc>
-    <lastmod>2020-03-29T16:30:58+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://mithi.github.io/robotics-blog/tags/</loc>
     <lastmod>2020-03-29T16:30:58+08:00</lastmod>
   </url>
   

@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="">
 <meta name="description" content="View bossy&amp;rsquo;s working code: 🎮 here
- Finally I&amp;rsquo;ve managed to test detected changes form Bossy to another microcontroller with a NRF24L01 module.
-Everytime Bossy detects a change made by the user handling the controller it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&amp;rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255)." />
+ Finally, I&amp;rsquo;ve managed to test detected changes from Bossy to another microcontroller with an NRF24L01&#43; module.
+Every time Bossy detects a change made by the user handling the controller, it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&amp;rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255)." />
 <meta name="keywords" content=", bossy, general-purpose-controller" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -34,11 +34,11 @@ Everytime Bossy detects a change made by the user handling the controller it upd
 
 <meta itemprop="name" content="🎮 Bossy Wireless! ">
 <meta itemprop="description" content="View bossy&rsquo;s working code: 🎮 here
- Finally I&rsquo;ve managed to test detected changes form Bossy to another microcontroller with a NRF24L01 module.
-Everytime Bossy detects a change made by the user handling the controller it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255).">
+ Finally, I&rsquo;ve managed to test detected changes from Bossy to another microcontroller with an NRF24L01&#43; module.
+Every time Bossy detects a change made by the user handling the controller, it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255).">
 <meta itemprop="datePublished" content="2020-03-28T22:46:30&#43;08:00" />
 <meta itemprop="dateModified" content="2020-03-28T22:46:30&#43;08:00" />
-<meta itemprop="wordCount" content="432">
+<meta itemprop="wordCount" content="438">
 <meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
 
 
@@ -48,8 +48,8 @@ Everytime Bossy detects a change made by the user handling the controller it upd
 
 <meta name="twitter:title" content="🎮 Bossy Wireless! "/>
 <meta name="twitter:description" content="View bossy&rsquo;s working code: 🎮 here
- Finally I&rsquo;ve managed to test detected changes form Bossy to another microcontroller with a NRF24L01 module.
-Everytime Bossy detects a change made by the user handling the controller it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255)."/>
+ Finally, I&rsquo;ve managed to test detected changes from Bossy to another microcontroller with an NRF24L01&#43; module.
+Every time Bossy detects a change made by the user handling the controller, it updates the LED Matrix appropriately and sends a two-byte message. One byte contains the input idea (a number between 0 and 24 since there&rsquo;s 25 input channel total) and the other byte contains either the state (a number on a scale of 0 to 4) or a low resolution version of the raw reading (IE the reading scaled to a number between 0 and 255)."/>
 
 
 
@@ -131,9 +131,9 @@ Everytime Bossy detects a change made by the user handling the controller it upd
                 <blockquote>
 <p>View bossy&rsquo;s working code: 🎮 <a href="https://github.com/mithi/bossy">here</a></p>
 </blockquote>
-<p>Finally I&rsquo;ve managed to test detected changes form Bossy to another
-microcontroller with a NRF24L01 module.</p>
-<p>Everytime Bossy detects a change made by the user handling the controller
+<p>Finally, I&rsquo;ve managed to test detected changes from Bossy to another
+microcontroller with an NRF24L01+ module.</p>
+<p>Every time Bossy detects a change made by the user handling the controller,
 it updates the LED Matrix appropriately and sends a two-byte message.
 One byte contains the input idea (a number between 0 and 24 since there&rsquo;s 25
 input channel total) and the other byte contains either the state (a number
@@ -144,15 +144,14 @@ reading scaled to a number between 0 and 255).</p>
 <blockquote>
 <h1 id="-simple-receiver-codehttpsgithubcommithibossytreemasterexamplesbossy_simple_receiverbossy_simple_receiverino">🎮 <a href="https://github.com/mithi/bossy/tree/master/examples/bossy_simple_receiver/bossy_simple_receiver.ino">Simple Receiver Code</a></h1>
 </blockquote>
-<p>One of them is the test code to  be used by the receiving Arduino that prints
+<p>One of them is the test code to be used by the receiving Arduino. The receiver prints
 the two-byte message it picks up. This is the sample code to test if the receiver is successfully
 able to get transmitted message from the Bossy Controller</p>
 <h2 id="sketch-2-bare-minimum-transmitter-test-code">Sketch 2: Bare minimum Transmitter Test Code</h2>
 <blockquote>
 <h1 id="-simple-transmitter-codehttpsgithubcommithibossyblobmasterexamplesbossy_simple_transmitterbossy_simple_transmitterino">🎮 <a href="https://github.com/mithi/bossy/blob/master/examples/bossy_simple_transmitter/bossy_simple_transmitter.ino">Simple Transmitter Code</a></h1>
 </blockquote>
-<p>This sketch communicates data wireless everytime Bossy detects a change. It also prints this data in the Serial monitor.
-This sketch does NOT use the LED Matrix.</p>
+<p>This sketch communicates data wireless every time Bossy detects a change from the user. It also prints this data in the Serial monitor. This sketch does NOT use the LED Matrix.</p>
 <p>Arduino Micro:</p>
 <pre><code>Sketch uses 11230 bytes (39%) of program storage space. Maximum is 28672 bytes.
 Global variables use 599 bytes (23%) of dynamic memory, leaving 1961 bytes for local variables. Maximum is 2560 bytes.
@@ -175,7 +174,7 @@ to verify that Bossy is successfully transmitting data.</p>
 <p>Arduino Micro:</p>
 <pre><code>Sketch uses 17624 bytes (61%) of program storage space. Maximum is 28672 bytes.
 Global variables use 829 bytes (32%) of dynamic memory, leaving 1731 bytes for local variables. Maximum is 2560 bytes.
-</code></pre><p>Arduino Uno</p>
+</code></pre><p>Arduino Uno:</p>
 <pre><code>Sketch uses 15390 bytes (47%) of program storage space. Maximum is 32256 bytes.
 Global variables use 864 bytes (42%) of dynamic memory, leaving 1184 bytes for local variables. Maximum is 2048 bytes.
 </code></pre>

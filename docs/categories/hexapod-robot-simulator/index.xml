@@ -7,19 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>👾🤖 Mithi</copyright>
-    <lastBuildDate>Wed, 08 Apr 2020 16:33:32 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2020 03:57:13 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/categories/hexapod-robot-simulator/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>🕷️ Hexapod Simulator: Version 1.1</title>
-      <link>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/2-version-1/</link>
+      <title>🕷️ Hexapod Simulator: A mind-boggling bug</title>
+      <link>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/3-prerelease-2/</link>
+      <pubDate>Mon, 13 Apr 2020 03:57:13 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/3-prerelease-2/</guid>
+      <description>Released: v0.2.0-alpha.1 Deployed (slow): https://hexapod-robot-simulator.herokuapp.com/inverse-kinematics   I was testing the inverse kinematics and I noticed some strange behavior. I have two versions, technically they should output the same thing (within an error range) which they usually do, but there are a few cases where they don&amp;rsquo;t and I don&amp;rsquo;t know why. I have to investigate this.
+I have a pseudo code like this
+# the hexapod given the dimensions, with all 18 angles = 0 base_hexapod = VirtualHexapod(dimensions) # Given the 8 ik parameters roll, pitch yaw angles, and 3 translation # the other 2 parameters is used to determine what # the contact points of the the legs are to the ground # update the new points of the hexapod # and return the 18 computed angles as `poses` updated_hexapod, poses = inverse_kinematics_update(base_hexapod, ik_parameters) # Given the computed angles recreate the pose (without knowing 6 ik parameters) # it just needs the 2 parameters used to determine the ground contact recomputed_hexapod = recompute_hexapod(dimensions, ik_parameters, poses) # in theory, they should be the roughly the same point assert recomputed_hexapod == updated_hexapod  First function: inverse_kinematics_update()  Roughly the algorithm of the inverse_kinematics_update() is like this: Since we know and can compute for the body contact(p0) and the ground contact(p3) and we know the three lengths of the limbs (coxia, femur, tibia).</description>
+    </item>
+    
+    <item>
+      <title>🕷️ Hexapod Simulator: 0.2.0-alpha.0</title>
+      <link>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/2-prerelease-1/</link>
       <pubDate>Wed, 08 Apr 2020 16:33:32 +0800</pubDate>
       
-      <guid>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/2-version-1/</guid>
-      <description>My objective to build a hexapod robot simulator from first principles. I&amp;rsquo;ll be using solely homogenous transform matrix, and not quaternions. I&amp;rsquo;m aware that quaternions is inarguable the better solution if not the best, not only the elegant math, but the speed of calculation. My reason is that I&amp;rsquo;m not that familiar with quaternions. In the future, when I have time I&amp;rsquo;d study quaternions and reimplement the inverse kinematics.
-You can currently check it out on on heroku but I highly suggest that you run it on your own local server.</description>
+      <guid>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/2-prerelease-1/</guid>
+      <description>v0.2.0-alpha.0  My objective to build a hexapod robot simulator from first principles. I&amp;rsquo;ll be using solely homogenous transform matrix, and not quaternions. I&amp;rsquo;m aware that quaternions is inarguable the better solution if not the best, not only the elegant math, but the speed of calculation. My reason is that I&amp;rsquo;m not that familiar with quaternions. In the future, when I have time I&amp;rsquo;d study quaternions and reimplement the inverse kinematics.</description>
     </item>
     
     <item>

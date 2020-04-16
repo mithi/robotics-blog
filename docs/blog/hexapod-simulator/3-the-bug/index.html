@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="Deployed (slow): https://hexapod-robot-simulator.herokuapp.com/inverse-kinematics   I was testing the inverse kinematics and I noticed some strange behavior. I have two versions, technically they should output the same thing (within an error range) which they usually do, but there are a few cases where they don&amp;rsquo;t and I don&amp;rsquo;t know why. I have to investigate this.
+I have a pseudo code like this
+# the hexapod given the dimensions, with all 18 angles = 0 base_hexapod = VirtualHexapod(dimensions) # Given the 8 ik parameters roll, pitch yaw angles, and 3 translation # the other 2 parameters is used to determine what # the contact points of the the legs are to the ground # update the new points of the hexapod # and return the 18 computed angles as `poses` updated_hexapod, poses = inverse_kinematics_update(base_hexapod, ik_parameters) # Given the computed angles recreate the pose (without knowing 6 ik parameters) # it just needs the 2 parameters used to determine the ground contact recomputed_hexapod = recompute_hexapod(dimensions, ik_parameters, poses) # in theory, they should be the roughly the same point assert recomputed_hexapod == updated_hexapod  First function: inverse_kinematics_update()  Roughly the algorithm of the inverse_kinematics_update() is like this: Since we know and can compute for the body contact(p0) and the ground contact(p3) and we know the three lengths of the limbs (coxia, femur, tibia)." />
+<meta name="keywords" content=", hexapod-robot-simulator, hexapod-simulator, hexapod" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://mithi.github.io/robotics-blog/blog/hexapod-simulator/3-the-bug/" />
+
+
+    <title>
+        
+            🕷️ Hexapod Simulator: A mind-boggling bug :: Mithi&#39;s Robotics Blog  — 👾🤖 todos, docs, notes, learnings, ideas (etc) about robots 🤖👾
+        
+    </title>
+
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/robotics-blog/main.min.a71f1ccb2abf86c1f9d46cddfa6403b99497528c340efb7c3589023cc9808b15.css">
+
+
+
+
+<meta itemprop="name" content="🕷️ Hexapod Simulator: A mind-boggling bug">
+<meta itemprop="description" content="Deployed (slow): https://hexapod-robot-simulator.herokuapp.com/inverse-kinematics   I was testing the inverse kinematics and I noticed some strange behavior. I have two versions, technically they should output the same thing (within an error range) which they usually do, but there are a few cases where they don&rsquo;t and I don&rsquo;t know why. I have to investigate this.
+I have a pseudo code like this
+# the hexapod given the dimensions, with all 18 angles = 0 base_hexapod = VirtualHexapod(dimensions) # Given the 8 ik parameters roll, pitch yaw angles, and 3 translation # the other 2 parameters is used to determine what # the contact points of the the legs are to the ground # update the new points of the hexapod # and return the 18 computed angles as `poses` updated_hexapod, poses = inverse_kinematics_update(base_hexapod, ik_parameters) # Given the computed angles recreate the pose (without knowing 6 ik parameters) # it just needs the 2 parameters used to determine the ground contact recomputed_hexapod = recompute_hexapod(dimensions, ik_parameters, poses) # in theory, they should be the roughly the same point assert recomputed_hexapod == updated_hexapod  First function: inverse_kinematics_update()  Roughly the algorithm of the inverse_kinematics_update() is like this: Since we know and can compute for the body contact(p0) and the ground contact(p3) and we know the three lengths of the limbs (coxia, femur, tibia).">
+<meta itemprop="datePublished" content="2020-04-13T03:57:13&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-13T03:57:13&#43;08:00" />
+<meta itemprop="wordCount" content="911">
+<meta itemprop="image" content="https://mithi.github.io/robotics-blog/"/>
+
+
+
+<meta itemprop="keywords" content="hexapod-robot-simulator,hexapod-simulator,hexapod," /><meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://mithi.github.io/robotics-blog/"/>
+
+<meta name="twitter:title" content="🕷️ Hexapod Simulator: A mind-boggling bug"/>
+<meta name="twitter:description" content="Deployed (slow): https://hexapod-robot-simulator.herokuapp.com/inverse-kinematics   I was testing the inverse kinematics and I noticed some strange behavior. I have two versions, technically they should output the same thing (within an error range) which they usually do, but there are a few cases where they don&rsquo;t and I don&rsquo;t know why. I have to investigate this.
+I have a pseudo code like this
+# the hexapod given the dimensions, with all 18 angles = 0 base_hexapod = VirtualHexapod(dimensions) # Given the 8 ik parameters roll, pitch yaw angles, and 3 translation # the other 2 parameters is used to determine what # the contact points of the the legs are to the ground # update the new points of the hexapod # and return the 18 computed angles as `poses` updated_hexapod, poses = inverse_kinematics_update(base_hexapod, ik_parameters) # Given the computed angles recreate the pose (without knowing 6 ik parameters) # it just needs the 2 parameters used to determine the ground contact recomputed_hexapod = recompute_hexapod(dimensions, ik_parameters, poses) # in theory, they should be the roughly the same point assert recomputed_hexapod == updated_hexapod  First function: inverse_kinematics_update()  Roughly the algorithm of the inverse_kinematics_update() is like this: Since we know and can compute for the body contact(p0) and the ground contact(p3) and we know the three lengths of the limbs (coxia, femur, tibia)."/>
+
+
+
+    <meta property="article:section" content="hexapod-simulator" />
+
+    <meta property="article:section" content="hexapod-robot-simulator" />
+
+
+
+    <meta property="article:published_time" content="2020-04-13 03:57:13 &#43;0800 PST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/robotics-blog" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">Mithi&#39;s Robots</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://mithi.github.io/robotics-blog/blog">Blog</a></li><li><a href="https://mithi.github.io/robotics-blog/misc">Misc</a></li><li><a href="https://ko-fi.com/minimithi">☕</a></li>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
+
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
+</span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="https://mithi.github.io/robotics-blog/blog/hexapod-simulator/3-the-bug/">🕷️ Hexapod Simulator: A mind-boggling bug</a></h2>
+
+            
+
+            <div class="post-content">
+                <blockquote>
+<ul>
+<li>Deployed (slow): <a href="https://hexapod-robot-simulator.herokuapp.com/inverse-kinematics">https://hexapod-robot-simulator.herokuapp.com/inverse-kinematics</a></li>
+</ul>
+</blockquote>
+<p>I was testing the inverse kinematics and I noticed some strange behavior. I have two versions,
+technically they should output the same thing (within an error range) which they usually do,
+but there are a few cases where they don&rsquo;t and I don&rsquo;t know why.
+I have to investigate this.</p>
+<p>I have a pseudo code like this</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#75715e"># the hexapod given the dimensions, with all 18 angles = 0</span>
+base_hexapod <span style="color:#f92672">=</span> VirtualHexapod(dimensions)
+
+<span style="color:#75715e"># Given the 8 ik parameters roll, pitch yaw angles, and 3 translation</span>
+<span style="color:#75715e"># the other 2 parameters is used to determine what</span>
+<span style="color:#75715e"># the contact points of the the legs are to the ground</span>
+<span style="color:#75715e"># update the new points of the hexapod</span>
+<span style="color:#75715e"># and return the 18 computed angles as `poses`</span>
+updated_hexapod, poses <span style="color:#f92672">=</span> inverse_kinematics_update(base_hexapod, ik_parameters)
+
+<span style="color:#75715e"># Given the computed angles recreate the pose (without knowing 6 ik parameters)</span>
+<span style="color:#75715e"># it just needs the 2 parameters used to determine the ground contact</span>
+recomputed_hexapod <span style="color:#f92672">=</span> recompute_hexapod(dimensions, ik_parameters, poses)
+
+<span style="color:#75715e"># in theory, they should be the roughly the same point</span>
+<span style="color:#66d9ef">assert</span> recomputed_hexapod <span style="color:#f92672">==</span> updated_hexapod
+</code></pre></div><blockquote>
+<h1 id="first-function-inverse_kinematics_update">First function: <code>inverse_kinematics_update()</code></h1>
+</blockquote>
+<p>Roughly the algorithm of the <code>inverse_kinematics_update()</code> is like this:
+Since we know and can compute for the body contact(<code>p0</code>) and the ground contact(<code>p3</code>)
+and we know the three lengths of the limbs (<code>coxia</code>, <code>femur</code>, <code>tibia</code>). And we know that
+the first limb is in the same axis as the body contact,
+we can solve for the 2 points of the legs (the coxia joint (<code>p1</code>), femur joint(<code>p2</code>))
+and we can compute the 3 angles with trigonometry</p>
+<pre><code>|--coxia-----\ ----
+p0 ------- p1 \    \
+               \ femur
+                \    \
+                 p2 ---
+                /    /
+               /   tibia
+              /    /
+            p3 -------
+
+point p0 - known
+point p3 - known
+coxia length - known
+femur length - known
+tibia length - known
+given p0 and p1 lie on the same known axis
+
+solve for
+p1
+p2
+
+We can also solve for the angles these points make..
+
+We return the hexapod with the updated points
+and also the 18 computed angles called &quot;poses&quot;
+</code></pre><blockquote>
+<h1 id="second-function-recompute_hexapod">Second function <code>recompute_hexapod()</code></h1>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">recompute_hexapod</span>(dimensions, ik_parameters, poses):
+    <span style="color:#75715e"># ❗❗IMPORTANT!This assumes leg with id 3 and id 4 are on the ground</span>
+    <span style="color:#75715e"># THIS IS NOT ALWAYS THE CASE.</span>
+    <span style="color:#75715e"># Should check which two legs are both on the ground before and after</span>
+    <span style="color:#75715e"># instead of using leg 3 and 4&#39;</span>
+
+    <span style="color:#75715e"># make the hexapod with all angles = 0</span>
+    <span style="color:#75715e"># update the hexapod so that we know which given points are in contact with the ground</span>
+    old_hexapod <span style="color:#f92672">=</span> VirtualHexapod(dimensions)
+    old_hexapod<span style="color:#f92672">.</span>update_stance(ik_parameters[<span style="color:#e6db74">&#34;hip_stance&#34;</span>], ik_parameters[<span style="color:#e6db74">&#34;leg_stance&#34;</span>])
+
+    <span style="color:#75715e"># get two of those points that contact the ground</span>
+    <span style="color:#75715e"># the hexapod we must end up with must be stepping in these points</span>
+    old_p1 <span style="color:#f92672">=</span> deepcopy(old_hexapod<span style="color:#f92672">.</span>legs[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span>p3)
+    old_p2 <span style="color:#f92672">=</span> deepcopy(old_hexapod<span style="color:#f92672">.</span>legs[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">.</span>p3)
+    old_vector <span style="color:#f92672">=</span> vector_from_to(old_p1, old_p2)
+
+    <span style="color:#75715e"># make a new hexapod with all angles = 0</span>
+    <span style="color:#75715e"># and update given the poses/ angles we&#39;ve computed</span>
+    new_hexapod <span style="color:#f92672">=</span> VirtualHexapod(dimensions)
+    new_hexapod<span style="color:#f92672">.</span>update(poses)
+    <span style="color:#75715e"># get two of those points</span>
+    new_p1 <span style="color:#f92672">=</span> deepcopy(new_hexapod<span style="color:#f92672">.</span>legs[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span>p3)
+    new_p2 <span style="color:#f92672">=</span> deepcopy(new_hexapod<span style="color:#f92672">.</span>legs[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">.</span>p3)
+    new_vector <span style="color:#f92672">=</span> vector_from_to(new_p1, new_p2)
+
+    <span style="color:#75715e"># we must translate and rotate the hexapod with the pose</span>
+    <span style="color:#75715e"># so that the hexapod is stepping on the predefined ground contact points</span>
+    translate_vector <span style="color:#f92672">=</span> vector_from_to(new_p1, old_p1)
+    _, twist_frame <span style="color:#f92672">=</span> find_twist_to_recompute_hexapod(new_vector, old_vector)
+    new_hexapod<span style="color:#f92672">.</span>rotate_and_shift(twist_frame, <span style="color:#ae81ff">0</span>)
+    twisted_p2 <span style="color:#f92672">=</span> new_hexapod<span style="color:#f92672">.</span>legs[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">.</span>p3
+    translate_vector <span style="color:#f92672">=</span> vector_from_to(twisted_p2, old_p2)
+    new_hexapod<span style="color:#f92672">.</span>move_xyz(translate_vector<span style="color:#f92672">.</span>x, translate_vector<span style="color:#f92672">.</span>y, <span style="color:#ae81ff">0</span>)
+
+    <span style="color:#75715e"># These things should be true</span>
+    <span style="color:#66d9ef">assert</span> np<span style="color:#f92672">.</span>isclose(new_p1<span style="color:#f92672">.</span>z, <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">assert</span> np<span style="color:#f92672">.</span>isclose(new_p2<span style="color:#f92672">.</span>z, <span style="color:#ae81ff">0</span>)
+    <span style="color:#66d9ef">assert</span> np<span style="color:#f92672">.</span>isclose(old_p1<span style="color:#f92672">.</span>z, <span style="color:#ae81ff">0</span>, atol<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>)
+    <span style="color:#66d9ef">assert</span> np<span style="color:#f92672">.</span>isclose(old_p2<span style="color:#f92672">.</span>z, <span style="color:#ae81ff">0</span>, atol<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>)
+    <span style="color:#66d9ef">assert</span> new_p1<span style="color:#f92672">.</span>name <span style="color:#f92672">==</span> old_p1<span style="color:#f92672">.</span>name
+    <span style="color:#66d9ef">assert</span> new_p2<span style="color:#f92672">.</span>name <span style="color:#f92672">==</span> old_p2<span style="color:#f92672">.</span>name
+    <span style="color:#66d9ef">assert</span> np<span style="color:#f92672">.</span>isclose(length(new_vector), length(old_vector), atol<span style="color:#f92672">=</span><span style="color:#ae81ff">0.1</span>)
+
+    <span style="color:#66d9ef">return</span> new_hexapod
+</code></pre></div><h1 id="my-ideas-on-how-to-debug">My ideas on how to debug</h1>
+<p>I don&rsquo;t know if this is just a floating point error that gets amplified over time.
+I don&rsquo;t know yet, but how do I try debug this?</p>
+<ol>
+<li>
+<p>Given the computed angles /poses, use the kinematics page
+<code>https://hexapod-robot-simulator.herokuapp.com/kinematics</code> to see if they
+match either the <code>updated_hexapod</code> or the <code>recomputed_hexapod</code></p>
+</li>
+<li>
+<p>Given the hexapod points computed at the function <code>inverse_kinematics_update()</code>
+double check whether the computed angles <code>alpha</code>, <code>beta</code> and <code>gamma</code> for each of the
+6 legs match when we get the computed <code>p0</code>, <code>p1</code>, <code>p2</code> and <code>p3</code> for each leg.</p>
+</li>
+<li>
+<p>We compute the points of <code>recomputed_hexapod</code> given the 18 angles (<code>old_pose</code>). Using
+these points, we compute the 18 angles (<code>new_pose</code>) and see if they match
+<code>assert new_pose == old_pose</code>, so in essence,</p>
+</li>
+</ol>
+<pre><code>1. Given 18 angles (old_poses) solve for computed hexapod points
+2. Given computed hexapod points so;ve for 18 angles (new_poses)
+
+assert new_poses == old_poses
+</code></pre><p>Here are some screenshots of the problem</p>
+<h1 id="part-1-output-as-expected">Part 1: Output as expected</h1>
+<p>Here&rsquo;s one where the <code>updated_hexapod</code> and the <code>recomputed_hexapod</code> are the same.</p>
+<blockquote>
+<h3 id="1-recomputed_hexapod">1. <code>recomputed_hexapod</code></h3>
+</blockquote>
+<p><img src="/robotics-blog/darkmode-local-12-0.png" alt=""></p>
+<blockquote>
+<h3 id="2-updated_hexapod">2. <code>updated_hexapod</code></h3>
+</blockquote>
+<p><img src="/robotics-blog/darkmode-heroku-12-0.png" alt=""></p>
+<h1 id="part-2-output-not-as-expected">Part 2: Output not as expected</h1>
+<p>Here&rsquo;s one case where they aren&rsquo;t</p>
+<blockquote>
+<h2 id="1-recomputed_hexapod-1">1. <code>recomputed_hexapod</code></h2>
+</blockquote>
+<p><img src="/robotics-blog/darkmode-local-13-5.png" alt=""></p>
+<blockquote>
+<h2 id="2-updated_hexapod-1">2. <code>updated_hexapod</code></h2>
+</blockquote>
+<p><img src="/robotics-blog/darkmode-heroku-13-5.png" alt=""></p>
+<h1 id="part-3-a-closer-look-observations">Part 3: A closer look, observations</h1>
+<p>As you can see here, both cases are a bit weird.
+One observation is that on both cases, not all
+the feet are in contact with the ground. Pay attention to the highlighted points.</p>
+<h2 id="1-recomputed_hexapod-2">1. <code>recomputed_hexapod</code></h2>
+<p><img src="/robotics-blog/hexapod-local.png" alt=""></p>
+<h2 id="2-updated_hexapod-2">2. <code>updated_hexapod</code></h2>
+<p><img src="/robotics-blog/hexapod-heroku.png" alt=""></p>
+<p>In one of the cases one of the feet are shoved below the ground.
+On the other case, some of the feet are above the ground.
+These things should actually not happen, we should be alerted by
+the <code>inverse_kinematics_update</code></p>
+<blockquote>
+<p>Inspect the full code in these links</p>
+<ul>
+<li><a href="https://github.com/mithi/hexapod-robot-simulator/blob/master/hexapod/ik_solver/ik_solver.py">https://github.com/mithi/hexapod-robot-simulator/blob/master/hexapod/ik_solver/ik_solver.py</a></li>
+<li><a href="https://github.com/mithi/hexapod-robot-simulator/blob/master/hexapod/ik_solver/helpers.py">https://github.com/mithi/hexapod-robot-simulator/blob/master/hexapod/ik_solver/helpers.py</a></li>
+</ul>
+</blockquote>
+<h1 id="part-4-videos">Part 4: Videos</h1>
+<p>Here&rsquo;s a few videos showing the two cases. Pay attention to the url
+<code>localhost</code> is the one with <code>recomputed_hexapod()</code> while <code>heroku</code> is the one with
+<code>inverse_kinematics_update</code></p>
+
+
+
+
+<video width="640" height="480" controls>
+  <source src="/robotics-blog/hexapod1.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+<br>
+
+<video width="640" height="480" controls>
+  <source src="/robotics-blog/hexapod2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+
+
+<p>Still in the process of debugging. Any ideas is much appreciated.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+  				<p>
+  					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/hexapod-robot-simulator">hexapod-robot-simulator</a></span><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/hexapod-simulator">hexapod-simulator</a></span><span class="tag"><a href="https://mithi.github.io/robotics-blog/tags/hexapod">hexapod</a></span>
+  				</p>
+  			</div>
+
+        
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+            <span>👾🤖 Mithi</span>
+            <span> <a href="https://mithi.github.io/robotics-blog/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a></span>
+        </div>
+    </div>
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
+            <span>Made with &#10084; by <a href="https://github.com/rhazdon">Djordje Atlialp</a></span>
+        </div>
+    </div>
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+
+<script type="text/javascript" src="/robotics-blog/bundle.min.2d5469329143160ae2456a69c3c76dc2d0a3b212b46afe291a51bd68650ed6f8697e001dab54f1c272c77ce08092a8c55e5bb4314e0ee334aab4b927ec896638.js" integrity="sha512-LVRpMpFDFgriRWppw8dtwtCjshK0av4pGlG9aGUO1vhpfgAdq1TxwnLHfOCAkqjFXlu0MU4O4zSqtLkn7IlmOA=="></script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-142507629-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
+    </body>
+</html>

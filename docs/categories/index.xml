@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>👾🤖 Mithi</copyright>
-    <lastBuildDate>Fri, 17 Apr 2020 02:24:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2020 18:51:20 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>hexapod-robot-simulator</title>
       <link>https://mithi.github.io/robotics-blog/categories/hexapod-robot-simulator/</link>
-      <pubDate>Fri, 17 Apr 2020 02:24:14 +0800</pubDate>
+      <pubDate>Sat, 04 Jul 2020 18:51:20 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/categories/hexapod-robot-simulator/</guid>
       <description></description>
@@ -24,7 +24,7 @@
     <item>
       <title>hexapod-simulator</title>
       <link>https://mithi.github.io/robotics-blog/categories/hexapod-simulator/</link>
-      <pubDate>Fri, 17 Apr 2020 02:24:14 +0800</pubDate>
+      <pubDate>Sat, 04 Jul 2020 18:51:20 +0800</pubDate>
       
       <guid>https://mithi.github.io/robotics-blog/categories/hexapod-simulator/</guid>
       <description></description>

@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>👾🤖 Mithi</copyright>
-    <lastBuildDate>Fri, 17 Apr 2020 02:24:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 04 Jul 2020 18:51:20 +0800</lastBuildDate>
     
 	<atom:link href="https://mithi.github.io/robotics-blog/categories/hexapod-robot-simulator/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>🕷️ Hexapod Simulator: Rewrite in Javascript</title>
+      <link>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/5-rewrite-in-javascript/</link>
+      <pubDate>Sat, 04 Jul 2020 18:51:20 +0800</pubDate>
+      
+      <guid>https://mithi.github.io/robotics-blog/blog/hexapod-simulator/5-rewrite-in-javascript/</guid>
+      <description>hexapod.netlify.app github.com/mithi/hexapod               Your browser does not support the video tag.  </description>
+    </item>
     
     <item>
       <title>🕷️ Hexapod Simulator: Dark Mode</title>

@@ -15,8 +15,8 @@
   "devDependencies": {
     "bulma": "^0.8.0",
     "node-sass": "^4.13.0",
-    "minimist": ">=1.2.2"
-
-  },
+    "minimist": ">=1.2.2",
+    "lodash": ">=4.17.19"
+  }
 }
 

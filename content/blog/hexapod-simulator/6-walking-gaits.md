@@ -11,8 +11,8 @@ tags: [hexapod-robot-simulator, hexapod-simulator, hexapod]
 
 ![](/robotics-blog/show-off-v2-4.gif)
 
-
 ![](/robotics-blog/show-off-v2-2.png)
+
 
 {{< rawhtml >}}
 

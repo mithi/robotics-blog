@@ -11,10 +11,18 @@ draft: false
 # [hexapod.netlify.app](http://hexapod.netlify.app)
 # [github.com/mithi/hexapod](http://github.com/mithi/hexapod)
 
+| ![](/robotics-blog/screenshot1.png)|![](/robotics-blog/screenshot3.png) |
+|---|---|
+|![](/robotics-blog/screenshot2.png)|![](/robotics-blog/screenshot4.png)|
+
+
 | ![](/robotics-blog/show-off-2.png)|![](/robotics-blog/show-off-4.png) |
 |---|---|
 |![](/robotics-blog/show-off-1.png)|![](/robotics-blog/show-off-3.png)|
 
+| ![](/robotics-blog/small-robot.gif) | ![](/robotics-blog/small-robot-2.gif) |
+|---|---|
+| . | . |
 
 {{< rawhtml >}}
 
